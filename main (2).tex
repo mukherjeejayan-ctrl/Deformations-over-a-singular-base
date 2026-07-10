@@ -1,0 +1,2299 @@
+\documentclass[11pt,twoside]{amsart}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=Blue, citecolor=Blue}
+\usepackage{amsthm, amsmath, amscd, amssymb,centernot,txfonts}
+\usepackage{tikz-cd}
+\usepackage{lipsum}
+\usepackage{cancel} 
+\usepackage{multicol}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\usepackage[all]{xy}
+\usepackage[left=2.5cm,top=2.5cm,bottom=3cm,right=2.5cm]{geometry}
+\usepackage{thmtools}
+\usepackage{dirtytalk}
+\usepackage{mathtools}
+\usetikzlibrary{shapes,arrows}
+\usepackage{etoolbox}
+\usepackage{dynkin-diagrams}
+\usepackage{enumitem}
+\usepackage{chngpage}
+\usepackage{adjustbox}
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage{fourier} 
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{comment}
+%\usepackage[cmtip,all]{xy}
+\usepackage{cancel}
+\usepackage{cleveref}
+\newcommand{\longsquiggly}{\xymatrix{{}\ar@{~>}[r]&{}}}
+
+
+
+
+\setlength{\headheight}{15.2pt}
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+
+
+\setcounter{tocdepth}{1}
+
+\setlength\parskip{0in}
+\setlength\parindent{0.2in}
+
+
+\theoremstyle{plain}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{claim}[theorem]{Claim}
+%\newtheorem{set-up}[theorem]{Set-up}
+
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Proj}{Proj}
+%\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Der}{Der}
+\DeclareMathOperator{\coker}{coker}
+%\DeclareMathOperator{\Ext}{\mathcal{E}xt}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rk}{rk}
+ 
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\AAA}{\mathbb{A}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\Tt}{\mathcal{T}}
+
+
+\newtheorem{observation}[theorem]{Observation}
+
+
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{set-up}[theorem]{Set-up}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{construction}[definition]{Construction}
+\newcommand{\te}{\otimes}
+
+\newcommand{\myeq}{\overset{\mathrm{duality}}{=\joinrel=}}
+\newcommand*{\QEDA}{\hfill\ensuremath{\blacksquare}}
+\newcommand*{\QEDB}{\hfill\ensuremath{\square}}
+
+\newcommand{\cO}{\mathscr{O}}
+\newcommand{\cE}{\mathscr{E}}
+\newcommand{\cB}{\mathscr{B}}
+\newcommand{\cI}{\mathscr{I}}
+\newcommand{\Yt}{\widetilde{Y}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\Hom}{\operatorname{Hom}}
+
+%\DeclareMathOperator{\Ext}{Ext}
+%\DeclareMathOperator{\Hom}{Hom}
+%\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Tot}{Tot}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Sing}{Sing}
+%\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\height}{ht}
+ 
+%\newcommand{\OO}{\mathcal{O}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cH}{\mathcal{H}}
+%\newcommand{\cI}{\mathcal{I}}
+\newcommand{\cJ}{\mathcal{J}}
+\newcommand{\cN}{\mathcal{N}}
+%\newcommand{\PP}{\mathbb{P}}
+%\newcommand{\CC}{\mathbb{C}}
+%\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\HH}{\mathrm{H}}
+
+
+\tikzstyle{decision} = [diamond, draw, , 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, , 
+    text width=10em, text centered, rounded corners, minimum height=2em]
+\tikzstyle{block1} = [rectangle, draw, , 
+    text width=5em, text centered, rounded corners, minimum height=2em]    
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,, node distance=3cm,
+    minimum height=2em]
+
+\begin{document}
+
+\title[Deformation theory of morphisms finite onto a singular base ]{Deformation theory of morphisms finite onto a singular base}
+
+\author[J. Mukherjee]{Jayan Mukherjee}
+\address{Department of Mathematics, Oklahoma State University, Stillwater, USA}
+\email{jayan.mukherjee@okstate.edu}
+
+\maketitle
+
+
+\section{Reflexive Ribbons}
+
+\begin{definition}[Ropes with conormal sheaf]
+\label{def:ribbon-conormal-sheaf}
+Let \(Y\) be a reduced connected scheme, and let \(\mathcal E\) be a coherent
+\(\mathcal O_Y\)-module. A \emph{ribbon over \(Y\)
+with conormal sheaf \(\mathcal E\)} is a scheme \(\widetilde Y\), together with a closed
+immersion
+\[
+    Y\hookrightarrow \widetilde Y,
+\]
+such that
+\[
+    \widetilde Y_{\mathrm{red}}=Y,
+    \qquad
+    \mathcal I_{Y/\widetilde Y}^{2}=0,
+    \qquad
+    \mathcal I_{Y/\widetilde Y}\simeq \mathcal E
+\]
+as \(\mathcal O_Y\)-modules. Equivalently, \(\widetilde Y\) fits into an exact sequence of sheaves of rings
+\[
+    0\longrightarrow \mathcal E
+    \longrightarrow \mathcal O_{\widetilde Y}
+    \longrightarrow \mathcal O_Y
+    \longrightarrow 0,
+\]
+where \(\mathcal E\) is an ideal of square zero. If \(\mathcal E\) is reflexive of rank \(n-1\), then $\widetilde{Y}$ is called a \emph{reflexive \(n\)-rope} over \(Y\).
+\end{definition}
+
+
+
+\begin{remark}
+\label{rem:properties-reflexive-rope}
+Assume that \(Y\) is normal and that \(\mathcal E\) is reflexive.
+
+\begin{enumerate}
+    \item Since \(Y\) is normal, a reflexive sheaf on \(Y\) is locally free outside a closed
+    subset of codimension at least two. Hence a reflexive rope is an ordinary rope on
+    the open subset where \(\mathcal E\) is locally free. In particular, a reflexive rope
+    is a genuine rope in codimension one.
+
+    \item The scheme \(\widetilde Y\) is a square-zero thickening of \(Y\). More precisely,
+    the closed immersion \(Y\hookrightarrow \widetilde Y\) is defined by the ideal
+    \[
+        \mathcal I_{Y/\widetilde Y}\simeq \mathcal E,
+    \]
+    and this ideal satisfies
+    \[
+        \mathcal I_{Y/\widetilde Y}^{2}=0.
+    \]
+    Thus the underlying topological space of \(\widetilde Y\) is the same as that of \(Y\),
+    but the structure sheaf has an additional square-zero layer given by \(\mathcal E\).
+
+    \item If \(\mathcal E\) has rank \(n-1\), then \(\widetilde Y\) has generic multiplicity
+    \(n\) along \(Y\). Indeed, at the generic point \(\eta\) of \(Y\), one has
+    \[
+        \operatorname{length}_{\mathcal O_{Y,\eta}}
+        \mathcal O_{\widetilde Y,\eta}
+        =
+        1+\operatorname{rank}\mathcal E
+        =
+        n.
+    \]
+    In particular, when \(\mathcal E\) has rank one, \(\widetilde Y\) is generically a
+    double structure over \(Y\).
+
+    \item \textcolor{blue}{Since \(Y\) is normal, \(\mathcal O_Y\) satisfies Serre's condition \(S_2\).
+    Since \(\mathcal E\) is reflexive, \(\mathcal E\) also satisfies \(S_2\). From the exact
+    sequence
+    \[
+        0\longrightarrow \mathcal E
+        \longrightarrow \mathcal O_{\widetilde Y}
+        \longrightarrow \mathcal O_Y
+        \longrightarrow 0,
+    \]
+    the depth lemma implies that \(\mathcal O_{\widetilde Y}\) satisfies \(S_2\). Hence
+    \(\widetilde Y\) is an \(S_2\)-scheme.}
+
+    \item \textcolor{blue}{Reflexivity alone does not imply that \(\widetilde Y\) is Cohen--Macaulay in
+    dimensions at least three. If \(Y\) is Cohen--Macaulay and \(\mathcal E\) is maximal
+    Cohen--Macaulay as an \(\mathcal O_Y\)-module, then the same exact sequence shows
+    that \(\widetilde Y\) is Cohen--Macaulay.}
+
+   
+\end{enumerate}
+\end{remark}
+
+
+
+\begin{proposition}[Injectivity of the conormal map for torsion-free square-zero ideals]
+\label{prop:injectivity-conormal-map}
+Let \(k\) be a field of characteristic \(0\). Let \(A\) be a reduced noetherian
+\(k\)-algebra, and let
+\[
+    0\longrightarrow M\longrightarrow B\xrightarrow{q} A\longrightarrow 0
+\]
+be a square-zero extension of \(k\)-algebras; that is,
+\[
+    M=\ker(q)
+    \qquad\text{and}\qquad
+    M^2=0.
+\]
+Assume that \(M\) is torsion-free as an \(A\)-module, where torsion-free means that
+multiplication by every nonzerodivisor of \(A\) is injective on \(M\). Then the natural
+conormal map
+\[
+    M=M/M^2
+    \longrightarrow
+    \Omega_{B/k}\otimes_B A
+\]
+is injective.
+
+Equivalently, we have an exact sequence the conormal sequence
+\[
+  0 \longrightarrow  M
+    \longrightarrow
+    \Omega_{B/k}\otimes_B A
+    \longrightarrow
+    \Omega_{A/k}
+    \longrightarrow 0
+\]
+is left-exact.
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+    \delta:M\longrightarrow \Omega_{B/k}\otimes_B A
+\]
+be the conormal map. Explicitly, it is given by
+\[
+    m\longmapsto dm\otimes 1.
+\]
+Let
+\[
+    N:=\ker(\delta).
+\]
+We want to prove that \(N=0\).
+
+We first reduce to the generic points of \(\operatorname{Spec}A\). Since \(A\) is noetherian,
+it has only finitely many minimal primes; see \cite[Algebra, Lemma 10.31.6]{stacks-project}.
+Let \(\mathfrak p\subset A\) be a minimal prime. Since \(A\) is reduced, the localization
+\[
+    A_{\mathfrak p}
+\]
+is a field; see \cite[Algebra, Lemma 10.25.1]{stacks-project}. We denote this field by
+\[
+    K:=A_{\mathfrak p}.
+\]
+
+Localizing the given square-zero extension at \(\mathfrak p\), we obtain an exact sequence
+\[
+    0\longrightarrow M_{\mathfrak p}
+    \longrightarrow B_{\mathfrak p}
+    \longrightarrow K
+    \longrightarrow 0.
+\]
+The ideal \(M_{\mathfrak p}\) is still square-zero.
+
+Because \(\operatorname{char}k=0\), every field extension of \(k\) is formally smooth over
+\(k\); see \cite[Algebra, Lemma 10.158.8]{stacks-project}. Hence \(K/k\) is formally
+smooth. Applying the infinitesimal lifting property for formal smoothness to the square-zero
+surjection
+\[
+    B_{\mathfrak p}\twoheadrightarrow K
+\]
+and to the identity map \(K\to K\), we obtain a \(k\)-algebra section
+\[
+    K\longrightarrow B_{\mathfrak p}.
+\]
+
+Now apply the split conormal exact sequence for Kähler differentials to the surjection
+\[
+    B_{\mathfrak p}\twoheadrightarrow K
+\]
+with kernel \(M_{\mathfrak p}\). The split conormal sequence says that, since this surjection
+has a \(k\)-algebra section, the sequence
+\[
+    0
+    \longrightarrow
+    M_{\mathfrak p}/M_{\mathfrak p}^{2}
+    \longrightarrow
+    \Omega_{B_{\mathfrak p}/k}\otimes_{B_{\mathfrak p}} K
+    \longrightarrow
+    \Omega_{K/k}
+    \longrightarrow 0
+\]
+is exact; see \cite[Algebra, Lemma 10.131.10]{stacks-project}. Since
+\[
+    M_{\mathfrak p}^{2}=0,
+\]
+we have
+\[
+    M_{\mathfrak p}/M_{\mathfrak p}^{2}=M_{\mathfrak p}.
+\]
+Therefore the localized conormal map
+\[
+    M_{\mathfrak p}
+    \longrightarrow
+    \Omega_{B_{\mathfrak p}/k}\otimes_{B_{\mathfrak p}} K
+\]
+is injective.
+
+Formation of Kähler differentials commutes with localization; see
+\cite[Algebra, Lemma 10.131.8]{stacks-project}. Hence
+\[
+    \Omega_{B_{\mathfrak p}/k}
+    \simeq
+    \Omega_{B/k}\otimes_B B_{\mathfrak p}.
+\]
+After tensoring with \(K=A_{\mathfrak p}\), this identifies
+\[
+    \Omega_{B_{\mathfrak p}/k}\otimes_{B_{\mathfrak p}} K
+\]
+with
+\[
+    \left(\Omega_{B/k}\otimes_B A\right)_{\mathfrak p}.
+\]
+Thus the localized map
+\[
+    \delta_{\mathfrak p}:M_{\mathfrak p}
+    \longrightarrow
+    \left(\Omega_{B/k}\otimes_B A\right)_{\mathfrak p}
+\]
+is injective. Equivalently,
+\[
+    N_{\mathfrak p}=0
+\]
+for every minimal prime \(\mathfrak p\subset A\).
+
+It remains to pass from generic injectivity to global injectivity. Let \(n\in N\). Since
+\(N_{\mathfrak p}=0\) for every minimal prime \(\mathfrak p\), for each minimal prime
+\(\mathfrak p\) there exists an element
+\[
+    s_{\mathfrak p}\in A\setminus \mathfrak p
+\]
+such that
+\[
+    s_{\mathfrak p}n=0.
+\]
+Equivalently, the annihilator ideal
+\[
+    \operatorname{Ann}_A(n)
+\]
+is not contained in any minimal prime of \(A\).
+
+Since \(A\) has only finitely many minimal primes, prime avoidance
+\cite[Algebra, Lemma 10.15.2]{stacks-project} implies that
+\[
+    \operatorname{Ann}_A(n)
+\]
+is not contained in the union of the minimal primes. Hence there exists an element
+\[
+    s\in \operatorname{Ann}_A(n)
+\]
+which is contained in no minimal prime of \(A\).
+
+Because \(A\) is reduced, the set of zerodivisors of \(A\) is the union of its minimal
+primes; see \cite[Algebra, Lemma 10.25.2]{stacks-project}. Therefore \(s\) is a
+nonzerodivisor of \(A\). Since \(M\) is torsion-free and \(N\subset M\), multiplication by
+\(s\) is injective on \(N\). But
+\[
+    sn=0
+\]
+by construction. Hence
+\[
+    n=0.
+\]
+Therefore every element of \(N\) is zero, so
+\[
+    N=0.
+\]
+
+Thus the conormal map
+\[
+    M\longrightarrow \Omega_{B/k}\otimes_B A
+\]
+is injective.
+\end{proof}
+
+
+\begin{proposition}[Classification of square-zero thickenings with torsion-free conormal sheaf]
+\label{prop:classification-square-zero-thickenings}
+Let \(k\) be a field of characteristic \(0\). Let \(Y\) be a reduced connected
+noetherian \(k\)-scheme, and let \(\mathcal E\) be a coherent torsion-free
+\(\mathcal O_Y\)-module. Consider pairs
+\[
+    (j:Y\hookrightarrow \widetilde Y,\alpha),
+\]
+where \(j\) is a closed immersion such that
+\[
+    \widetilde Y_{\mathrm{red}}=Y,
+    \qquad
+    \mathcal I_{Y/\widetilde Y}^{2}=0,
+\]
+and where
+\[
+    \alpha:\mathcal I_{Y/\widetilde Y}\xrightarrow{\sim}\mathcal E
+\]
+is an isomorphism of \(\mathcal O_Y\)-modules. Then the isomorphism classes of such pairs, where isomorphisms are required to be
+over \(Y\) and compatible with the chosen identification with \(\mathcal E\), are
+classified by
+\[
+    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E).
+\]
+
+If the identification
+\[
+    \mathcal I_{Y/\widetilde Y}\simeq\mathcal E
+\]
+is not fixed, then the set of isomorphism classes is the quotient of
+\[
+    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E)
+\]
+by the natural action of
+\[
+    \operatorname{Aut}_{\mathcal O_Y}(\mathcal E).
+\]
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+    (j:Y\hookrightarrow \widetilde Y,\alpha)
+\]
+be such a square-zero thickening, and set
+\[
+    \mathcal K:=\mathcal I_{Y/\widetilde Y}.
+\]
+Thus
+\[
+    \mathcal K^{2}=0
+\]
+and
+\[
+    \alpha:\mathcal K\xrightarrow{\sim}\mathcal E.
+\]
+
+The closed immersion
+\[
+    j:Y\hookrightarrow \widetilde Y
+\]
+has the usual conormal sequence
+\[
+    \mathcal K/\mathcal K^{2}
+    \longrightarrow
+    \Omega_{\widetilde Y/k}\otimes_{\mathcal O_{\widetilde Y}}\mathcal O_Y
+    \longrightarrow
+    \Omega_{Y/k}
+    \longrightarrow 0.
+\]
+Since \(\mathcal K^2=0\), this becomes
+\[
+    \mathcal K
+    \longrightarrow
+    \Omega_{\widetilde Y/k}|_Y
+    \longrightarrow
+    \Omega_{Y/k}
+    \longrightarrow 0.
+\]
+
+We claim that the first map is injective. This is local on \(Y\). On an affine open
+subset \(U=\operatorname{Spec}A\subset Y\), write
+\[
+    \widetilde U=\operatorname{Spec}B
+\]
+for the corresponding affine open subset of \(\widetilde Y\). Then we have a
+square-zero extension
+\[
+    0\longrightarrow M\longrightarrow B\longrightarrow A\longrightarrow 0,
+\]
+where
+\[
+    M=\Gamma(U,\mathcal K).
+\]
+Since \(\mathcal K\simeq\mathcal E\), and since \(\mathcal E\) is torsion-free, the
+\(A\)-module \(M\) is torsion-free. Also \(A\) is reduced because \(Y\) is reduced.
+Therefore, by \Cref{prop:injectivity-conormal-map}, the conormal map
+\[
+    M
+    \longrightarrow
+    \Omega_{B/k}\otimes_B A
+\]
+is injective. Hence the sheaf map
+\[
+    \mathcal K
+    \longrightarrow
+    \Omega_{\widetilde Y/k}|_Y
+\]
+is injective.
+
+Thus we obtain a short exact sequence
+\[
+    0
+    \longrightarrow
+    \mathcal K
+    \longrightarrow
+    \Omega_{\widetilde Y/k}|_Y
+    \longrightarrow
+    \Omega_{Y/k}
+    \longrightarrow 0.
+\]
+Using the chosen isomorphism
+\[
+    \alpha:\mathcal K\xrightarrow{\sim}\mathcal E,
+\]
+this gives a short exact sequence
+\[
+    0
+    \longrightarrow
+    \mathcal E
+    \longrightarrow
+    \Omega_{\widetilde Y/k}|_Y
+    \longrightarrow
+    \Omega_{Y/k}
+    \longrightarrow 0.
+\]
+Therefore the thickening determines an extension class
+\[
+    [e_{\widetilde Y}]
+    \in
+    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E).
+\]
+
+Conversely, let
+\[
+    0
+    \longrightarrow
+    \mathcal E
+    \longrightarrow
+    \mathcal G
+    \xrightarrow{p}
+    \Omega_{Y/k}
+    \longrightarrow 0
+\]
+be an extension of \(\Omega_{Y/k}\) by \(\mathcal E\). We construct from this a
+square-zero thickening of \(Y\) with conormal sheaf \(\mathcal E\).
+
+Let
+\[
+    d:\mathcal O_Y\longrightarrow \Omega_{Y/k}
+\]
+be the universal derivation. Define
+\[
+    \mathcal O_{\widetilde Y}
+    :=
+    \mathcal O_Y\times_{\Omega_{Y/k}}\mathcal G.
+\]
+Thus, for an open set \(U\subset Y\),
+\[
+    \mathcal O_{\widetilde Y}(U)
+    =
+    \left\{
+        (f,g)\in \mathcal O_Y(U)\oplus\mathcal G(U)
+        \;\middle|\;
+        df=p(g)
+    \right\}.
+\]
+
+We define multiplication on \(\mathcal O_{\widetilde Y}\) by
+\[
+    (f,g)\cdot(f',g')
+    :=
+    (ff',fg'+f'g).
+\]
+This multiplication is well-defined. Indeed, since
+\[
+    p(g)=df
+    \qquad\text{and}\qquad
+    p(g')=df',
+\]
+we have
+\[
+    p(fg'+f'g)
+    =
+    f\,p(g')+f'\,p(g)
+    =
+    f\,df'+f'\,df
+    =
+    d(ff').
+\]
+Thus
+\[
+    (ff',fg'+f'g)
+\]
+again lies in the fiber product
+\[
+    \mathcal O_Y\times_{\Omega_{Y/k}}\mathcal G.
+\]
+With this multiplication, \(\mathcal O_{\widetilde Y}\) is a sheaf of rings whose unit is
+\[
+    (1,0).
+\]
+
+The projection onto the first factor gives a surjection
+\[
+    \mathcal O_{\widetilde Y}
+    \longrightarrow
+    \mathcal O_Y,
+    \qquad
+    (f,g)\longmapsto f.
+\]
+Its kernel consists of pairs
+\[
+    (0,g)
+\]
+with
+\[
+    p(g)=0.
+\]
+Since
+\[
+    \ker(p)=\mathcal E,
+\]
+we get
+\[
+    \ker(\mathcal O_{\widetilde Y}\to\mathcal O_Y)\simeq\mathcal E.
+\]
+Moreover, if \(e,e'\) are local sections of \(\mathcal E\), then
+\[
+    (0,e)\cdot(0,e')=(0,0).
+\]
+Hence this kernel is an ideal of square zero.
+
+Therefore the ringed space defined by \(\mathcal O_{\widetilde Y}\) is a square-zero
+thickening
+\[
+    Y\hookrightarrow \widetilde Y
+\]
+whose ideal sheaf is identified with \(\mathcal E\).
+
+These two constructions give the desired classification of marked square-zero thickenings
+by
+\[
+    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E).
+\]
+
+Finally, suppose the identification of the square-zero ideal with \(\mathcal E\) is not fixed.
+Changing an identification
+\[
+    \mathcal I_{Y/\widetilde Y}\xrightarrow{\sim}\mathcal E
+\]
+by an automorphism
+\[
+    \sigma\in \operatorname{Aut}_{\mathcal O_Y}(\mathcal E)
+\]
+pushes out the corresponding extension class by \(\sigma\). Thus
+\[
+    \operatorname{Aut}_{\mathcal O_Y}(\mathcal E)
+\]
+acts naturally on
+\[
+    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E),
+\]
+and the unmarked isomorphism classes are obtained by taking the quotient by this action.
+\end{proof}
+
+
+
+\begin{proposition}[Morphisms from square-zero thickenings to an ambient scheme]
+\label{prop:square-zero-thickenings-and-morphisms}
+Let
+\[
+    i:Y\hookrightarrow Z
+\]
+be a closed immersion of schemes, and let
+\[
+    I=I_{Y/Z}\subset \mathcal O_Z
+\]
+be its ideal sheaf. Let \(\mathcal E\) be an \(\mathcal O_Y\)-module. Consider triples
+\[
+    (\widetilde Y,j,\alpha),
+\]
+where
+\[
+    j:Y\hookrightarrow \widetilde Y
+\]
+is a closed immersion defined by a square-zero ideal
+\[
+    \mathcal K:=\mathcal I_{Y/\widetilde Y},
+    \qquad
+    \mathcal K^2=0,
+\]
+and
+\[
+    \alpha:\mathcal K\xrightarrow{\sim}\mathcal E
+\]
+is an isomorphism of \(\mathcal O_Y\)-modules.
+
+Then the following hold.
+
+\begin{enumerate}
+    \item Isomorphism classes of pairs
+    \[
+        \left((\widetilde Y,j,\alpha),\widetilde i\right),
+    \]
+    where
+    \[
+        \widetilde i:\widetilde Y\to Z
+    \]
+    is a morphism satisfying
+    \[
+        \widetilde i\circ j=i,
+    \]
+    are naturally in bijection with homomorphisms
+    \[
+        \tau:I/I^2\longrightarrow \mathcal E.
+    \]
+
+    \item Under this correspondence, the scheme-theoretic image
+    \[
+        W:=\operatorname{Im}(\widetilde i)\subset Z
+    \]
+    has ideal sheaf
+    \[
+        I_{W/Z}
+        =
+        \ker\left(
+            I
+            \longrightarrow
+            I/I^2
+            \xrightarrow{\tau}
+            \mathcal E
+        \right).
+    \]
+    Consequently,
+    \[
+        I^2\subset I_{W/Z}\subset I,
+    \]
+    and the ideal of \(Y\) inside \(W\) is
+    \[
+        \mathcal I_{Y/W}
+        \simeq
+        \operatorname{im}(\tau).
+    \]
+
+    \item The morphism
+    \[
+        \widetilde i:\widetilde Y\to Z
+    \]
+    is a closed immersion if and only if
+    \[
+        \tau:I/I^2\to \mathcal E
+    \]
+    is surjective.
+
+    In particular, embedded square-zero thickenings
+    \[
+        \widetilde Y\subset Z
+    \]
+    with
+    \[
+        \mathcal I_{Y/\widetilde Y}\simeq\mathcal E
+    \]
+    correspond precisely to surjections
+    \[
+        I/I^2\twoheadrightarrow \mathcal E.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+We first explain how a morphism
+\[
+    \widetilde i:\widetilde Y\to Z
+\]
+extending \(i:Y\hookrightarrow Z\) produces a homomorphism
+\[
+    \tau:I/I^2\to \mathcal E.
+\]
+
+Let
+\[
+    \mathcal K=\mathcal I_{Y/\widetilde Y}.
+\]
+Since \(\widetilde i\circ j=i\), the morphism on structure sheaves
+\[
+    \widetilde i^\#:\mathcal O_Z\longrightarrow \widetilde i_*\mathcal O_{\widetilde Y}
+\]
+reduces modulo \(\mathcal K\) to the map
+\[
+    i^\#:\mathcal O_Z\longrightarrow i_*\mathcal O_Y.
+\]
+Therefore, if \(a\) is a local section of \(I\), then \(i^\#(a)=0\), and hence
+\[
+    \widetilde i^\#(a)\in \mathcal K.
+\]
+Using the fixed isomorphism
+\[
+    \alpha:\mathcal K\xrightarrow{\sim}\mathcal E,
+\]
+we define
+\[
+    \lambda_{\widetilde i}(a)
+    :=
+    \alpha\bigl(\widetilde i^\#(a)\bigr)
+    \in \mathcal E.
+\]
+
+We claim that \(\lambda_{\widetilde i}\) kills \(I^2\). Indeed, if \(a,b\) are local
+sections of \(I\), then
+\[
+    \widetilde i^\#(a),\widetilde i^\#(b)\in \mathcal K.
+\]
+Since \(\mathcal K^2=0\), it follows that
+\[
+    \widetilde i^\#(ab)
+    =
+    \widetilde i^\#(a)\widetilde i^\#(b)
+    =
+    0.
+\]
+Thus
+\[
+    \lambda_{\widetilde i}(ab)=0.
+\]
+Therefore \(\lambda_{\widetilde i}\) descends to a homomorphism
+\[
+    \tau_{\widetilde i}:I/I^2\longrightarrow \mathcal E.
+\]
+
+This homomorphism is \(\mathcal O_Y\)-linear. To see this, let \(f\) be a local section
+of \(\mathcal O_Z\), and let \(a\) be a local section of \(I\). Then
+\[
+    \widetilde i^\#(fa)
+    =
+    \widetilde i^\#(f)\widetilde i^\#(a).
+\]
+The section \(\widetilde i^\#(a)\) lies in \(\mathcal K\). Since \(\mathcal K^2=0\), the
+\(\mathcal O_{\widetilde Y}\)-module structure on \(\mathcal K\) factors through
+\[
+    \mathcal O_{\widetilde Y}/\mathcal K\simeq\mathcal O_Y.
+\]
+Thus
+\[
+    \widetilde i^\#(f)\widetilde i^\#(a)
+    =
+    \overline f\cdot \widetilde i^\#(a),
+\]
+where \(\overline f\) is the image of \(f\) in \(\mathcal O_Y\). Applying \(\alpha\), we get
+\[
+    \tau_{\widetilde i}(\overline{fa})
+    =
+    \overline f\cdot \tau_{\widetilde i}(\overline a).
+\]
+Hence
+\[
+    \tau_{\widetilde i}:I/I^2\to\mathcal E
+\]
+is \(\mathcal O_Y\)-linear.
+
+We now construct the inverse correspondence.
+
+Let
+\[
+    \tau:I/I^2\to\mathcal E
+\]
+be an \(\mathcal O_Y\)-module homomorphism. Let
+\[
+    Y^{(1)}_Z:=V(I^2)\subset Z
+\]
+be the first infinitesimal neighborhood of \(Y\) in \(Z\). Its structure sheaf fits into
+the square-zero extension
+\[
+    0\longrightarrow I/I^2
+    \longrightarrow \mathcal O_{Y^{(1)}_Z}
+    \longrightarrow \mathcal O_Y
+    \longrightarrow 0.
+\]
+We push out this square-zero extension along
+\[
+    \tau:I/I^2\to\mathcal E.
+\]
+
+Concretely, define a sheaf of rings \(\mathcal O_{\widetilde Y_\tau}\) on the underlying
+topological space of \(Y\) by
+\[
+    \mathcal O_{\widetilde Y_\tau}
+    :=
+    \left(
+        \mathcal O_{Y^{(1)}_Z}\oplus \mathcal E
+    \right)
+    \big/
+    \left\langle
+        (u,-\tau(u))\mid u\in I/I^2
+    \right\rangle.
+\]
+Here \(I/I^2\) is viewed as a square-zero ideal in \(\mathcal O_{Y^{(1)}_Z}\), and
+\(\mathcal E\) is placed as a square-zero ideal. The multiplication is the one induced
+from the standard square-zero multiplication:
+\[
+    (a,e)(a',e')
+    =
+    \bigl(
+        aa',
+        \overline a\, e'
+        +
+        \overline{a'}\, e
+    \bigr),
+\]
+where \(\overline a,\overline{a'}\) denote the images in \(\mathcal O_Y\).
+
+By construction, there is an exact sequence of sheaves of rings and modules
+\[
+    0\longrightarrow \mathcal E
+    \longrightarrow \mathcal O_{\widetilde Y_\tau}
+    \longrightarrow \mathcal O_Y
+    \longrightarrow 0,
+\]
+and \(\mathcal E\) is an ideal of square zero. Therefore
+\[
+    j_\tau:Y\hookrightarrow \widetilde Y_\tau
+\]
+is a square-zero thickening with conormal sheaf \(\mathcal E\).
+
+The natural quotient map
+\[
+    \mathcal O_Z
+    \longrightarrow
+    \mathcal O_Z/I^2
+    =
+    \mathcal O_{Y^{(1)}_Z}
+\]
+followed by
+\[
+    \mathcal O_{Y^{(1)}_Z}\to \mathcal O_{\widetilde Y_\tau}
+\]
+defines a morphism
+\[
+    \widetilde i_\tau:\widetilde Y_\tau\to Z.
+\]
+Modulo the square-zero ideal \(\mathcal E\), this morphism restricts to the original
+closed immersion
+\[
+    i:Y\hookrightarrow Z.
+\]
+Hence
+\[
+    \widetilde i_\tau\circ j_\tau=i.
+\]
+
+We now check that the two constructions are inverse to each other.
+
+Starting from a homomorphism \(\tau:I/I^2\to\mathcal E\), the construction above gives
+\[
+    \widetilde i_\tau:\widetilde Y_\tau\to Z.
+\]
+If \(a\) is a local section of \(I\), then its image in
+\(\mathcal O_{Y^{(1)}_Z}\) is the class \(\overline a\in I/I^2\). In the pushout
+\(\mathcal O_{\widetilde Y_\tau}\), this class becomes \(\tau(\overline a)\in\mathcal E\).
+Therefore the homomorphism associated to \(\widetilde i_\tau\) is exactly \(\tau\).
+
+Conversely, suppose we start with a pair
+\[
+    \left((\widetilde Y,j,\alpha),\widetilde i\right).
+\]
+The morphism
+\[
+    \widetilde i^\#:\mathcal O_Z\to\widetilde i_*\mathcal O_{\widetilde Y}
+\]
+kills \(I^2\). Hence it
+factors through
+\[
+    \mathcal O_{Y^{(1)}_Z}=\mathcal O_Z/I^2.
+\]
+We obtain a morphism of square-zero extensions
+\[
+\begin{tikzcd}
+    0 \arrow[r] &
+    I/I^2 \arrow[r] \arrow[d,"\tau_{\widetilde i}"] &
+    \mathcal O_{Y^{(1)}_Z} \arrow[r] \arrow[d] &
+    \mathcal O_Y \arrow[r] \arrow[d,equal] &
+    0
+    \\
+    0 \arrow[r] &
+    \mathcal E \arrow[r] &
+    \mathcal O_{\widetilde Y} \arrow[r] &
+    \mathcal O_Y \arrow[r] &
+    0 .
+\end{tikzcd}
+\]
+By the universal property of the pushout, this induces a morphism
+\[
+    \mathcal O_{\widetilde Y_{\tau_{\widetilde i}}}
+    \longrightarrow
+    \mathcal O_{\widetilde Y}.
+\]
+This morphism is the identity on the quotient \(\mathcal O_Y\) and the identity on the
+square-zero ideal \(\mathcal E\). Hence it is an isomorphism of sheaves of rings. Therefore
+the original pair is recovered from \(\tau_{\widetilde i}\). This proves the bijection in
+part \((1)\).
+
+Next we compute the ideal of the scheme-theoretic image. Let
+\[
+    W=\operatorname{Im}(\widetilde i_\tau)\subset Z.
+\]
+By definition,
+\[
+    I_{W/Z}
+    =
+    \ker\left(
+        \mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}
+    \right).
+\]
+If a local section \(f\in\mathcal O_Z\) maps to zero in \(\mathcal O_{\widetilde Y_\tau}\),
+then its image in \(\mathcal O_Y\) is zero, so \(f\in I\). For \(a\in I\), its image in
+\(\mathcal O_{\widetilde Y_\tau}\) is precisely
+\[
+    \tau(\overline a)\in\mathcal E,
+\]
+where \(\overline a\) denotes the class of \(a\) in \(I/I^2\). Therefore
+\[
+    a\in I_{W/Z}
+    \quad\Longleftrightarrow\quad
+    \tau(\overline a)=0.
+\]
+Thus
+\[
+    I_{W/Z}
+    =
+    \ker\left(
+        I
+        \longrightarrow
+        I/I^2
+        \xrightarrow{\tau}
+        \mathcal E
+    \right).
+\]
+
+Since this ideal contains \(I^2\) and is contained in \(I\), we have
+\[
+    I^2\subset I_{W/Z}\subset I.
+\]
+Moreover, the ideal of \(Y\) in \(W\) is
+\[
+    \mathcal I_{Y/W}=I/I_{W/Z}.
+\]
+By the first isomorphism theorem,
+\[
+    I/I_{W/Z}\simeq\operatorname{im}(\tau).
+\]
+Hence
+\[
+    \mathcal I_{Y/W}\simeq \operatorname{im}(\tau).
+\]
+
+Finally, we prove the closed immersion criterion. The morphism
+\[
+    \widetilde i_\tau:\widetilde Y_\tau\to Z
+\]
+is a closed immersion if and only if the corresponding morphism of sheaves of rings
+\[
+    \mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}
+\]
+is surjective. Since
+\[
+    \mathcal O_Z\to\mathcal O_Y
+\]
+is already surjective, the only possible failure of surjectivity lies in the square-zero
+ideal \(\mathcal E\subset\mathcal O_{\widetilde Y_\tau}\). The image of \(I\) inside
+\(\mathcal E\) is exactly
+\[
+    \operatorname{im}(\tau).
+\]
+Therefore
+\[
+    \mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}
+\]
+is surjective if and only if
+\[
+    \operatorname{im}(\tau)=\mathcal E,
+\]
+i.e. if and only if
+\[
+    \tau:I/I^2\to\mathcal E
+\]
+is surjective.
+
+Thus \(\widetilde i_\tau\) is a closed immersion if and only if \(\tau\) is surjective.
+This proves the proposition.
+\end{proof}
+
+
+\section{The map connecting deformations and reflexive ribbons}
+
+\begin{lemma}[The induced map to the two conormal Hom groups]
+\label{lem:T1-map-to-conormal-Hom}
+Let \(k\) be an algebraically closed field, and let
+\[
+    X \xrightarrow{\pi} Y \xrightarrow{i} Z
+\]
+be morphisms of \(k\)-schemes, with \(\pi\) finite and \(i\) a closed immersion.
+Let \(I=I_{Y/Z}\) be the ideal sheaf of \(Y\) in \(Z\), and set
+\[
+    \varphi=i\circ \pi.
+\]
+Assume that the finite \(\mathcal O_Y\)-algebra \(\pi_*\mathcal O_X\) admits a splitting
+\[
+    \pi_*\mathcal O_X \simeq \mathcal O_Y\oplus \mathcal E
+\]
+as an \(\mathcal O_Y\)-module. Then there is a natural homomorphism
+\[
+    \Theta=\Theta_1\oplus \Theta_2:
+    T^1(X/Z)
+    \longrightarrow
+    \operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal O_Y)
+    \oplus
+    \operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal E),
+\]
+where
+\[
+    T^1(X/Z):=\operatorname{Ext}^1_X(L_{X/Z},\mathcal O_X).
+\]
+Equivalently, \(\Theta\) is the composite
+\[
+\begin{tikzcd}[column sep=large]
+    T^1(X/Z)
+    \arrow[r]
+    &
+    \operatorname{Ext}^1_X(L\pi^*L_{Y/Z},\mathcal O_X)
+    \arrow[r,"\sim"]
+    &
+    \operatorname{Hom}_{\mathcal O_Y}(I/I^2,\pi_*\mathcal O_X)
+    \arrow[r,"\sim"]
+    &
+    \operatorname{Hom}(I/I^2,\mathcal O_Y)
+    \oplus
+    \operatorname{Hom}(I/I^2,\mathcal E).
+\end{tikzcd}
+\]
+\end{lemma}
+
+\begin{proof}
+We use the cotangent complex. By Wehler's convention for tangent cohomology,
+\[
+    T^i(X/Z,\mathcal M)
+    =
+    \operatorname{Ext}^i_X(L_{X/Z},\mathcal M),
+\]
+and in particular
+\[
+    T^1(X/Z)=\operatorname{Ext}^1_X(L_{X/Z},\mathcal O_X)
+\]
+is the tangent space to the functor of first-order deformations of \(X\) over the
+fixed target \(Z\); see \cite[\S 1.1--1.2]{Wehler1986}.
+
+Apply the transitivity triangle for the composable morphisms
+\[
+    X \xrightarrow{\pi} Y \xrightarrow{i} Z.
+\]
+It gives a distinguished triangle
+\[
+    L\pi^*L_{Y/Z}
+    \longrightarrow
+    L_{X/Z}
+    \longrightarrow
+    L_{X/Y}
+    \xrightarrow{+1}.
+\]
+Equivalently, in Wehler's notation, every morphism \(g:X\to Y\) over \(Z\)
+induces a short exact sequence in the derived category, hence long exact
+sequences in tangent cohomology; see \cite[\S 1.3(e)]{Wehler1986}. Applying
+\(\mathbf R\mathcal Hom_X(-,\mathcal O_X)\) to the first arrow of the triangle gives
+a canonical homomorphism
+\[
+    \operatorname{Ext}^1_X(L_{X/Z},\mathcal O_X)
+    \longrightarrow
+    \operatorname{Ext}^1_X(L\pi^*L_{Y/Z},\mathcal O_X).
+\]
+Thus we have a natural map
+\[
+    T^1(X/Z)
+    \longrightarrow
+    \operatorname{Ext}^1_X(L\pi^*L_{Y/Z},\mathcal O_X).
+\]
+
+\textcolor{blue}{Since \(i:Y\hookrightarrow Z\) is a closed immersion with ideal \(I\), the
+relative cotangent complex is
+\[
+    L_{Y/Z}\simeq (I/I^2)[1];
+\]
+see, for instance, \cite[Ch.~III, Proposition~2.2.4]{Illusie1971} or
+\cite[Proposition~3.2.9]{Sernesi2006}.}
+We do not use the stronger assertion $$L_{Y/Z}\simeq (I/I^2)[1],$$ which would require the closed immersion $i:Y\hookrightarrow Z$ to be a local complete intersection immersion. Instead, we use only the first truncation of the cotangent complex. Locally on $Z$, the closed immersion $i:Y\hookrightarrow Z$ is given by a surjection of rings $A\to B=A/I$. For a surjective ring map $A\to B$ with kernel $I$, the cotangent complex satisfies $$H^0(L_{B/A})=0$$ and $$H^{-1}(L_{B/A})\simeq I/I^2;$$ see \cite[The Cotangent Complex, Lemma~92.11.2]{stacks-project}. Hence, after sheafification, one has $$H^0(L_{Y/Z})=0$$ and $$H^{-1}(L_{Y/Z})\simeq I/I^2.$$ By the canonical truncation triangle in the derived category $D(\mathcal O_Y)$, one has
+$$
+\tau_{\leq -2}L_{Y/Z}
+\longrightarrow
+L_{Y/Z}
+\longrightarrow
+\tau_{\geq -1}L_{Y/Z}
+\xrightarrow{+1};
+$$
+see \cite[Derived Categories, Remark~13.12.4]{stacks-project}. Since $\tau_{\geq -1}L_{Y/Z}$ has only one nonzero cohomology sheaf, namely $I/I^2$ in degree $-1$, it follows that
+$$
+\tau_{\geq -1}L_{Y/Z}\simeq (I/I^2)[1].
+$$
+Set $$K:=\tau_{\leq -2}L_{Y/Z}.$$ Then $K\in D^{\leq -2}(\mathcal O_Y)$, while any $\mathcal O_Y$-module $\mathcal M$ is regarded as an object of $D^{\geq 0}(\mathcal O_Y)$. Therefore, by the standard Ext-vanishing for objects with bounded cohomological degrees, one has
+$$
+\operatorname{Ext}^n_Y(K,\mathcal M)=0
+\qquad\text{for } n<2;
+$$
+see \cite[Derived Categories, Lemma~13.27.3]{stacks-project}. Applying the functor $\operatorname{Ext}^{\bullet}_Y(-,\mathcal M)$ to the truncation triangle gives an isomorphism
+$$
+\operatorname{Ext}^1_Y(L_{Y/Z},\mathcal M)
+\simeq
+\operatorname{Ext}^1_Y((I/I^2)[1],\mathcal M).
+$$
+Finally, using the shift convention for Ext groups, one obtains
+$$
+\operatorname{Ext}^1_Y((I/I^2)[1],\mathcal M)
+=
+\operatorname{Ext}^0_Y(I/I^2,\mathcal M)
+=
+\operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal M).
+$$
+Thus, for every $\mathcal O_Y$-module $\mathcal M$, and in particular for $\mathcal M=\pi_*\mathcal O_X$ or for a direct summand $\mathcal M=\mathcal E$, one has
+$$
+T^1(Y/Z,\mathcal M)
+=
+\operatorname{Ext}^1_Y(L_{Y/Z},\mathcal M)
+\simeq
+\operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal M).
+$$
+
+Therefore
+\[
+\begin{aligned}
+    \operatorname{Ext}^1_X(L\pi^*L_{Y/Z},\mathcal O_X)
+    &\simeq
+    \operatorname{Ext}^1_X(L\pi^*((I/I^2)[1]),\mathcal O_X)  \\
+    &\simeq
+    \operatorname{Hom}_{D(X)}(L\pi^*(I/I^2),\mathcal O_X).
+\end{aligned}
+\]
+By derived adjunction,
+\[
+    \operatorname{Hom}_{D(X)}(L\pi^*(I/I^2),\mathcal O_X)
+    \simeq
+    \operatorname{Hom}_{D(Y)}(I/I^2,R\pi_*\mathcal O_X).
+\]
+Since \(\pi\) is finite, \(R\pi_*\mathcal O_X=\pi_*\mathcal O_X\). Hence
+\[
+    \operatorname{Ext}^1_X(L\pi^*L_{Y/Z},\mathcal O_X)
+    \simeq
+    \operatorname{Hom}_{\mathcal O_Y}(I/I^2,\pi_*\mathcal O_X).
+\]
+
+Finally, using the given splitting
+\[
+    \pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E,
+\]
+we obtain
+\[
+    \operatorname{Hom}_{\mathcal O_Y}(I/I^2,\pi_*\mathcal O_X)
+    \simeq
+    \operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal O_Y)
+    \oplus
+    \operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal E).
+\]
+The composite is the required homomorphism \(\Theta=\Theta_1\oplus\Theta_2\).
+\end{proof}
+
+\begin{remark}
+When \(X\) and \(Y\) are smooth and the deformation of \(\varphi=i\circ\pi\) is
+locally trivial, \(T^1(X/Z)\) is represented by the usual global normal space
+\(H^0(N_\varphi)\). In this case the map \(\Theta\) recovers the homomorphism
+\[
+    H^0(N_\varphi)
+    \longrightarrow
+    \operatorname{Hom}(\pi^*(I/I^2),\mathcal O_X)
+    \simeq
+    \operatorname{Hom}(I/I^2,\pi_*\mathcal O_X)
+\]
+used by Gonz\'alez. After the trace decomposition
+\(\pi_*\mathcal O_X=\mathcal O_Y\oplus\mathcal E\), this gives the two components
+\[
+    H^0(N_\varphi)\to \operatorname{Hom}(I/I^2,\mathcal O_Y),
+    \qquad
+    H^0(N_\varphi)\to \operatorname{Hom}(I/I^2,\mathcal E),
+\]
+as in \cite[Proposition~3.7]{Gonzalez2005}; see also
+\cite[Proposition~1.2]{GallegoGonzalezPurnaprajna2010}.
+\end{remark}
+
+\begin{theorem}[Central fiber of the image of a first-order deformation]
+\label{thm:central-fiber-image-singular-source}
+Let \(k\) be an algebraically closed field and let
+\[
+    X \xrightarrow{\pi} Y \xrightarrow{i} Z
+\]
+be morphisms of \(k\)-schemes, where \(\pi\) is finite and \(i\) is a closed immersion.
+Let
+\[
+    \varphi=i\circ \pi:X\to Z,
+\]
+and let \(I=I_{Y/Z}\subset \mathcal O_Z\) be the ideal sheaf of \(Y\) in \(Z\).
+Assume that
+\[
+    \pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E
+\]
+as an \(\mathcal O_Y\)-module.
+
+Let
+\[
+    \Delta=\operatorname{Spec} k[\epsilon]/(\epsilon^2),
+\]
+and let
+\[
+    \widetilde\varphi:\widetilde X\longrightarrow Z\times \Delta
+\]
+be a first-order deformation of \(\varphi\) over the fixed target \(Z\), i.e. assume that
+\(\widetilde X\) is flat over \(\Delta\), its central fiber is \(X\), and the restriction of
+\(\widetilde\varphi\) to the central fiber is \(\varphi\).
+
+Let
+\[
+    \widetilde Y:=\operatorname{Im}(\widetilde\varphi)\subset Z\times\Delta
+\]
+be the scheme-theoretic image of \(\widetilde\varphi\), and let
+\[
+    \widetilde Y_0:=\widetilde Y\times_{\Delta}\operatorname{Spec}k
+    \subset Z
+\]
+be its central fiber.
+
+Associated to \(\widetilde\varphi\) there is a natural homomorphism
+\[
+    \nu_{\widetilde\varphi}: I/I^2\longrightarrow \pi_*\mathcal O_X.
+\]
+Using the splitting
+\[
+    \pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E,
+\]
+write
+\[
+    \nu_{\widetilde\varphi}
+    =
+    \nu_1\oplus \nu_2,
+\]
+where
+\[
+    \nu_1:I/I^2\to \mathcal O_Y,
+    \qquad
+    \nu_2:I/I^2\to \mathcal E.
+\]
+Then the ideal sheaf of \(\widetilde Y_0\) in \(Z\) is
+\[
+    I_{\widetilde Y_0/Z}
+    =
+    \ker\left(
+        I
+        \longrightarrow
+        I/I^2
+        \xrightarrow{\nu_2}
+        \mathcal E
+    \right).
+\]
+In particular,
+\[
+    I^2\subset I_{\widetilde Y_0/Z}\subset I,
+\]
+and hence
+\[
+    Y\subset \widetilde Y_0\subset Y^{(1)}_Z,
+\]
+where \(Y^{(1)}_Z\) denotes the first infinitesimal neighborhood of \(Y\) in \(Z\).
+\end{theorem}
+
+\begin{proof}
+The proof is local on \(Z\), so let
+\[
+    W=\operatorname{Spec}A\subset Z
+\]
+be an affine open subset and set
+\[
+    U=W\cap Y=\operatorname{Spec}(A/I),
+\]
+where, by abuse of notation, \(I\subset A\) denotes the ideal defining \(U\subset W\).
+Let
+\[
+    V=\pi^{-1}(U)=\operatorname{Spec}B.
+\]
+Since \(\pi\) is finite, we have
+\[
+    B=\Gamma(U,\pi_*\mathcal O_X).
+\]
+Using the splitting \(\pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E\), after restricting to
+\(U\) we may write
+\[
+    B\simeq A/I\oplus M,
+    \qquad
+    M=\Gamma(U,\mathcal E).
+\]
+
+Let
+\[
+    R=k[\epsilon]/(\epsilon^2).
+\]
+Then
+\[
+    W\times\Delta=\operatorname{Spec}(A\otimes_k R)
+    =
+    \operatorname{Spec}(A\oplus A\epsilon).
+\]
+The restriction of \(\widetilde X\) over \(V\) is affine, say
+\[
+    \widetilde V=\operatorname{Spec}\widetilde B.
+\]
+Since \(\widetilde X\) is flat over \(\Delta\) and has central fiber \(X\), the \(R\)-algebra
+\(\widetilde B\) fits into a square-zero extension
+\[
+    0\longrightarrow B
+    \xrightarrow{\iota}
+    \widetilde B
+    \xrightarrow{q}
+    B
+    \longrightarrow 0.
+\]
+Here \(q\) is reduction modulo \(\epsilon\), and \(\iota\) identifies \(B\) with
+\(\epsilon\widetilde B\). Explicitly, if \(b\in B\) and \(\widetilde b\in \widetilde B\) is any lift of \(b\),
+then
+\[
+    \iota(b)=\epsilon\widetilde b.
+\]
+This is independent of the chosen lift because \(\epsilon^2=0\). Thus
+\[
+    \ker(q)=\epsilon\widetilde B\simeq B,
+    \qquad
+    (\epsilon\widetilde B)^2=0.
+\]
+
+The morphism \(\widetilde\varphi\) gives a ring homomorphism
+\[
+    \widetilde\varphi^\#:
+    A\oplus A\epsilon
+    \longrightarrow
+    \widetilde B.
+\]
+Modulo \(\epsilon\), this recovers the original morphism
+\[
+    \varphi^\#:A\to B.
+\]
+Since \(\varphi\) factors through \(Y\), the kernel of \(\varphi^\#:A\to B\) is \(I\), and the image
+of \(\varphi^\#\) is the summand \(A/I\subset B=A/I\oplus M\).
+
+We first construct the map
+\[
+    \nu_{\widetilde\varphi}: I/I^2\to B.
+\]
+If \(a\in I\), then
+\[
+    q\bigl(\widetilde\varphi^\#(a)\bigr)
+    =
+    \varphi^\#(a)
+    =
+    0.
+\]
+Therefore
+\[
+    \widetilde\varphi^\#(a)\in \ker(q)=\epsilon\widetilde B\simeq B.
+\]
+Define \(\lambda(a)\in B\) by the condition
+\[
+    \iota(\lambda(a))=\widetilde\varphi^\#(a).
+\]
+If \(a,b\in I\), then
+\[
+    \widetilde\varphi^\#(a),\widetilde\varphi^\#(b)\in \epsilon\widetilde B.
+\]
+Hence
+\[
+    \widetilde\varphi^\#(ab)
+    =
+    \widetilde\varphi^\#(a)\widetilde\varphi^\#(b)
+    \in
+    (\epsilon\widetilde B)^2
+    =
+    0.
+\]
+Thus \(\lambda(ab)=0\), so \(\lambda\) kills \(I^2\). Therefore \(\lambda\) descends to a homomorphism
+\[
+    \overline{\lambda}: I/I^2\to B.
+\]
+This is the local form of \(\nu_{\widetilde\varphi}\).
+
+Now decompose
+\[
+    B=A/I\oplus M.
+\]
+Write
+\[
+    \overline{\lambda}=\nu_1\oplus \nu_2,
+\]
+where
+\[
+    \nu_1:I/I^2\to A/I,
+    \qquad
+    \nu_2:I/I^2\to M.
+\]
+
+Let \(\widetilde J\subset A\oplus A\epsilon\) be the ideal of the scheme-theoretic image
+\(\widetilde Y\subset W\times\Delta\). Thus
+\[
+    \widetilde J=\ker(\widetilde\varphi^\#).
+\]
+We now compute \(\widetilde J\). Let \(a+a'\epsilon\in A\oplus A\epsilon\). If
+\(a+a'\epsilon\in\widetilde J\), then reducing modulo \(\epsilon\) gives
+\[
+    \varphi^\#(a)=0,
+\]
+so \(a\in I\).
+
+Assume now that \(a\in I\). Then
+\[
+    \widetilde\varphi^\#(a)=\iota(\lambda(a)).
+\]
+Also,
+\[
+    \widetilde\varphi^\#(a'\epsilon)
+    =
+    \epsilon\widetilde\varphi^\#(a')
+    =
+    \iota(\varphi^\#(a')).
+\]
+Therefore
+\[
+    \widetilde\varphi^\#(a+a'\epsilon)
+    =
+    \iota\bigl(\lambda(a)+\varphi^\#(a')\bigr).
+\]
+Since \(\iota\) is injective, this vanishes if and only if
+\[
+    \lambda(a)+\varphi^\#(a')=0
+    \quad\text{in }B.
+\]
+Equivalently, writing \(B=A/I\oplus M\), this condition becomes
+\[
+    \nu_1(\overline a)+\overline{a'}=0
+    \quad\text{in }A/I,
+\]
+and
+\[
+    \nu_2(\overline a)=0
+    \quad\text{in }M,
+\]
+where \(\overline a\) denotes the class of \(a\) in \(I/I^2\), and
+\(\overline{a'}\) denotes the class of \(a'\) in \(A/I\).
+
+Thus
+\[
+    \widetilde J
+    =
+    \left\{
+        a+a'\epsilon
+        \ \middle|\
+        a\in I,\ 
+        \nu_1(\overline a)+\overline{a'}=0,\ 
+        \nu_2(\overline a)=0
+    \right\}.
+\]
+
+The ideal \(J\subset A\) of the central fiber \(\widetilde Y_0\subset W\) is
+\[
+    J=
+    \frac{\widetilde J+(\epsilon)}{(\epsilon)}
+    \subset A.
+\]
+Equivalently, \(a\in J\) if and only if there exists \(a'\in A\) such that
+\[
+    a+a'\epsilon\in \widetilde J.
+\]
+By the formula for \(\widetilde J\), this is equivalent to
+\[
+    a\in I,\qquad \nu_2(\overline a)=0,
+\]
+together with the existence of \(a'\in A\) satisfying
+\[
+    \overline{a'}=-\nu_1(\overline a).
+\]
+The last condition is automatic, because every element of \(A/I\) has a lift to \(A\).
+Therefore
+\[
+    J
+    =
+    \{a\in I\mid \nu_2(\overline a)=0\}.
+\]
+Equivalently,
+\[
+    J=
+    \ker\left(
+        I\to I/I^2\xrightarrow{\nu_2}M
+    \right).
+\]
+Sheafifying this local computation gives
+\[
+    I_{\widetilde Y_0/Z}
+    =
+    \ker\left(
+        I_{Y/Z}
+        \longrightarrow
+        I_{Y/Z}/I_{Y/Z}^2
+        \xrightarrow{\nu_2}
+        \mathcal E
+    \right).
+\]
+
+Since the map factors through \(I/I^2\), we have \(I^2\subset I_{\widetilde Y_0/Z}\).
+Also \(I_{\widetilde Y_0/Z}\subset I\). Hence
+\[
+    I^2\subset I_{\widetilde Y_0/Z}\subset I,
+\]
+which is equivalent to
+\[
+    Y\subset \widetilde Y_0\subset Y^{(1)}_Z.
+\]
+This proves the theorem.
+\end{proof}
+
+\section{Deformations of double covers of cones over a rational normal curve}
+
+\subsection{Canonical double covers of rational normal cones}
+
+Let $e>4$, and let $Y=S(0,e)\subset \mathbb{P}^{e+1}$ be the rational normal cone of degree $e$. Equivalently, $Y\simeq \mathbb{P}(1,1,e)$. We denote by $p\in Y$ the vertex. The point $p$ is the unique singular point of $Y$, and analytically it is a cyclic quotient singularity of type $\frac{1}{e}(1,1)$.
+
+Let $F$ denote the generator of the class group of $Y$, so that $\mathcal{O}_{Y}(F)=\mathcal{O}_{\mathbb{P}(1,1,e)}(1)$. The hyperplane class of the embedding $Y\subset \mathbb{P}^{e+1}$ is $H=eF$, or equivalently
+$$
+\mathcal{O}_{Y}(H)\simeq \mathcal{O}_{\mathbb{P}(1,1,e)}(e).
+$$
+The canonical sheaf of $Y$ is
+$$
+\omega_{Y}\simeq \mathcal{O}_{\mathbb{P}(1,1,e)}(-(e+2)).
+$$
+
+We consider a finite double cover $\pi:X\to Y$ whose trace decomposition is
+$$
+\pi_{*}\mathcal{O}_{X}=\mathcal{O}_{Y}\oplus \mathcal{E}.
+$$
+For the cover to be canonical with respect to the hyperplane class $H$, we require $\omega_{X}\simeq \pi^*\mathcal{O}_{Y}(H)$. The double-cover canonical formula gives
+$$
+\omega_{X}\simeq \pi^*(\omega_{Y}\otimes \mathcal{E}^{\vee}),
+$$
+where $\mathcal{E}^{\vee}:=\mathcal{H}om_{Y}(\mathcal{E},\mathcal{O}_{Y})$. Therefore the condition $\omega_{X}\simeq \pi^*\mathcal{O}_{Y}(H)$ forces $\omega_{Y}\otimes \mathcal{E}^{\vee}\simeq \mathcal{O}_{Y}(H)$, and hence
+$$
+\mathcal{E}\simeq \omega_{Y}(-H).
+$$
+Substituting the expressions above, we obtain
+$$
+\mathcal{E}
+\simeq
+\mathcal{O}_{\mathbb{P}(1,1,e)}(-(e+2)-e)
+= \mathcal{O}_{\mathbb{P}(1,1,e)}(-(2e+2)).
+$$
+
+Thus the double cover is determined by the algebra $\mathcal{O}_{Y}\oplus\mathcal{E}$, together with a multiplication map
+$$
+\mathcal{E}\otimes_{\mathcal{O}_{Y}}\mathcal{E}\longrightarrow \mathcal{O}_{Y}.
+$$
+which is the same as a multiplication map 
+$$
+(\mathcal{E}\otimes_{\mathcal{O}_{Y}}\mathcal{E})^{\vee \vee}\longrightarrow \mathcal{O}_{Y}.
+$$
+Equivalently, this multiplication is determined by a section of the reflexive square $(\mathcal{E}^{\vee}\otimes_{\mathcal{O}_{Y}}\mathcal{E}^{\vee})^{\vee\vee}$. Since $\mathcal{E}^{\vee}\simeq \mathcal{O}_{\mathbb{P}(1,1,e)}(2e+2)$, we have
+$$
+(\mathcal{E}^{\vee}\otimes_{\mathcal{O}_{Y}}\mathcal{E}^{\vee})^{\vee\vee}
+\simeq
+\mathcal{O}_{\mathbb{P}(1,1,e)}(4e+4).
+$$
+Hence the branch data are given by a section
+$$
+s\in H^0\left(Y,\mathcal{O}_{\mathbb{P}(1,1,e)}(4e+4)\right).
+$$
+We denote the corresponding branch divisor by $B:=V(s)$. Thus
+$$
+B\in \left|\mathcal{O}_{\mathbb{P}(1,1,e)}(4e+4)\right|.
+$$
+
+Since $e>4$, every weighted homogeneous polynomial of degree $4e+4$ in coordinates of weights $1,1,e$ vanishes at the vertex $p=[0:0:1]$. Indeed, a monomial involving only the weight-$e$ coordinate would have degree divisible by $e$, while $4e+4\not\equiv 0\pmod e$ for $e>4$. Therefore every monomial of weighted degree $4e+4$ contains at least one of the weight-$1$ coordinates, and hence vanishes at $p$. Consequently, $p\in B$.
+
+The trace-zero sheaf $\mathcal{E}=\mathcal{O}_{\mathbb{P}(1,1,e)}(-(2e+2))$ is rank-one reflexive. It is locally free at the vertex precisely when $e$ divides $2e+2$, equivalently when $e$ divides $2$. Since $e>4$, this does not occur. Thus $\mathcal{E}$ is not locally free at $p$, and the double cover is non-flat over the vertex in the sense of Alexeev--Pardini.
+
+Away from $p$, the sheaf $\mathcal{E}$ is locally free, and the cover is locally given by an equation $z^2=f$. At the vertex, however, the cover must be understood through the reflexive algebra $\mathcal{O}_{Y}\oplus\mathcal{E}$ rather than through a line-bundle total space.
+
+With this setup, the canonical divisor of $X$ satisfies $K_{X}=\pi^*H$. Since $H^2=e$ on the rational normal cone, one obtains
+$$
+K_{X}^2=2H^2=2e.
+$$
+Moreover,
+$$
+p_g(X)=h^0(X,\omega_{X})=h^0(Y,\mathcal{O}_{Y}(H))=e+2.
+$$
+Thus
+$$
+K_{X}^2=2e=2p_g(X)-4.
+$$
+
+
+
+\begin{proposition}\label{prop:hom-conormal-trace-zero-cone}
+Let $Y=S(0,e)\subset\mathbb{P}^{e+1}$ be the rational normal cone of degree $e$, and let $H=\mathcal{O}_Y(1)$ denote the hyperplane class of this embedding. Equivalently, identify
+$$
+Y\simeq \mathbb{P}(1,1,e),
+$$
+so that
+$$
+H\simeq \mathcal{O}_{\mathbb{P}(1,1,e)}(e).
+$$
+Let $\mathcal{I}\subset\mathcal{O}_{\mathbb{P}^{e+1}}$ be the ideal sheaf of $Y$. Set
+$$
+\mathcal{E}:=\omega_Y(-H).
+$$
+Then
+$$
+\operatorname{Hom}_Y(\mathcal{I}/\mathcal{I}^2,\mathcal{E})=0.
+$$
+\end{proposition}
+
+\begin{proof}
+The homogeneous ideal of the rational normal cone $Y=S(0,e)\subset\mathbb{P}^{e+1}$ is generated by quadrics. Therefore there is a surjection
+$$
+\mathcal{O}_Y(-2H)^{\oplus N}\twoheadrightarrow \mathcal{I}/\mathcal{I}^2
+$$
+for some integer $N$. Applying $\operatorname{Hom}_Y(-,\mathcal{E})$ gives an injection
+$$
+\operatorname{Hom}_Y(\mathcal{I}/\mathcal{I}^2,\mathcal{E})
+\hookrightarrow
+\operatorname{Hom}_Y(\mathcal{O}_Y(-2H)^{\oplus N},\mathcal{E}).
+$$
+The right-hand side is
+$$
+H^0(Y,\mathcal{E}(2H))^{\oplus N}.
+$$
+Thus it is enough to show that
+$$
+H^0(Y,\mathcal{E}(2H))=0.
+$$
+
+Now
+$$
+\mathcal{E}(2H)=\omega_Y(-H+2H)=\omega_Y(H).
+$$
+Under the identification $Y\simeq\mathbb{P}(1,1,e)$, one has
+$$
+\omega_Y\simeq\mathcal{O}_{\mathbb{P}(1,1,e)}(-(e+2)).
+$$
+Since $H\simeq\mathcal{O}_{\mathbb{P}(1,1,e)}(e)$, it follows that
+$$
+\mathcal{E}(2H)
+\simeq
+\mathcal{O}_{\mathbb{P}(1,1,e)}(-(e+2)+e)
+= \mathcal{O}_{\mathbb{P}(1,1,e)}(-2).
+$$
+But
+$$
+H^0(\mathbb{P}(1,1,e),\mathcal{O}_{\mathbb{P}(1,1,e)}(-2))=0.
+$$
+Therefore
+$$
+H^0(Y,\mathcal{E}(2H))=0.
+$$
+Hence
+$$
+\operatorname{Hom}_Y(\mathcal{I}/\mathcal{I}^2,\mathcal{E})=0.
+$$
+\end{proof}
+
+
+
+\bibliographystyle{plain}
+\begin{thebibliography}{KMM92}
+\color{black}
+
+
+
+\bibitem{AHL10}
+Artebani, Michela; Hausen, Jürgen; Laface, Antonio
+\emph{On Cox rings of K3 surfaces}
+Compos. Math. 146 (2010), no. 4, 964–998.
+
+\bibitem{ABS17}
+Arbarello, Enrico; Bruno, Andrea; Sernesi, Edoardo
+\emph{On hyperplane sections of K3 surfaces.}
+Algebr. Geom. 4 (2017), no. 5, 562–596.
+
+
+\bibitem{AltmannStevens}
+K.~Altmann and J.~Stevens,
+\newblock \emph{Cotangent cohomology of rational surface singularities},
+\newblock Invent. Math. \textbf{138} (1999), no.~1, 163--181.
+
+\bibitem{BE95}
+Bayer, Dave; Eisenbud, David
+\emph{Ribbons and their canonical embeddings}
+Trans. Amer. Math. Soc. 347 (1995), no. 3, 719–756.
+
+
+\bibitem{Bea02}
+Beauville, A. \emph{Fano threefolds and $K3$ surfaces}
+https://arxiv.org/abs/math/0211313
+%\bibitem[Bel24]{Bel24}
+%Belmans, Peter
+%\emph{Fanography: a tool to visually study the geography of Fano 3-folds.}
+%https://www.fanography.info
+
+\bibitem{BGM24} Bangere, Purnaprajna; Gallego, Francisco Javier; Mukherjee; Jayan \emph{Projective smoothing of varieties with simple normal crossings.}(https://arxiv.org/abs/2403.04167)
+
+\bibitem{BKM25}
+Bayer, Arend;  Kuznetsov, Alexander;  Macr\'i, Emanuele 
+\emph{Mukai models of Fano varieties}
+arXiv:2501.16157
+
+\bibitem{BM87}
+Beauville, A.; Mérindol, J.-Y.
+\emph{Sections hyperplanes des surfaces $K3$.[Hyperplane sections of $K3$ surfaces]}
+Duke Math. J. 55 (1987), no. 4, 873–878.
+
+\bibitem{BMR21}
+Bangere, Purnaprajna; Mukherjee, Jayan; Raychaudhury, Debaditya
+\emph{K3 carpets on minimal rational surfaces and their smoothings.}
+Internat. J. Math.32(2021), no.6, Paper No. 2150032, 20 pp.
+
+\bibitem{BM24} 
+Bangere, Purnaprajna; Mukherjee, Jayan  
+\emph{Extendability of projective varieties via degeneration to ribbons with applications to Calabi-Yau threefolds} (arXiv:2409.03960)
+
+\bibitem{BM25}
+Bangere, Purnaprajna; Mukherjee, Jayan  
+\emph{Extendability of general prime $K3$ surfaces via degeneration to ribbons} (in progress)
+
+
+
+%\bibitem[BGM24]{BGM24} Bangere, Purnaprajna; Gallego, Francisco Javier; Mukherjee; Jayan \emph{Projective degenerations of $K3$ surfaces to a union of Hirzebruch surfaces not embedded as scrolls.} (in preparation)
+
+%\bibitem[BGM24b]{BGM24b} Bangere, Purnaprajna; Gallego, Francisco Javier; Mukherjee; Jayan \emph{Projective smoothing of simple normal crossing projective bundles.} (in preparation)
+
+%\bibitem[BGM24c]{BGM24c} Bangere, Purnaprajna; Gallego, Francisco Javier; Mukherjee; Jayan \emph{Projective smoothing of simple normal crossing complete intersections.} (in preparation)
+
+\bibitem{CD22}
+Ciliberto, Ciro; Dedieu, Thomas
+\emph{$K3$ curves with index $k>1$.}
+Boll. Unione Mat. Ital. 15 (2022), no. 1-2, 87–115.
+
+\bibitem{CD24}
+Ciliberto, Ciro; Dedieu, Thomas
+\emph{Double covers and extensions.}
+Kyoto J. Math. 64 (2024), no. 1, 75–94.
+
+
+\bibitem{CDGK20}
+Ciliberto, C; Dedieu, T;  Galati, C.; Knutsen, A. L.  
+\emph{Moduli of curves on Enriques surfaces.}
+Adv. Math. 365 (2020), 107010, 42 pp. 6, 13, 14
+
+\bibitem{CDS20}
+Ciliberto, Ciro; Dedieu, Thomas; Sernesi, Edoardo
+\emph{Wahl maps and extensions of canonical curves and $K3$ surfaces.}
+J. Reine Angew. Math. 761 (2020), 219–245.
+
+\bibitem{CLM93}
+Ciliberto, C; Lopez, A; Miranda, R
+\emph{Projective degenerations of $K3$ surfaces, Gaussian maps and Fano threefolds}
+Invent. Math. 114, 641 667 (1993)
+
+\bibitem{CLM94}
+Ciliberto, Ciro; Lopez, Angelo Felice; Miranda, Rick
+\emph{On the corank of Gaussian maps for general embedded $K3$ surfaces}
+arXiv:alg-geom/9411008
+
+\bibitem{CLM98}
+Ciliberto, Ciro; Lopez, Angelo Felice; Miranda, Rick
+\emph{Classification of varieties with canonical curve section via Gaussian maps on canonical curves.}
+Amer. J. Math.   120 (1998), no. 1, 1–21.
+
+\bibitem{CLM98c}
+Ciliberto, Ciro; Lopez, Angelo Felice; Miranda, Rick
+\emph{Corrigendum to ``Classification of varieties with canonical curve section via Gaussian maps on canonical curves''.}
+Amer. J. Math. 143 (2021), no. 6, 1661–1663.
+
+\bibitem{CilibertoLopezMiranda}
+C.~Ciliberto, A.~F.~Lopez, and R.~Miranda,
+\newblock \emph{Some remarks on the obstructedness of cones over curves of low genus},
+\newblock in \emph{Higher Dimensional Complex Varieties (Trento, 1994)},
+de Gruyter, Berlin, 1996, pp.~167--182.
+
+\bibitem{CM90}
+Ciliberto, Ciro; Miranda, Rick
+\emph{On the Gaussian map for canonical curves of low genus.}
+Duke Math. J. 61 (1990), no. 2, 417–443.
+
+\bibitem{DM92}
+Duflot, Jeanne; Miranda, Rick
+\emph{The Gaussian map for rational ruled surfaces.}
+Trans. Amer. Math. Soc. 330 (1992), no. 1, 447–459.
+
+\bibitem{DM24}
+Deopurkar, Anand; Mukherjee, Jayan
+\emph{Syzygies of canonical ribbons on higher genus curves}
+arXiv:2412.05500
+
+%\color{black}
+%\bibitem[Deb01]{Debarre} Debarre, O., \emph{Higher-dimensional algebraic geometry}, 
+%Universitext Springer--Verlag, New York, 2001.
+%\color{black}
+
+\bibitem{DP12}
+Duflot, Jeanne; Peters, Pamela L.
+\emph{Gaussian maps for double covers of toric surfaces.}
+Rocky Mountain J. Math. 42 (2012), no. 5, 1471–1520.
+
+
+
+
+
+
+
+
+
+
+
+
+%\bibitem[Fri83]{F83}
+%Friedman, Robert; 
+%\emph{Global smoothings of varieties with normal crossings.} 
+%Ann. of Math. (2) 118 (1983), no. 1, 75--114.
+
+ 
+
+\color{black}
+
+%\bibitem[Fuj14a]{KFujita} Fujita, Kento, \emph{Simple normal crossing Fano varieties and log Fano manifolds.}
+%Nagoya Math. J. 214 (2014), 95-123.
+
+%\bibitem[Fuj14b]{Fujino} Fujino, Osamu.
+%\emph{Fundamental theorems for semi log canonical pairs.} Algebr. Geom. 1 (2014), no.2, 194-228.
+
+%\color{black}
+
+\bibitem{GGP08}
+Gallego, Francisco Javier; González, Miguel; Purnaprajna, Bangere P., 
+\emph{$K3$ double structures on Enriques surfaces and their smoothings.}
+J. Pure Appl. Algebra 212 (2008), no. 5, 981--993
+
+\bibitem{GGP13}
+Gallego, F.J., González, M., Purnaprajna, B.P., 
+\emph{An infinitesimal condition to smooth ropes.}
+Rev Mat Complut 26, 253–269 (2013).
+
+\bibitem{Gon06}
+  Gonz\'alez, Miguel.
+  \emph{Smoothing of ribbons over curves}.
+  J. Reine Angew. Math. 591 (2006), 201--235.
+
+\bibitem{GP97}
+Gallego, F.J., Purnaprajna, B.P.
+\emph{Degenerations of $K3$ surfaces in projective space}
+Transactions of the American Mathematical Society
+Volume 349, Number 6, June 1997, Pages 2477–2492
+
+
+
+\color{black}
+
+  %\bibitem[Gro61]{EGA} A. Grothendieck, \emph{\'El\'ements 
+%de g\'eom\'etrie 
+%alg\'ebrique. III. \'Etude cohomologique des faisceaux 
+%coh\'erents. I.}, Inst. 
+%Hautes \'Etudes Sci. Publ. Math.  
+%{11}, (1961).
+
+\bibitem{Hartshorne}  
+Hartshorne, R; \emph{Algebraic geometry}, 
+Grad. Texts in Math., No. 52
+Springer-Verlag, New York-Heidelberg, 1977
+
+\color{black}
+
+\bibitem{Hor74}
+Horikawa, Eiji
+\emph{On deformations of holomorphic maps. II.}
+J. Math. Soc. Japan 26 (1974), 647–667.
+
+
+
+\bibitem{I77}
+Iskovskih, V. A.
+\emph{Fano threefolds. I.}
+(Russian)Izv. Akad. Nauk SSSR Ser. Mat.41 (1977), no.3, 516–562, 717.
+
+\bibitem{I78}
+Iskovskih, V. A.
+\emph{Fano threefolds. II.}
+(Russian)Izv. Akad. Nauk SSSR Ser. Mat.42 (1978), no.3, 506–549.
+
+
+
+%\bibitem[Kim17]{Ki17}
+%Kimura, Y.;
+%\emph{Structure of stable degeneration of $K3$ surfaces into pairs of rational elliptic surfaces}
+%JHEP03(2018)045, %https://doi.org/10.48550/arXiv.1710.04984
+\bibitem{K01}
+Knutsen, Andreas Leopold
+\emph{On $k$th-order embeddings of $K3$ surfaces and Enriques surfaces.}
+Manuscripta Math. 104 (2001), no. 2, 211–237.
+
+\bibitem{K20}
+Knutsen, Andreas Leopold
+\emph{Global sections of twisted normal bundles of $K3$ surfaces and their hyperplane sections.}
+Atti Accad. Naz. Lincei Rend. Lincei Mat. Appl. 31 (2020), no. 1, 57–79.
+
+
+\bibitem{KLM11}
+Knutsen, Andreas Leopold; Lopez, Angelo Felice; Muñoz, Roberto
+\emph{On the extendability of projective surfaces and a genus bound for Enriques-Fano threefolds.}
+J. Differential Geom.88(2011), no.3, 485–518.
+
+\bibitem{KL81}
+Kleppe, J.; 
+\emph{The Hilbert Flag Scheme, its properties, and its connection with the Hilbert Scheme. Applications to curves in three-space. Thesis. University of Oslo, Preprint No. 5 (1981)}
+\bibitem{KL87}
+Kleppe, J.;
+\emph{Non-reduced components of the Hilbert scheme of smooth space curves. In: Space Curve.}
+Rocca di papa, 1985. Ghione, F., Peskine, C., Sernesi, E. (eds.) Springer Lect. Notes Math. No. 1266 (1987), 181-207
+
+\bibitem{HR} M.~Hochster and J.\,L.~Roberts, \emph{Rings of invariants of reductive groups acting on regular rings are Cohen--Macaulay}, Advances in Math.\ \textbf{13} (1974), 115--175.
+ 
+\bibitem{Illusie} L.~Illusie, \emph{Complexe cotangent et d\'eformations I, II}, Lecture Notes in Math.\ \textbf{239}, \textbf{283}, Springer-Verlag, 1971--1972.
+ 
+\bibitem{Saito} M.~Saito, \emph{Mixed Hodge complexes on algebraic varieties}, Math.\ Ann.\ \textbf{316} (2000), 283--331.
+
+\bibitem{stacks-project}
+The Stacks Project Authors,
+\emph{The Stacks Project},
+\url{https://stacks.math.columbia.edu}
+ 
+\bibitem{Steenbrink} J.\,H.\,M.~Steenbrink, \emph{Mixed Hodge structure on the vanishing cohomology}, in: Real and Complex Singularities, Sijthoff and Noordhoff, 1977, 525--563.
+ 
+\bibitem{Wehler} J.~Wehler, \emph{Cyclic coverings: deformation and Torelli theorem}, Math.\ Ann.\ \textbf{274} (1986), 443--472.
+
+  
+
+
+
+
+%\bibitem[Kon85]{Ko85}
+%Kondo, S
+%\emph{Type II degenerations of $K3$ surfaces}
+%Nagoya Math. J. Vol. 99 (1985), 11-30
+
+
+
+%\bibitem[Kul77]{Ku77}
+%Kulikov, V. 
+%\emph{Degenerations of K3 surfaces and Enriques surfaces} Math. USSR Izvestiya 11 (1977), 957-989.
+
+
+
+
+
+\color{black}
+
+
+
+\bibitem{Lop23}
+Lopez, Angelo Felice
+\emph{On the extendability of projective varieties: a survey.The art of doing algebraic geometry, 261–291. With an appendix by Thomas Dedieu}
+Trends Math. Birkhäuser/Springer, Cham, [2023], ©2023 ISBN:978-3-031-11937-8
+ISBN:978-3-031-11938-5
+
+
+%\bibitem[LR12]{LR}
+%Liu, Wenfei; Rollenske, Sönke. \emph{Two-dimensional semi-log-canonical hypersurfaces}, 
+%Matematiche (Catania) 67 (2012), no. 2, 185–202.
+
+\bibitem{Lvo92} 
+L\'vovsky, S.
+\emph{Extensions of projective varieties and deformations. I, II.}
+Michigan Math. J.39(1992), no.1, 41–51, 65--70.
+
+
+
+
+
+\bibitem{MM82}
+Mori, Shigefumi; Mukai, Shigeru
+\emph{Classification of Fano 3-folds with $B2 \geq 2$.}
+Manuscripta Math.36(1981/82/1982), no.2, 147–162.
+
+
+\bibitem{M88}
+Mukai, S
+\emph{Curves, K3 Surfaces and Fano 3-folds of Genus $\leq$ 10}
+Algebraic Geometry and Commutative Algebra, Academic Press,
+1988, Pages 357-377.
+
+  \color{black}
+  
+
+
+  \color{black}
+%\bibitem[Par91]{Par91}
+%Pardini, Rita
+%\emph{Abelian covers of algebraic varieties.}
+%J. Reine Angew. Math.417(1991), 191–213.
+
+
+
+
+%\bibitem[PP81]{PP81}
+%Persson, U; Pinkham, H 
+%\emph{Degenerations of surfaces with trivial canonical bundle}
+%Ann. of Math. 113 (1981), 45-66
+
+\bibitem{Pinkham}
+H.~C.~Pinkham,
+\newblock \emph{Deformations of algebraic varieties with \(G_m\) action},
+\newblock Ast\'erisque \textbf{20}, Soci\'et\'e Math\'ematique de France, Paris, 1974.
+
+
+\bibitem{Ser}
+Sernesi, Edoardo.
+\emph{Deformations of Algebraic Schemes.}
+Grundlehren der Mathematischen Wissenschaften [Fundamental Principles of Mathematical Sciences], 334. Springer-Verlag, Berlin, 2006.
+
+\bibitem[Stacks]{stacks-project}
+The Stacks Project Authors,
+\emph{Stacks Project}.
+\url{https://stacks.math.columbia.edu}.
+
+\bibitem{StacksProject}
+The Stacks Project Authors,
+\emph{Stacks Project},
+\url{https://stacks.math.columbia.edu}.
+
+\bibitem{Tot20}
+Totaro, Burt
+\emph{Bott vanishing for algebraic surfaces.}
+Trans. Amer. Math. Soc. 373 (2020), no. 5, 3609–3626.
+%\bibitem[Sei92]{Sei92}
+%Seiler, Wolfgang K.
+%\emph{Deformations of ruled surfaces.}
+%J. Reine Angew. Math.426(1992), 203–219.
+
+%\bibitem[SP]{SP}
+%Stacks project authors
+%\emph{The Stacks project}
+%\url{https://stacks.math.columbia.edu}, 2023
+
+%\bibitem[Tho13]{T13}
+%Thompson, A;
+%\emph{Degenerations of $K3$ surfaces of degree two}
+%Transactions of the American Mathematical Society
+%Volume 366, Number 1, January 2014, Pages 219–243
+%S 0002-9947(2013)05759-5
+
+
+\bibitem{V92}
+Voisin, Claire
+\emph{Sur l'application de Wahl des courbes satisfaisant la condition de Brill-Noether-Petri.[On the Wahl mapping of curves satisfying the Brill-Noether-Petri condition]}
+Acta Math. 168 (1992), no. 3-4, 249–272.
+
+
+
+
+
+
+\bibitem{W87}
+Wahl, J. M. 
+\emph{The Jacobian algebra of a graded Gorenstein singularity.}
+Duke Math. J. 55 (1987), no. 4,
+843-871
+
+\bibitem{Zak91}
+Zak, F. L.
+\emph{Some properties of dual varieties and their applications in projective geometry.}
+Algebraic geometry (Chicago, IL, 1989), 273–280.
+Lecture Notes in Math., 1479
+Springer-Verlag, Berlin, 1991
+
+\bibitem{Wehler1986}
+J.~Wehler,
+\newblock Cyclic coverings: deformation and Torelli theorem,
+\newblock \emph{Math. Ann.} \textbf{274} (1986), 443--472.
+
+\bibitem{Gonzalez2005}
+M.~Gonz\'alez,
+\newblock Smoothing of ribbons over curves,
+\newblock \emph{J. Reine Angew. Math.} \textbf{591} (2006), 201--235.
+
+\bibitem{GallegoGonzalezPurnaprajna2010}
+F.~J. Gallego, M.~Gonz\'alez, and B.~P. Purnaprajna,
+\newblock Deformation of canonical morphisms and the moduli of surfaces of general type,
+\newblock \emph{Invent. Math.} \textbf{182} (2010), 1--46.
+
+\bibitem{Illusie1971}
+L.~Illusie,
+\newblock \emph{Complexe cotangent et d\'eformations I},
+\newblock Lecture Notes in Mathematics, Vol.~239,
+\newblock Springer-Verlag, Berlin--New York, 1971.
+
+\bibitem{Sernesi2006}
+E.~Sernesi,
+\newblock \emph{Deformations of Algebraic Schemes},
+\newblock Grundlehren der mathematischen Wissenschaften, Vol.~334,
+\newblock Springer-Verlag, Berlin, 2006.
+
+
+
+
+ 
+\end{thebibliography}
+
+\end{document}
+
+
+
+
+
+
+\begin{remark}[2.4]
+The content of Lemma~2.3 is a purely cohomological fact of sheaves on $X$.
+The proof given in \cite[4.2]{Hor74}, in the context of complex manifolds, is still valid
+in the case of a homomorphism of quasi--coherent sheaves
+\[
+\mathcal A \xrightarrow{\,F\,} \mathcal B
+\]
+with kernel and cokernel, respectively, $\mathcal K$ and $\mathcal N$, on a noetherian separated scheme $X$.
+Let $\mathcal V$ be an open cover of $X$. We set
+\begin{equation}\tag{2.4.1}
+D(X,F;\mathcal V)
+=
+\frac{\Bigl\{(g,\rho)\in C^{0}(\mathcal V,\mathcal B)\times Z^{1}(\mathcal V,\mathcal A)\ \Big|\ 
+\delta g = F\rho\Bigr\}}
+{\Bigl\{(Fh,\delta h)\ \Big|\ h\in C^{0}(\mathcal V,\mathcal A)\Bigr\}}
+\end{equation}
+and
+\begin{equation}\tag{2.4.2}
+D(X,F)=\varinjlim_{\mathcal V}\, D(X,F;\mathcal V),
+\end{equation}
+where the direct limit is taken under refinement of coverings. Then for every open affine cover
+$\mathcal V$ the natural map $D(X,F;\mathcal V)\to D(X,F)$ is an isomorphism.
+Two exact sequences, like in Lemma~2.3, are then obtained:
+\[
+H^{0}(\mathcal A)\longrightarrow H^{0}(\mathcal B)\longrightarrow D(X,F)
+\longrightarrow H^{1}(\mathcal A)\longrightarrow H^{1}(\mathcal B),
+\]
+\[
+0\longrightarrow H^{1}(\mathcal K)\longrightarrow D(X,F)\longrightarrow H^{0}(\mathcal N)
+\longrightarrow H^{2}(\mathcal K).
+\]
+\end{remark}
