@@ -1744,6 +1744,128 @@ K_{X}^2=2e=2p_g(X)-4.
 $$
 
 
+\begin{theorem}[The singularity over the vertex]
+\label{thm:singularity-canonical-double-cover-cone}
+Let $e>4$, let $\pi:X\longrightarrow Y$
+be the canonical double cover over $Y=S(0,e)\simeq \mathbb{P}(1,1,e)$ as in the set-up. Let $q\in X$ be the point lying over $p$. Then the following statements hold.
+
+\begin{enumerate}
+    \item On the local uniformizing cover
+    $$
+    \mathbb{A}^2_{u,v}
+    \longrightarrow
+    (Y,p)
+    \simeq
+    \left(
+    \mathbb{A}^2_{u,v}/\mu_e,0
+    \right),
+    $$
+    the pullback of the branch equation has the form
+    $$
+    f(u,v)
+    =
+    f_4(u,v)
+    +
+    f_{e+4}(u,v)
+    +
+    f_{2e+4}(u,v)
+    +
+    f_{3e+4}(u,v)
+    +
+    f_{4e+4}(u,v),
+    $$
+    where $f_d$ is homogeneous of ordinary degree $d$. For a general branch section, the binary quartic $f_4$ is squarefree, equivalently, its zero locus in $\mathbb{P}^1$ consists of four distinct points.
+
+    \item The pullback of the germ $(X,q)$ to the local uniformizing cover is the hypersurface germ
+    $$
+    \widetilde X
+    =
+    \left\{
+    w^2=f(u,v)
+    \right\}
+    \subset
+    \mathbb{A}^3_{u,v,w},
+    $$
+    equipped with the $\mu_e$-action
+    $$
+    \zeta\cdot(u,v,w)
+    =
+    (\zeta u,\zeta v,\zeta^2w).
+    $$
+    Moreover,
+    $$
+    (X,q)
+    \simeq
+    (\widetilde X,0)/\mu_e.
+    $$
+   \item The minimal resolution
+    $$
+    \rho:\widehat X\longrightarrow X
+    $$
+    of the germ $(X,q)$ has a unique exceptional curve, isomorphic to $C$, and
+    $$
+    C^2=-2e.
+    $$
+    Consequently, $(X,q)$ is a simple elliptic surface singularity. It is log canonical but not Kawamata log terminal, and the discrepancy of the exceptional elliptic curve is
+    $$
+    a(C,X)=-1.
+    $$
+
+    \item The surface $X$ is normal and Gorenstein. More precisely, its dualizing sheaf is invertible and satisfies
+    $$
+    \omega_X
+    \simeq
+    \pi^*\mathcal{O}_Y(H).
+    $$
+    In particular,
+    $$
+    K_X=\pi^*H
+    $$
+    is Cartier.
+
+    \item Let
+    $$
+    C
+    =
+    \left\{
+    w^2=f_4(u,v)
+    \right\}
+    \subset
+    \mathbb{P}(1,1,2),
+    \qquad
+    L:=\mathcal{O}_C(1).
+    $$
+    Then $C$ is a smooth elliptic curve and
+    $$
+    \deg L=2.
+    $$
+    The germ $(X,q)$ is analytically isomorphic to the vertex of the affine cone
+    $$
+    \operatorname{Spec}
+    \left(
+    \bigoplus_{m\geq 0}
+    H^0(C,L^{em})
+    \right).
+    $$
+    Equivalently, $(X,q)$ is the affine cone over the embedding of $C$ defined by the complete linear system
+    $$
+    |L^e|.
+    $$
+    Since
+    $$
+    \deg L^e=2e,
+    $$
+    this realizes $C$ as an elliptic normal curve of degree $2e$ in
+    $$
+    \mathbb{P}^{2e-1}.
+    $$
+
+    \item For a general branch section, $X$ is smooth away from $q$. Consequently, $q$ is the unique singular point of $X$.
+\end{enumerate}
+\end{theorem}
+
+
+
 
 \begin{proposition}\label{prop:hom-conormal-trace-zero-cone}
 Let $Y=S(0,e)\subset\mathbb{P}^{e+1}$ be the rational normal cone of degree $e$, and let $H=\mathcal{O}_Y(1)$ denote the hyperplane class of this embedding. Equivalently, identify
