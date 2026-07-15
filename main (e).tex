@@ -1901,7 +1901,93 @@ This proves Part $2$.
 
 \end{proof}
 
+\begin{proof}[Proof of Part $(3)$]
+Let $D\subset \mathbb A^2_{u,v}$ be the curve defined by $f(u,v)=0$, and let $o=(0,0)$. By Part $(1)$, one has $\operatorname{mult}_oD=4$, and the tangent cone of $D$ is the reduced divisor $f_4(u,v)=0$, consisting of four distinct lines.
 
+Let $\sigma:S\to\mathbb A^2$ be the blowup of $o$, let $E\simeq\mathbb P^1$ be its exceptional curve, and let $D'$ be the strict transform of $D$. Then
+$$
+\sigma^*D=D'+4E
+$$
+and
+$$
+K_S=\sigma^*K_{\mathbb A^2}+E.
+$$
+Consequently,
+$$
+K_S+\frac12D'
+= \sigma^*\left(K_{\mathbb A^2}+\frac12D\right)-E.
+$$
+Thus $E$ has discrepancy $-1$ with respect to the pair $\left(\mathbb A^2,\frac12D\right)$. This shows that $\widetilde{X}$ is log-canonical but not klt at $0$. \par
+We now construct the corresponding resolution of $\widetilde X$. Let
+
+$$
+p:\widetilde X =\left\{w^2=f(u,v)\right\}\subset
+\mathbb{A}^3_{u,v,w}\longrightarrow\mathbb A^2
+$$
+be the projection. \textcolor{blue}{Since the equation is monic in $w$}, the morphism $p$ is finite flat of degree $2$. Let $Z=p^{-1}(o)$ be the scheme-theoretic inverse image of the origin; it is defined on $\widetilde X$ by the ideal $(u,v)$ and is the length two subscheme $\operatorname{Spec}\displaystyle\frac{k[w]}{w^2}$ and is supported at $0 \in \widetilde X$.
+Form the fiber product
+$$
+T:=\widetilde X\times_{\mathbb A^2}S.
+$$
+Since $p$ is flat, by the commuting of blow-ups and base change (see \cite{stacks-project}[Lemma $71.17.3$]), $T$ is the blowup of $\widetilde X$ along $Z$:
+
+$$
+T\simeq\operatorname{Bl}_Z(\widetilde X).
+$$
+
+Indeed, the lemma states that blowing up commutes with flat base change.
+
+Let $\nu:\widehat{\widetilde X}\to T$ be the normalization, and denote by $\rho:\widehat{\widetilde X}\to\widetilde X$ the induced morphism. We claim that $\rho:\widehat{\widetilde X}\to\widetilde X$ is a resolution. For this it is enough to verify that $\widehat{\widetilde X}$ is smooth. Since the map $\rho:\widehat{\widetilde X}\to\widetilde X$ is birational, it is enough to verify smooth above the point $0 \in \widetilde X$. But this locus is the same as the scheme theoretic inverse image of the exceptional locus of $S \to \mathbb{A}^2$ along the map $\widehat{\widetilde X} \to S$. We verify that $\widehat{\widetilde X}$ is smooth above the exceptional locus. On the chart of $S$ given by $v=ux$, write
+$$
+f(u,ux)= u^4\left(f_4(1,x)+u^ef_{e+4}(1,x)+u^{2e}f_{2e+4}(1,x)+u^{3e}f_{3e+4}(1,x)+u^{4e}f_{4e+4}(1,x)\right).
+$$
+Let $$F(u,x) =  f_4(1,x)+u^ef_{e+4}(1,x)+u^{2e}f_{2e+4}(1,x)+u^{3e}f_{3e+4}(1,x)+u^{4e}f_{4e+4}(1,x)$$ denote the strict transform $D'$ of $D$ under the blow-up. One has $F(0,x)=f_4(1,x).$
+On this chart, the fiber product $T$ is given by
+
+$$
+\{w^2=u^4F(u,x)\} \subset \mathbb{A}^3_{u,x,w}.
+$$
+In its function field, the element $\eta=w/u^2$ is integral, since it satisfies $\eta^2=F(u,x)$. Hence the normalization is given locally by
+$$
+\{\eta^2=F(u,x)\} \subset \mathbb{A}^3_{u,x,\eta}
+$$
+Along the exceptional divisor $u=0$, this equation becomes
+$$
+\eta^2=f_4(1,x).
+$$
+If this hypersurface is singular at a point $(0,x_0, \eta_0, )$, all partials have to vanish which implies $\eta_0 = f(1,x_0) = \frac{d}{dx}f(1,x)|_{x=x_0} = 0$. The analogous calculation on the other blowup chart gives the same conclusion. But this means that the strict transform of $f$ meets the exceptional divisor at a point with multiplicity at least two, which contradicts that $f(u,v)$ is a general quartic.
+Therefore $\widehat{\widetilde X}$ is smooth above the exceptional locus, and, after restricting to the germ at the origin, $\rho$ is a resolution.
+
+Let $h:\widehat{\widetilde X}\to S$ be the induced double cover, and let $C=h^{-1}(E)$. The local equation above shows that $E$ (given by $(u = 0)$) is not a component of the branch divisor of $h$; the branch divisor is $D'$ whose local equation is given by $F(u,x)$. Moreover, the restriction
+$$
+C\longrightarrow E\simeq\mathbb P^1
+$$
+is the double cover branched along the four distinct points $D'\cap E$ (this double cover is locally defined by $\eta^2=f_4(1,x)$). Hence $C$ is a smooth elliptic curve.
+Since $E$ is not a branch component, one has $h^*E=C$. By the projection formula,
+$C^2=(h^*E)^2=2E^2=-2.$ Thus the exceptional locus of $\rho$ is the single smooth elliptic curve $C$ with $C^2=-2$.
+Finally, the double-cover canonical formulas give
+
+$$
+K_{\widetilde X} =
+p^*\left(K_{\mathbb A^2}+\frac12D\right)
+$$
+
+and
+
+$$
+K_{\widehat{\widetilde X}} =
+h^*\left(K_S+\frac12D'\right).
+$$
+
+Using the discrepancy calculation for the pair and the equality $h^*E=C$, we obtain
+
+$$
+K_{\widehat{\widetilde X}}=
+\rho^*K_{\widetilde X}-C.
+$$
+
+Therefore the discrepancy of the exceptional elliptic curve over $\widetilde X$ is $-1$.
+\end{proof}
 \begin{proposition}
 Let $e>4$, let $\pi:X\longrightarrow Y$
 be the canonical double cover over $Y=S(0,e)\simeq \mathbb{P}(1,1,e)$ as in the set-up. Let $q\in X$ be the point lying over $p$.
