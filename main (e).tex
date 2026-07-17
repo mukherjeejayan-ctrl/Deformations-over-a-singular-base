@@ -1776,28 +1776,54 @@ be the canonical double cover over $Y=S(0,e)\simeq \mathbb{P}(1,1,e)$ as in the 
     $$
     where $f_d$ is homogeneous of ordinary degree $d$. For a general branch section, the binary quartic $f_4$ is squarefree, equivalently, its zero locus in $\mathbb{P}^1$ consists of four distinct points.
 
-    \item The pullback of the germ $(X,q)$ to the local uniformizing cover is the hypersurface germ
-    $$
-    \widetilde X
-    =
-    \left\{
-    w^2=f(u,v)
-    \right\}
-    \subset
-    \mathbb{A}^3_{u,v,w},
-    $$
-    equipped with the $\mu_e$-action
-    $$
-    \zeta\cdot(u,v,w)
-    =
-    (\zeta u,\zeta v,\zeta^2w).
-    $$
-    Moreover,
-    $$
-    (X,q)
-    \simeq
-    (\widetilde X,0)/\mu_e.
-    $$
+   
+\item The hypersurface germ
+$$
+\widetilde X
+=
+\left\{
+w^2=f(u,v)
+\right\}
+\subset
+\mathbb A^3_{u,v,w},
+$$
+together with the projection
+$$
+\widetilde{\pi}:\widetilde X\longrightarrow \mathbb A^2_{u,v},
+$$
+is a finite flat double cover. The scalar action of $\mu_e$ on
+$\mathbb A^2_{u,v}$ lifts to an action on $\widetilde X$ given by
+$$
+\zeta\cdot(u,v,w)
+=
+(\zeta u,\zeta v,\zeta^2w).
+$$
+With respect to these actions, $\widetilde{\pi}$ is $\mu_e$-equivariant, and
+there is a commutative diagram
+$$
+\begin{tikzcd}
+(\widetilde X,0)
+\arrow[r]
+\arrow[d,"\widetilde{\pi}"']
+&
+(X,q)
+\arrow[d,"\pi"]
+\\
+(\mathbb A^2_{u,v},0)
+\arrow[r]
+&
+(Y,p),
+\end{tikzcd}
+$$
+in which the horizontal morphisms are the quotient morphisms by $\mu_e$.
+In particular,
+$$
+(X,q)
+\simeq
+(\widetilde X,0)/\mu_e.
+$$
+
+
    \item The minimal resolution
     $$
     \rho:\widehat X\longrightarrow X
