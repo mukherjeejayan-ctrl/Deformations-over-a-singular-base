@@ -1899,31 +1899,35 @@ general branch section, $f_4$ is squarefree. Equivalently, its zero locus in
 $\mathbb P^1$ consists of four distinct points.
 \end{proof}
 \begin{proof}[Proof of Part $(2)$]
-For Part $2$, pull the double cover back along the local uniformizing morphism
+Let $S=k[u,v]$ and $R=S^{\mu_e}$. The trace-zero reflexive module of the double cover near $p$ corresponds to the $R$-module $S_{-2}$ of semi-invariants of character $-2$, since$-(2e+2)\equiv -2 \pmod e.$ By Part $(1)$, every homogeneous component of $f(u,v)$ has degree congruent to $4$ modulo $e$. Hence
 $$
-\mathbb A^2_{u,v}\longrightarrow (Y,p).
+f(\zeta u,\zeta v)=\zeta^4f(u,v).
 $$
-Since the pullback of the branch section is the semi-invariant function $f(u,v)$ found in Part $1$, the pulled-back cover is the hypersurface germ
+Consider the hypersurface
 $$
-\widetilde X =
+\widetilde X = 
 \left\{
 w^2=f(u,v)
 \right\}
 \subset
 \mathbb A^3_{u,v,w}.
 $$
-It remains only to determine the induced $\mu_e$-action on $w$. The reflexive sheaf
-$ \mathcal E \simeq \mathcal O_Y(-(2e+2))$
-corresponds on the uniformizing cover to the module of semi-invariants of character
-$-(2e+2)\equiv -2\pmod e.$
-Equivalently, the dual generator defining the double-cover coordinate has character $2$. Thus the action on $w$ is $\zeta\cdot w=\zeta^2w.$ By construction, the quotient of this pulled-back double cover by $\mu_e$ recovers the original reflexive double-cover algebra near $p$. Hence
-
+Since its equation is monic in $w$, the projection $\widetilde\pi:\widetilde X\longrightarrow\mathbb A^2_{u,v}$ is finite and flat of degree $2$. Define a $\mu_e$-action on $\widetilde X$ by $\zeta\cdot(u,v,w) = (\zeta u,\zeta v,\zeta^2w).$ Both $w^2$ and $f(u,v)$ have character $4$, so this action preserves the defining equation of $\widetilde X$. Moreover, $\widetilde\pi$ is $\mu_e$-equivariant. It remains to identify the quotient. The coordinate ring of $\widetilde X$ is
+$$
+S\oplus Sw,
+$$
+and its invariant subring is
+$$
+(S\oplus Sw)^{\mu_e} =
+R\oplus S_{-2}w,
+$$
+because $gw$ is invariant precisely when $g$ has character $-2$. Under the identification of $S_{-2}$ with the trace-zero reflexive module of $\pi$ near $p$, this invariant algebra is the local double-cover algebra defining $X$ near $q$. Therefore
 $$
 (X,q)
 \simeq
 (\widetilde X,0)/\mu_e.
 $$
-This proves Part $2$.
+The quotient morphisms give the commutative diagram asserted in Part $(2)$. This proves Part $2$.
 
 \end{proof}
 
