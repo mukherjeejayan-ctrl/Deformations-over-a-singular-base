@@ -1899,7 +1899,7 @@ general branch section, $f_4$ is squarefree. Equivalently, its zero locus in
 $\mathbb P^1$ consists of four distinct points.
 \end{proof}
 \begin{proof}[Proof of Part $(2)$]
-Let $S=k[u,v]$ and $R=S^{\mu_e}$. The trace-zero reflexive module of the double cover near $p$ corresponds to the $R$-module $S_{-2}$ of semi-invariants of character $-2$, since$-(2e+2)\equiv -2 \pmod e.$ By Part $(1)$, every homogeneous component of $f(u,v)$ has degree congruent to $4$ modulo $e$. Hence
+Let $P=k[u,v]$ and $R=P^{\mu_e}$. The trace-zero reflexive module of the double cover near $p$ corresponds to the $R$-module $P_{-2}$ of semi-invariants of character $-2$, since$-(2e+2)\equiv -2 \pmod e.$ By Part $(1)$, every homogeneous component of $f(u,v)$ has degree congruent to $4$ modulo $e$. Hence
 $$
 f(\zeta u,\zeta v)=\zeta^4f(u,v).
 $$
@@ -1914,14 +1914,14 @@ w^2=f(u,v)
 $$
 Since its equation is monic in $w$, the projection  $\widetilde\pi:\widetilde X\longrightarrow\mathbb A^2_{u,v}$ is finite and flat of degree $2$. Define a $\mu_e$-action on $\widetilde X$ by $\zeta\cdot(u,v,w) = (\zeta u,\zeta v,\zeta^2w).$ Both $w^2$ and $f(u,v)$ have character $4$, so this action preserves the defining equation of $\widetilde X$. Moreover, $\widetilde\pi$ is $\mu_e$-equivariant. It remains to identify the quotient. The coordinate ring of $\widetilde X$ is
 $$
-S\oplus Sw,
+P\oplus Pw,
 $$
 and its invariant subring is
 $$
-(S\oplus Sw)^{\mu_e} =
-R\oplus S_{-2}w,
+(P\oplus Pw)^{\mu_e} =
+R\oplus P_{-2}w,
 $$
-because $gw$ is invariant precisely when $g$ has character $-2$. Under the identification of $S_{-2}$ with the trace-zero reflexive module of $\pi$ near $p$, this invariant algebra is the local double-cover algebra defining $X$ near $q$. Therefore
+because $gw$ is invariant precisely when $g$ has character $-2$. Under the identification of $P_{-2}$ with the trace-zero reflexive module of $\pi$ near $p$, this invariant algebra is the local double-cover algebra defining $X$ near $q$. Therefore
 $$
 (X,q)
 \simeq
@@ -2017,6 +2017,110 @@ K_{\widehat{\widetilde X}}=
 $$
 
 Therefore the discrepancy of the exceptional elliptic curve over $\widetilde X$ is $-1$.
+The $\mu_e$-action on $\widetilde X$ preserves the ideal $(u,v)$ defining $Z$. It therefore lifts to $\operatorname{Bl}_Z(\widetilde X)$ and, by functoriality of normalization, to $\widehat{\widetilde X}$. Let
+
+$$
+\varpi:\widehat{\widetilde X}\longrightarrow
+\widehat X:=\widehat{\widetilde X}/\mu_e
+$$
+
+be the quotient morphism.
+
+We describe the quotient on the chart $v=ux$. This is sufficient because the two standard charts of the blowup cover the exceptional divisor, and the calculation on the chart $u=vy$ is identical after interchanging $u$ and $v$. On the chosen chart,
+
+$$
+x=\frac vu,
+\qquad
+\eta=\frac{w}{u^2},
+$$
+and hence the lifted action is
+$$
+\zeta\cdot(u,x,\eta) =
+(\zeta u,x,\eta).
+$$
+In particular, $x$ and $\eta$ are invariant. Since
+$$
+F(u,x) =
+f_4(1,x)
++
+u^ef_{e+4}(1,x)
++
+u^{2e}f_{2e+4}(1,x)
++
+u^{3e}f_{3e+4}(1,x)
++
+u^{4e}f_{4e+4}(1,x),
+$$
+the function $F(u,x)$ is a polynomial in $y=u^e$. Thus the quotient chart is the hypersurface
+$$
+\eta^2
+f_4(1,x)
++
+yf_{e+4}(1,x)
++
+y^2f_{2e+4}(1,x)
++
+y^3f_{3e+4}(1,x)
++
+y^4f_{4e+4}(1,x)
+$$
+in the coordinates $(y,x,\eta)$, and the quotient morphism is
+$$
+\varpi(u,x,\eta)=(u^e,x,\eta).
+$$
+The exceptional curve $\widetilde C$ is given upstairs by
+$$
+u=0,
+\qquad
+\eta^2=f_4(1,x),
+$$
+and its image $C$ is given downstairs by
+$$
+y=0,
+\qquad
+\eta^2=f_4(1,x).
+$$
+The quotient is smooth along $C$. Indeed, a singular point on $y=0$ would satisfy
+$$
+\eta=0,
+\qquad
+f_4(1,x)=0,
+\qquad
+\frac{d}{dx}f_4(1,x)=0,
+$$
+contradicting the squarefreeness of $f_4$. The same argument applies on the second blowup chart. Away from $\widetilde C$, the $\mu_e$-action is free, and hence the quotient is smooth there. Therefore $\widehat X$ is smooth. The equivariant resolution $\widehat{\widetilde X}\to\widetilde X$ descends to a proper birational morphism
+$$
+\rho:\widehat X\longrightarrow X
+$$
+whose exceptional locus is the single elliptic curve $C$. Since $C$ is not a rational $(-1)$-curve, this is the minimal resolution of $(X,q)$. Finally, $C$ is locally defined by $y=0$, and $\varpi^*y=u^e$. Hence
+$$
+\varpi^*C=e\widetilde C.
+$$
+Since $\varpi$ has degree $e$, the projection formula gives
+$$
+(\varpi^*C)^2=eC^2.
+$$
+Using $\widetilde C^2=-2$, we obtain
+$$
+eC^2 = (e\widetilde C)^2 =e^2\widetilde C^2 = -2e^2.
+$$
+Therefore
+$$
+C^2=-2e.
+$$
+Thus the minimal resolution of $(X,q)$ has a unique exceptional elliptic curve of self-intersection $-2e$.
+
+
+
+
+
+
+
+
+
+
+
+
 \end{proof}
 \begin{proposition}
 Let $e>4$, let $\pi:X\longrightarrow Y$
