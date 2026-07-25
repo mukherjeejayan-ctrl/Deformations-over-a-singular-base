@@ -1332,6 +1332,86 @@ as in \cite[Proposition~3.7]{Gonzalez2005}; see also
 \cite[Proposition~1.2]{GallegoGonzalezPurnaprajna2010}.
 \end{remark}
 
+\begin{proposition}\label{prop:smoothness-deformations-fixed-target}
+Let
+$
+X\xrightarrow{\pi}Y\xrightarrow{i}Z
+$
+be morphisms of projective schemes over $\mathbb C$, where $\pi$ is finite and $i$ is a closed immersion with ideal sheaf $I=I_{Y/Z}$. Set $\varphi=i\circ\pi$, and assume that
+$
+\pi_*\mathcal O_X\simeq\mathcal O_Y\oplus\mathcal E
+$
+as an $\mathcal O_Y$-module. If
+$$
+\operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal E)=0,
+$$
+then the natural morphism of analytic deformation functors
+$$
+\operatorname{Def}(\pi/Z)\longrightarrow\operatorname{Def}(X/Z)
+$$
+is formally smooth. In particular, for every complex germ $S$, the map
+$$
+\operatorname{Def}(\pi/Z)(S)\longrightarrow\operatorname{Def}(X/Z)(S)
+$$
+is surjective. Equivalently, every deformation of $\varphi:X\to Z$ over the fixed target $Z$ is induced by a deformation of the diagram
+$
+X\xrightarrow{\pi}Y\xrightarrow{i}Z.
+$
+\end{proposition}
+
+\begin{proof}
+We apply \cite[Proposition~1.10]{Wehler1986} to the diagram
+$
+X\xrightarrow{\pi}Y\xrightarrow{i}Z.
+$
+For $j=1,2$, consider the natural maps
+$$
+\beta^j:T^j(Y/Z)\longrightarrow
+\operatorname{Ext}^j_X(L\pi^*L_{Y/Z},\mathcal O_X).
+$$
+Since $\pi$ is finite, derived adjunction and the decomposition
+$
+\pi_*\mathcal O_X\simeq\mathcal O_Y\oplus\mathcal E
+$
+give
+$$
+\operatorname{Ext}^j_X(L\pi^*L_{Y/Z},\mathcal O_X)
+\simeq
+T^j(Y/Z)\oplus
+\operatorname{Ext}^j_Y(L_{Y/Z},\mathcal E).
+$$
+Under this decomposition, $\beta^j$ is the inclusion of the first summand, because it is induced by the natural inclusion
+$
+\mathcal O_Y\hookrightarrow\pi_*\mathcal O_X.
+$
+Consequently, $\beta^2$ is injective.
+
+By \Cref{lem:T1-map-to-conormal-Hom}, one has
+$$
+\operatorname{Ext}^1_X(L\pi^*L_{Y/Z},\mathcal O_X)
+\simeq
+\operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal O_Y)
+\oplus
+\operatorname{Hom}_{\mathcal O_Y}(I/I^2,\mathcal E),
+$$
+while
+$
+T^1(Y/Z)\simeq\operatorname{Hom}*{\mathcal O_Y}(I/I^2,\mathcal O_Y).
+$
+Under these identifications, $\beta^1$ is the inclusion of the first summand. The assumed vanishing
+$
+\operatorname{Hom}*{\mathcal O_Y}(I/I^2,\mathcal E)=0
+$
+therefore implies that $\beta^1$ is an isomorphism, and in particular is surjective.
+
+Thus $\beta^1$ is surjective and $\beta^2$ is injective. The proof of \cite[Proposition~1.10]{Wehler1986} then shows that
+$
+\operatorname{Def}(\pi/Z)\to\operatorname{Def}(X/Z)
+$
+is formally smooth, and the proposition itself gives surjectivity on deformations over every complex germ $S$.
+\end{proof}
+
+
 \begin{theorem}[Central fiber of the image of a first-order deformation]
 \label{thm:central-fiber-image-singular-source}
 Let \(k\) be an algebraically closed field and let
@@ -2176,6 +2256,24 @@ Let $e>4$, and let $Y=S(0,e)\subset \mathbb{P}^{e+1}$ be the rational normal con
 $$
 \operatorname{Hom}_Y(\mathcal I/\mathcal I^2,\mathcal E)=0.
 $$
+By \Cref{prop:hom-conormal-trace-zero-cone,prop:smoothness-deformations-fixed-target}, the natural morphism
+$$
+\operatorname{Def}(\pi/\mathbb P^{e+1})
+\longrightarrow
+\operatorname{Def}(X/\mathbb P^{e+1})
+$$
+is formally smooth. Hence every deformation of the canonical morphism
+$
+\varphi:X\to\mathbb P^{e+1}
+$
+over the fixed projective space is induced by a deformation of the double cover
+$
+\pi:X\to Y
+$
+and of the cone
+$
+Y\subset\mathbb P^{e+1}.
+$
 
 \end{proposition}
 
