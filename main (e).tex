@@ -2066,7 +2066,7 @@ $$
 \eta^2=f_4(1,x).
 $$
 If this hypersurface is singular at a point $(0,x_0, \eta_0, )$, all partials have to vanish which implies $\eta_0 = f(1,x_0) = \frac{d}{dx}f(1,x)|_{x=x_0} = 0$. The analogous calculation on the other blowup chart gives the same conclusion. But this means that the strict transform of $f$ meets the exceptional divisor at a point with multiplicity at least two, which contradicts that $f(u,v)$ is a general quartic.
-Therefore $\widehat{\widetilde X}$ is smooth above the exceptional locus, and, after restricting to the germ at the origin, $\rho$ is a resolution.
+Therefore $\widehat{\widetilde X}$ is smooth above the exceptional locus, and, after restricting to the germ at the origin, $\widetilde{\rho}$ is a resolution.
 
 Let $h:\widehat{\widetilde X}\to S$ be the induced double cover, and let $C=h^{-1}(E)$. The local equation above shows that $E$ (given by $(u = 0)$) is not a component of the branch divisor of $h$; the branch divisor is $D'$ whose local equation is given by $F(u,x)$. Moreover, the restriction
 $$
@@ -2097,7 +2097,72 @@ K_{\widehat{\widetilde X}}=
 $$
 
 Therefore the discrepancy of the exceptional elliptic curve over $\widetilde X$ is $-1$.
-The $\mu_e$-action on $\widetilde X$ preserves the ideal $(u,v)$ defining $Z$. It therefore lifts to $\operatorname{Bl}_Z(\widetilde X)$ and, by functoriality of normalization, to $\widehat{\widetilde X}$. Let
+The $\mu_e$-action on $\widetilde X$ preserves the ideal $(u,v)$ defining $Z$. It therefore lifts to $\operatorname{Bl}_Z(\widetilde X)$ and, by functoriality of normalization, to $\widehat{\widetilde X}$. 
+\begingroup
+\color{blue}
+We describe these lifts explicitly. The action preserves $Z$ scheme-theoretically, since
+\[
+\zeta\cdot(u,v)=(\zeta u,\zeta v)=(u,v).
+\]
+On the blow-up chart $v=ux$, the coordinate $x=v/u$ is invariant, and the lifted action on
+\[
+T=\operatorname{Bl}_Z(\widetilde X)
+\]
+is
+\[
+\zeta\cdot(u,x,w)=(\zeta u,x,\zeta^2w).
+\]
+Indeed, this action preserves the equation
+\[
+w^2=u^4F(u,x),
+\]
+because $F(\zeta u,x)=F(u,x)$, as every power of $u$ occurring in $F$ is divisible by $e$. On the other chart, with $x'=u/v$, the corresponding formula is
+\[
+\zeta\cdot(v,x',w)=(\zeta v,x',\zeta^2w).
+\]
+Since $x'=x^{-1}$ on the overlap, these actions agree and therefore define a $\mu_e$-action on $T$.
+
+On the first chart, the normalization is obtained by adjoining
+\[
+\eta=\frac{w}{u^2},
+\qquad
+\eta^2=F(u,x).
+\]
+The new coordinate is invariant, since
+\[
+\zeta\cdot\eta
+=
+\frac{\zeta^2w}{(\zeta u)^2}
+=
+\eta.
+\]
+Thus the lifted action on the normalized chart is
+\[
+\zeta\cdot(u,x,\eta)=(\zeta u,x,\eta),
+\]
+and it is compatible with the normalization morphism
+\[
+\nu(u,x,\eta)=(u,x,w=u^2\eta).
+\]
+On the second chart, setting $\eta'=w/v^2$, one similarly obtains
+\[
+\zeta\cdot(v,x',\eta')=(\zeta v,x',\eta').
+\]
+The transition relations
+\[
+x'=x^{-1},
+\qquad
+\eta'=\frac{\eta}{x^2}
+\]
+are $\mu_e$-equivariant. Hence these local actions glue to a $\mu_e$-action on $\widehat{\widetilde X}$ for which
+\[
+\nu:\widehat{\widetilde X}\longrightarrow T
+\]
+is equivariant.
+\endgroup
+
+
+Let
 
 $$
 \varpi:\widehat{\widetilde X}\longrightarrow
@@ -2379,6 +2444,51 @@ Set $\mathcal C_e:=\mu(V^{\mathrm{good}})\subset\mathcal M_{\mathrm{red}}$. By C
 Finally, the geometric points of the coarse Kollár moduli space correspond to isomorphism classes of stable surfaces. Since the fibers of $\mu$ are precisely the $\widetilde G$-orbits, every canonical double cover in the stated class determines exactly one point of $\mathcal C_e$, and distinct points of $\mathcal C_e$ represent non-isomorphic stable surfaces.
 \end{proof}
 
+\begin{proposition}\label{prop:dimension-canonical-covers-smooth-scrolls}
+Let $\mathcal S_e\subset\mathcal M_{\mathrm{red}}$ be the locus whose geometric points represent smooth surfaces whose canonical morphism is a finite double cover of a smooth rational normal scroll of degree $e$ in $\mathbb P^{e+1}$. Then $\mathcal S_e$ is irreducible and
+$$
+\dim\mathcal S_e=7e+28.
+$$
+More precisely, a dense subset of $\mathcal S_e$ parametrizes canonical double covers of $\mathbb F_0$ when $e$ is even and of $\mathbb F_1$ when $e$ is odd.
+\end{proposition}
+
+\begin{proof}
+It is known from the work of Horikawa, that deformations of canonical double covers over smooth scrolls are unobstructed and are once again canonical double covers over smooth scrolls (see \cite{Hor76I,Hor76II}) So $\mathcal{S}_e$ is an irreducible component of $\mathcal{M}_{\operatorname{red}}$ . We simply compute the dimension of the moduli component.
+A smooth rational normal scroll of degree $e$ is isomorphic to a Hirzebruch surface $\mathbb F_\epsilon$, embedded by the complete linear series of $|
+H=C_0+\frac{e+\epsilon}{2}f.
+|$, where $C_0$ is the negative section and let $f$ is a fiber of $\mathbb F_\epsilon$.
+The branch divisor of the canonical double cover is
+$$
+B\in|2H-2K_{Y_\epsilon}| = \left|6C_0+(e+3\epsilon+4)f\right|.
+$$
+Now for any $\epsilon$, the general deformation of $\mathbb F_{\epsilon}$ is either $\mathbb F_0$ or $\mathbb F_1$ depending on whether $\epsilon$ is even or odd.
+These deformations lift to the corresponding canonical double covers. Indeed, if $\pi:X\to Y$ is a double cover with branch divisor $B$, then $\pi_*\mathcal N_\pi\simeq\mathcal O_B(B)$ and
+$$
+H^1(\mathcal N_\pi)=H^1(\mathcal O_B(B))=0.
+$$
+So we can assume $\epsilon = 0$ or $1$. Then $H^1(T_{\mathbb F_\epsilon})=0$. It is therefore enough to compute the dimension of the locus of canonical double covers of the fixed balanced scroll $Y_\epsilon$ which is $\mathbb F_{\epsilon}$, $\epsilon = 0$ or $1$  embedded by $|
+H=C_0+\frac{e+\epsilon}{2}f.
+|$. \\
+If $\epsilon=0$, then
+$$
+h^0\bigl(Y_0,\mathcal O_{Y_0}(B)\bigr) = 7(e+5)
+= 7e+35.
+$$
+If $\epsilon=1$, then
+$$
+h^0\bigl(Y_1,\mathcal O_{Y_1}(B)\bigr)
+= \sum_{j=0}^{6}(e+8-j)
+= 7e+35.
+$$
+Thus, in either case, the branch divisors are parametrized by a projective space of dimension $7e+34$. Both $\operatorname{Aut}(\mathbb F_0)$ and $\operatorname{Aut}(\mathbb F_1)$ have dimension $6$. Since a general canonical double cover has finite automorphism group, the stabilizer of a general branch divisor is finite. Therefore,
+$$
+\dim\mathcal S_e
+= (7e+34)-6 = 7e+28.
+$$
+
+%The open subset of admissible branch divisors on the balanced scroll is irreducible. Since every canonical double cover of an unbalanced smooth scroll deforms to a canonical double cover of the balanced scroll, the full smooth-scroll locus $\mathcal S_e$ is irreducible and has the same dimension.
+\end{proof}
+
 
 
 \bibliographystyle{plain}
@@ -2589,10 +2699,31 @@ Springer-Verlag, New York-Heidelberg, 1977
 
 \color{black}
 
-\bibitem{Hor74}
-Horikawa, Eiji
-\emph{On deformations of holomorphic maps. II.}
-J. Math. Soc. Japan 26 (1974), 647–667.
+\bibitem{Hor76I}
+E.~Horikawa,
+\emph{Algebraic surfaces of general type with small $c_1^2$. I},
+Ann. of Math. (2) \textbf{104} (1976), no.~2, 357--387.
+
+\bibitem{Hor76II}
+E.~Horikawa,
+\emph{Algebraic surfaces of general type with small $c_1^2$. II},
+Invent. Math. \textbf{37} (1976), no.~2, 121--155.
+
+\bibitem{Hor78III}
+E.~Horikawa,
+\emph{Algebraic surfaces of general type with small $c_1^2$. III},
+Invent. Math. \textbf{47} (1978), 209--248.
+
+\bibitem{Hor79IV}
+E.~Horikawa,
+\emph{Algebraic surfaces of general type with small $c_1^2$. IV},
+Invent. Math. \textbf{50} (1978/79), 103--128.
+
+\bibitem{Hor81V}
+E.~Horikawa,
+\emph{Algebraic surfaces of general type with small $c_1^2$. V},
+J. Fac. Sci. Univ. Tokyo Sect. IA Math. \textbf{28} (1981),
+no.~3, 745--755.
 
 
 
