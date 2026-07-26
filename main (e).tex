@@ -2489,7 +2489,141 @@ $$
 %The open subset of admissible branch divisors on the balanced scroll is irreducible. Since every canonical double cover of an unbalanced smooth scroll deforms to a canonical double cover of the balanced scroll, the full smooth-scroll locus $\mathcal S_e$ is irreducible and has the same dimension.
 \end{proof}
 
+\begin{proposition}\label{prop:cone-cover-component}
+Let $e>4$, and let $\mathcal C_e$ and $\mathcal S_e$ be the loci defined in
+\Cref{prop:canonical-double-cover-locus,prop:dimension-canonical-covers-smooth-scrolls}.
+Then the closure
+$$
+\overline{\mathcal C_e}\subset\mathcal M_{\mathrm{red}}
+$$
+is an irreducible component of $\mathcal M_{\mathrm{red}}$. Moreover,
+$$
+\overline{\mathcal C_e}\not\subseteq\overline{\mathcal S_e}.
+$$
+In particular, a general surface parametrized by $\mathcal C_e$ is not a
+degeneration of smooth Horikawa surfaces.
+\end{proposition}
 
+\begin{proof}
+By
+\Cref{prop:canonical-double-cover-locus,prop:dimension-canonical-covers-smooth-scrolls},
+one has
+$$
+\dim\mathcal C_e=9e+19
+\qquad\text{and}\qquad
+\dim\mathcal S_e=7e+28.
+$$
+Since $e>4$, $\dim\mathcal C_e-\dim\mathcal S_e = 2e-9 > 0.
+$
+It follows immediately that
+$\overline{\mathcal C_e}\not\subseteq\overline{\mathcal S_e}.$ \\
+Let $\mathcal D$ be an irreducible component of $\mathcal M_{\mathrm{red}}$
+containing $\overline{\mathcal C_e}$. We show that $\mathcal D=\overline{\mathcal C_e}$.
+Since $\mathcal C_e$ is irreducible, we may therefore choose a general point
+$$
+[X]\in
+\mathcal C_e\setminus\overline{\mathcal S_e}.
+$$
+The canonical morphism of $X$ factors as
+$$
+X\xrightarrow{\pi}
+Y=S(0,e)
+\hookrightarrow
+\mathbb P^{e+1}.
+$$
+Consider a sufficiently small deformation
+$$
+f:\mathcal X\longrightarrow T
+$$
+of $X$. Since $X$ is Gorenstein, after shrinking $T$ the morphism $f$ is
+Gorenstein; see \cite[Tag~0C09]{stacks-project}. Moreover,
+$$
+H^1(X,\omega_X)
+\simeq
+H^1(X,\mathcal O_X)^{\vee}
+=
+0.
+$$
+By cohomology and base change, after shrinking $T$ the sheaf
+$f_*\omega_{\mathcal X/T}$ is locally free of rank $e+2$ and its formation
+commutes with base change; see
+\cite[Theorem~III.12.11]{Hartshorne}. Since $\omega_X$ is globally generated,
+the relative evaluation map is surjective after shrinking $T$. Upon choosing a
+trivialization of $f_*\omega_{\mathcal X/T}$, we obtain a relative canonical
+morphism
+$$
+\Phi:\mathcal X\longrightarrow\mathbb P^{e+1}\times T
+$$
+whose restriction to the central fiber is the canonical morphism of $X$. By
+\Cref{prop:hom-conormal-trace-zero-cone,prop:smoothness-deformations-fixed-target},
+the deformation $\Phi$ is induced, after shrinking $T$, by a deformation of the
+factorization
+$$
+X\xrightarrow{\pi}Y\hookrightarrow\mathbb P^{e+1}.
+$$
+Thus there is a commutative diagram
+$$
+\begin{tikzcd}
+\mathcal X
+\arrow[r,"\Pi"]
+\arrow[dr,"\Phi"']
+&
+\mathcal Y
+\arrow[d]
+\\
+&
+\mathbb P^{e+1}\times T,
+\end{tikzcd}
+$$
+where $\mathcal Y\to T$ is an embedded deformation of
+$Y\subset\mathbb P^{e+1}$ and $\Pi$ restricts to $\pi$ on the central fiber.
+After shrinking $T$ once more, $\Pi$ is finite of degree $2$. Every nearby fiber $\mathcal{Y}_t\subset\mathbb P^{e+1}$ is an integral nondegenerate
+surface with the same Hilbert polynomial as $Y$. In particular,
+$$
+\deg \mathcal{Y}_t=e
+=
+\operatorname{codim}_{\mathbb P^{e+1}}(\mathcal{Y}_t)+1.
+$$
+Thus $\mathcal{Y}_t$ is a surface of minimal degree. By the Del Pezzo--Bertini
+classification of varieties of minimal degree, $\mathcal{Y}_t$ is a rational normal
+scroll; see \cite{EH87}. The Veronese surface is excluded because
+$e>4$. If $\mathcal{Y}_t$ is singular, then it is projectively equivalent to the rational normal
+cone $S(0,e)$. The corresponding double cover belongs to
+$\overline{\mathcal C_e}$. If $\mathcal{Y}_t$ is smooth, then $\mathcal{X}_t$ is a canonical double cover of a smooth rational
+normal scroll of degree $e$. By
+\Cref{prop:dimension-canonical-covers-smooth-scrolls}, such a cover belongs to
+$\overline{\mathcal S_e}$. Consequently, every sufficiently small deformation
+of $X$ belongs to
+$$
+\overline{\mathcal C_e}\cup\overline{\mathcal S_e}.
+$$
+Since $[X]\notin\overline{\mathcal S_e}$ and
+$\overline{\mathcal S_e}$ is closed, there is an analytic neighborhood
+$\mathcal U$ of $[X]$ in $\mathcal M_{\mathrm{red}}$ such that
+$$
+\mathcal U\cap\overline{\mathcal S_e}
+=
+\varnothing.
+$$
+It follows from the preceding argument that
+$$
+\mathcal U\cap\mathcal D
+\subseteq
+\overline{\mathcal C_e}.
+$$
+The subset $\mathcal U\cap\mathcal D$ is a nonempty open subset of the
+irreducible space $\mathcal D$, and hence it is dense in $\mathcal D$. Since
+$\overline{\mathcal C_e}$ is closed, this implies
+$$
+\mathcal D\subseteq\overline{\mathcal C_e}.
+$$
+The reverse inclusion holds by the choice of $\mathcal D$. Therefore,
+$$
+\mathcal D=\overline{\mathcal C_e},
+$$
+and $\overline{\mathcal C_e}$ is an irreducible component of
+$\mathcal M_{\mathrm{red}}$.
+\end{proof}
 
 \bibliographystyle{plain}
 \begin{thebibliography}{KMM92}
@@ -2632,7 +2766,12 @@ Duflot, Jeanne; Peters, Pamela L.
 \emph{Gaussian maps for double covers of toric surfaces.}
 Rocky Mountain J. Math. 42 (2012), no. 5, 1471–1520.
 
-
+\bibitem{EH87}
+D.~Eisenbud and J.~Harris,
+\emph{On varieties of minimal degree (a centennial account)},
+Algebraic Geometry, Bowdoin, 1985, Part~I,
+Proc. Sympos. Pure Math. \textbf{46},
+Amer. Math. Soc., Providence, RI, 1987, 3--13.
 
 
 
