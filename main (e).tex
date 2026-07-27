@@ -2312,7 +2312,288 @@ be the canonical double cover over $Y=S(0,e)\simeq \mathbb{P}(1,1,e)$ as in the 
 \end{enumerate}
 \end{proposition}
 
+\begin{proposition}\label{prop:resolution-of-cover}
+Assume that $e>4$. Let
+\[
+Y=\mathbb P(1,1,e),
+\]
+let $p\in Y$ be its vertex, and let
+\[
+\pi:X\longrightarrow Y
+\]
+be the double cover considered above, defined by a general branch divisor
+\[
+B\in\left|\mathcal O_Y(4e+4)\right|.
+\]
+Let $q\in X$ be the unique point lying over $p$. Let
+\[
+\sigma:S=\mathbb F_e\longrightarrow Y
+\]
+be the minimal resolution of $Y$, with exceptional section $C_0$ and fiber class $f$. Denote by $B_S$ the strict transform of $B$ on $S$. Let $T$ be the reduced scheme structure on the unique irreducible component of
+$X\times_Y S$ which dominates $S$, and set
+\[
+\widehat X:=T^\nu.
+\]
+Then the following statements hold.
 
+\begin{enumerate}
+    \item The two projections induce a commutative diagram
+    \[
+    \begin{tikzcd}[column sep=large,row sep=large]
+        \widehat X
+        \arrow[r,"\widehat\pi"]
+        \arrow[d,"\rho"']
+        &
+        S=\mathbb F_e
+        \arrow[d,"\sigma"]
+        \\
+        X
+        \arrow[r,"\pi"']
+        &
+        Y=\mathbb P(1,1,e).
+    \end{tikzcd}
+    \]
+    The morphism $\widehat\pi$ is a finite flat double cover with branch divisor
+    \[
+    B_S\sim 4C_0+(4e+4)f.
+    \]
+    Equivalently,
+    \[
+    \widehat\pi_*\mathcal O_{\widehat X}
+    \simeq
+    \mathcal O_S
+    \oplus
+    \mathcal O_S\bigl(-2C_0-(2e+2)f\bigr).
+    \]
+    In particular, $C_0$ is not a component of the branch divisor.
+
+    \item The surface $\widehat X$ is smooth, and $\rho$ is the minimal resolution of the singularity $(X,q)$. Its exceptional locus is the curve
+    \[
+    E:=\widehat\pi^{-1}(C_0).
+    \]
+    The restriction
+    \[
+    \gamma:=\widehat\pi|_E:E\longrightarrow C_0\simeq\mathbb P^1
+    \]
+    is a double cover branched at the four points of $B_S\cap C_0$. Consequently, $E$ is a smooth elliptic curve and
+    \[
+    E^2=-2e.
+    \]
+
+    \item The discrepancy of $E$ over $X$ is equal to $-1$:
+    \[
+    K_{\widehat X}=\rho^*K_X-E.
+    \]
+    Consequently, $(X,q)$ is log canonical but not klt.
+
+    \item Put
+    \[
+    A:=\mathcal O_E(-E).
+    \]
+    Then
+    \[
+    \deg A=2e,
+    \qquad
+    A\simeq\gamma^*\mathcal O_{\mathbb P^1}(e).
+    \]
+    The line bundle $A$ embeds $E$ as an elliptic normal curve of degree $2e$ in
+    \[
+    \mathbb P^{2e-1}.
+    \]
+    Analytically, the germ $(X,q)$ is isomorphic to the vertex of the affine cone over this embedded elliptic curve:
+    \[
+    (X,q)^{\mathrm{an}}
+    \simeq
+    \left(
+    \operatorname{Spec}
+    \bigoplus_{m\geq0}H^0\!\left(E,A^{\otimes m}\right),
+    \mathfrak m_+
+    \right)^{\mathrm{an}}.
+    \]
+    Equivalently,
+    \[
+    \widehat{\mathcal O}_{X,q}
+    \simeq
+    \widehat{
+    \left(
+    \bigoplus_{m\geq0}H^0\!\left(E,A^{\otimes m}\right)
+    \right)_{\mathfrak m_+}
+    }.
+    \]
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Since $\pi$ is finite, the base change
+\[
+X\times_Y S\longrightarrow S
+\]
+is finite. It follows that $T\to S$ is finite. Since $T$ is of finite type over the ground field, its normalization is finite, and hence
+\[
+\widehat\pi:\widehat X\longrightarrow S
+\]
+is finite. Moreover,
+\[
+K(S)=K(Y)
+\qquad\text{and}\qquad
+[K(X):K(Y)]=2,
+\]
+so $\widehat\pi$ has degree $2$.
+
+The surface $\widehat X$ is normal and therefore Cohen--Macaulay, while $S$ is smooth. It follows from miracle flatness that $\widehat\pi$ is flat. Since the characteristic is different from $2$, the trace map gives a decomposition
+\[
+\widehat\pi_*\mathcal O_{\widehat X}
+\simeq
+\mathcal O_S\oplus L^{-1}
+\]
+for some line bundle $L$ on $S$. Multiplication on the trace-zero summand determines a reduced branch divisor
+\[
+\Delta\in|2L|.
+\]
+
+Over $S\setminus C_0$, the morphism $\sigma$ is an isomorphism. Therefore $\Delta$ agrees with $B_S$ away from $C_0$. Since both divisors are reduced, one has
+\[
+\Delta=B_S
+\qquad\text{or}\qquad
+\Delta=B_S+C_0.
+\]
+On the other hand,
+\[
+B_S\sim4C_0+(4e+4)f
+     =2\bigl(2C_0+(2e+2)f\bigr).
+\]
+Thus the class of $B_S$ is divisible by $2$ in
+\[
+\operatorname{Pic}(S)
+=
+\mathbb Z[C_0]\oplus\mathbb Z[f].
+\]
+The class
+\[
+B_S+C_0\sim5C_0+(4e+4)f
+\]
+is not divisible by $2$. Since the class of the branch divisor $\Delta$ must be divisible by $2$, it follows that
+\[
+\Delta=B_S
+\]
+and
+\[
+L\simeq\mathcal O_S\bigl(2C_0+(2e+2)f\bigr).
+\]
+In particular, $C_0$ is not a branch component.
+
+For a general choice of $B$, the divisor $B_S$ is a general member of the base-point-free linear system
+\[
+\left|4C_0+(4e+4)f\right|.
+\]
+Hence $B_S$ is smooth. Moreover,
+\[
+B_S\cdot C_0
+=
+\bigl(4C_0+(4e+4)f\bigr)\cdot C_0
+=
+4,
+\]
+and, for a general member, these four intersection points are distinct and transverse. A flat double cover of a smooth surface branched along a smooth divisor is smooth. Therefore $\widehat X$ is smooth.
+
+Since $C_0$ is not a branch component, its scheme-theoretic inverse image is reduced:
+\[
+E=\widehat\pi^*C_0.
+\]
+The induced morphism
+\[
+E\longrightarrow C_0\simeq\mathbb P^1
+\]
+is a double cover branched at the four points of $B_S\cap C_0$. The Riemann--Hurwitz formula gives
+\[
+2g(E)-2
+=
+2\bigl(2g(\mathbb P^1)-2\bigr)+4
+=
+0,
+\]
+so $E$ is a smooth elliptic curve. Furthermore,
+\[
+E^2
+=
+\bigl(\widehat\pi^*C_0\bigr)^2
+=
+2C_0^2
+=
+-2e.
+\]
+
+The morphism $\rho$ is an isomorphism away from $E$ because $\sigma$ is an isomorphism away from $C_0$. Thus $\rho$ contracts precisely $E$ to $q$ and is a resolution of $(X,q)$. Since $E$ is elliptic, this resolution is minimal.
+
+Since $K_X$ is $\mathbb Q$-Cartier and $E$ is the only $\rho$-exceptional prime divisor, one may write
+\[
+K_{\widehat X}
+=
+\rho^*K_X+aE
+\]
+for some $a\in\mathbb Q$. Since $E$ is contracted by $\rho$,
+\[
+\rho^*K_X\cdot E=0.
+\]
+Adjunction on the elliptic curve $E$ gives
+\[
+\bigl(K_{\widehat X}+E\bigr)\cdot E
+=
+2g(E)-2
+=
+0.
+\]
+It follows that
+\[
+K_{\widehat X}\cdot E=-E^2.
+\]
+Intersecting the discrepancy formula with $E$ therefore gives
+\[
+aE^2=-E^2,
+\]
+and hence
+\[
+a=-1.
+\]
+Thus
+\[
+K_{\widehat X}+E=\rho^*K_X.
+\]
+Since $(\widehat X,E)$ is a simple normal-crossing log-canonical pair, $(X,q)$ is log canonical. It is not klt because the discrepancy of $E$ is exactly $-1$.
+
+Finally,
+\[
+A:=\mathcal O_E(-E)
+\]
+has degree
+\[
+\deg A=-E^2=2e.
+\]
+Because $E=\widehat\pi^*C_0$, one also has
+\[
+A
+\simeq
+\gamma^*\mathcal O_{C_0}(-C_0)
+\simeq
+\gamma^*\mathcal O_{\mathbb P^1}(e).
+\]
+Since $\deg A=2e\geq3$, the line bundle $A$ is very ample and normally generated. Moreover,
+\[
+h^0(E,A)=\deg A=2e,
+\]
+so it embeds $E$ as an elliptic normal curve of degree $2e$ in $\mathbb P^{2e-1}$.
+
+The exceptional locus of the minimal resolution of $(X,q)$ consists of the single smooth elliptic curve $E$. Thus $(X,q)$ is a simple elliptic singularity of degree
+\[
+-E^2=2e.
+\]
+By the classification of simple elliptic singularities, its analytic type is determined by $E$ and the degree of its normal bundle. Equivalently, a neighborhood of $E$ in $\widehat X$ is analytically isomorphic to a neighborhood of the zero section in the total space of $A^{-1}$. Contracting the zero section gives
+\[
+\operatorname{Spec}
+\bigoplus_{m\geq0}H^0\!\left(E,A^{\otimes m}\right).
+\]
+This proves the final assertion.
+\end{proof}
 
 
 \begin{proposition}\label{prop:hom-conormal-trace-zero-cone}
@@ -2624,6 +2905,363 @@ $$
 and $\overline{\mathcal C_e}$ is an irreducible component of
 $\mathcal M_{\mathrm{red}}$.
 \end{proof}
+
+\begin{proposition}\label{prop:H2-tangent}
+Let $e>4$, and let $X\in\mathcal C_e$ be general. Set
+\[
+\mathcal T_X
+:=
+\mathcal Hom_X(\Omega_X^1,\mathcal O_X).
+\]
+Then there is an isomorphism
+\[
+H^2(X,\mathcal T_X)^\vee
+\simeq
+H^0\bigl(\mathbb P^1,\mathcal O_{\mathbb P^1}(e-2)\bigr).
+\]
+In particular,
+\[
+h^2(X,\mathcal T_X)=e-1.
+\]
+\end{proposition}
+
+\begin{proof}
+Let
+\[
+\begin{tikzcd}[column sep=large,row sep=large]
+    \widehat X
+    \arrow[r,"\widehat\pi"]
+    \arrow[d,"\rho"']
+    &
+    S=\mathbb F_e
+    \arrow[d,"\sigma"]
+    \\
+    X
+    \arrow[r,"\pi"']
+    &
+    Y=\mathbb P(1,1,e)
+\end{tikzcd}
+\]
+be the resolution constructed above. Let $C_0\subset S$ be the negative section, let
+$f$ be the fiber class, and put
+\[
+E:=\widehat\pi^{-1}(C_0).
+\]
+The double cover $\widehat\pi$ is determined by the line bundle
+\[
+\mathcal L
+:=
+\mathcal O_S\bigl(2C_0+(2e+2)f\bigr),
+\]
+and its branch divisor is a smooth divisor
+\[
+B_S\in\left|\mathcal L^{\otimes 2}\right|
+=
+\left|4C_0+(4e+4)f\right|
+\]
+meeting $C_0$ transversely.
+
+Since $X$ is a projective Gorenstein surface, Serre duality gives
+\[
+H^2(X,\mathcal T_X)^\vee
+\simeq
+\operatorname{Hom}_X(\mathcal T_X,\omega_X)
+\simeq
+H^0\bigl(X,\Omega_X^{[1]}\otimes\omega_X\bigr),
+\]
+where
+\[
+\Omega_X^{[1]}:=(\Omega_X^1)^{\vee\vee};
+\]
+see \cite[Chapter~III, Theorem~7.6]{Hartshorne}.
+
+The surface $X$ is log canonical, its non-klt locus is the point $q$, and
+\[
+\rho^{-1}(q)=E.
+\]
+By the extension theorem for differential forms on log-canonical spaces
+\cite[Theorem~1.5]{GKKP}, the sheaf
+\[
+\rho_*\Omega_{\widehat X}^1(\log E)
+\]
+is reflexive. Since it agrees with $\Omega_X^1$ over $X_{\mathrm{reg}}$, it follows that
+\[
+\rho_*\Omega_{\widehat X}^1(\log E)
+\simeq
+\Omega_X^{[1]}.
+\]
+The projection formula therefore yields
+\[
+H^2(X,\mathcal T_X)^\vee
+\simeq
+H^0\left(
+\widehat X,
+\Omega_{\widehat X}^1(\log E)\otimes\rho^*\omega_X
+\right).
+\]
+
+Using
+\[
+K_{\widehat X}=\rho^*K_X-E
+\]
+and the canonical bundle formula for the double cover, one obtains
+\[
+\rho^*K_X
+=
+K_{\widehat X}+E
+=
+\widehat\pi^*(K_S+\mathcal L+C_0)
+=
+\widehat\pi^*(C_0+ef).
+\]
+Set
+\[
+\mathcal M:=\mathcal O_S(C_0+ef).
+\]
+
+Pardini's eigensheaf decomposition for differentials
+\cite[Proposition~4.1(b)]{Pardini}, together with the logarithmic residue sequence
+\cite[(2.3)]{EV}, gives
+\[
+\widehat\pi_*\Omega_{\widehat X}^1(\log E)
+\simeq
+\Omega_S^1(\log C_0)
+\oplus
+\left(
+\Omega_S^1\bigl(\log(C_0+B_S)\bigr)
+\otimes\mathcal L^{-1}
+\right).
+\]
+Consequently,
+\begin{align*}
+&H^0\left(
+\widehat X,
+\Omega_{\widehat X}^1(\log E)\otimes\widehat\pi^*\mathcal M
+\right)
+\\
+&\qquad\simeq
+H^0\left(
+S,\Omega_S^1(\log C_0)\otimes\mathcal M
+\right)
+\\
+&\qquad\quad\oplus
+H^0\left(
+S,
+\Omega_S^1\bigl(\log(C_0+B_S)\bigr)
+\otimes\mathcal M\otimes\mathcal L^{-1}
+\right).
+\end{align*}
+
+Let
+\[
+p:S=\mathbb F_e\longrightarrow\mathbb P^1
+\]
+be the ruling. The logarithmic relative cotangent sequence is
+\[
+0
+\longrightarrow
+\mathcal O_S(-2f)
+\longrightarrow
+\Omega_S^1(\log C_0)
+\longrightarrow
+\mathcal O_S(-C_0-ef)
+\longrightarrow
+0.
+\]
+After tensoring by $\mathcal M$, this becomes
+\[
+0
+\longrightarrow
+\mathcal A
+\longrightarrow
+\Omega_S^1(\log C_0)\otimes\mathcal M
+\longrightarrow
+\mathcal O_S
+\longrightarrow
+0,
+\qquad
+\mathcal A:=\mathcal O_S\bigl(C_0+(e-2)f\bigr).
+\]
+One has
+\[
+p_*\mathcal A
+\simeq
+\mathcal O_{\mathbb P^1}(e-2)
+\oplus
+\mathcal O_{\mathbb P^1}(-2),
+\qquad
+R^1p_*\mathcal A=0.
+\]
+Hence
+\[
+h^0(S,\mathcal A)=e-1,
+\qquad
+h^1(S,\mathcal A)=1.
+\]
+
+The preceding extension is non-split. Indeed, on the standard affine covering of
+$\mathbb P^1$, local fiber coordinates $z_0,z_1$ vanishing along $C_0$ may be chosen so
+that
+\[
+z_1=t^ez_0.
+\]
+Therefore
+\[
+\frac{dz_1}{z_1}
+=
+\frac{dz_0}{z_0}
++
+e\frac{dt}{t}.
+\]
+The resulting Čech cocycle is $e$ times the generator of
+\[
+H^1\bigl(\mathbb P^1,\mathcal O_{\mathbb P^1}(-2)\bigr),
+\]
+and is nonzero. Thus the connecting homomorphism
+\[
+H^0(S,\mathcal O_S)
+\longrightarrow
+H^1(S,\mathcal A)
+\]
+is an isomorphism. It follows that
+\[
+H^0\left(
+S,\Omega_S^1(\log C_0)\otimes\mathcal M
+\right)
+\simeq
+H^0(S,\mathcal A)
+\simeq
+H^0\bigl(\mathbb P^1,\mathcal O_{\mathbb P^1}(e-2)\bigr).
+\]
+
+It remains to show that the anti-invariant summand vanishes. Put
+\[
+\mathcal N
+:=
+\mathcal M\otimes\mathcal L^{-1}
+=
+\mathcal O_S\bigl(-C_0-(e+2)f\bigr).
+\]
+The residue sequence along $B_S$ gives
+\[
+0
+\longrightarrow
+\Omega_S^1(\log C_0)\otimes\mathcal N
+\longrightarrow
+\Omega_S^1\bigl(\log(C_0+B_S)\bigr)\otimes\mathcal N
+\longrightarrow
+\mathcal N|_{B_S}
+\longrightarrow
+0.
+\]
+Since
+\[
+\deg\mathcal N|_{B_S}
+=
+\mathcal N\cdot B_S
+=
+-4e-12<0,
+\]
+one has
+\[
+H^0(B_S,\mathcal N|_{B_S})=0.
+\]
+Moreover, tensoring the logarithmic relative cotangent sequence by $\mathcal N$
+gives
+\[
+0
+\longrightarrow
+\mathcal O_S\bigl(-C_0-(e+4)f\bigr)
+\longrightarrow
+\Omega_S^1(\log C_0)\otimes\mathcal N
+\longrightarrow
+\mathcal O_S\bigl(-2C_0-(2e+2)f\bigr)
+\longrightarrow
+0.
+\]
+Both outer line bundles have negative degree on every fiber of $p$, and hence have
+no global sections. Therefore
+\[
+H^0\left(
+S,
+\Omega_S^1\bigl(\log(C_0+B_S)\bigr)\otimes\mathcal N
+\right)
+=0.
+\]
+
+Combining the invariant and anti-invariant calculations gives
+\[
+H^2(X,\mathcal T_X)^\vee
+\simeq
+H^0\bigl(\mathbb P^1,\mathcal O_{\mathbb P^1}(e-2)\bigr),
+\]
+and hence
+\[
+h^2(X,\mathcal T_X)=e-1.
+\]
+\end{proof}
+
+
+\begin{proposition}\label{prop:obstructed-deformations}
+Let $e>4$, and let $X\in\mathcal C_e$ be general. Then the deformation functor $\operatorname{Def}_X$ is obstructed. More precisely, the tangent space to $\operatorname{Def}_X$ contains a subspace of dimension at least $e+1$ every nonzero element of which is obstructed.
+\end{proposition}
+
+\begin{proof}
+Let $q\in X$ be the unique singular point, and set
+\[
+\mathbb T_X^1
+:=
+\operatorname{Ext}_X^1
+\bigl(\mathbb L_X,\mathcal O_X\bigr),
+\qquad
+\Theta_X
+:=
+\mathcal Hom_X
+\bigl(\Omega_X,\mathcal O_X\bigr).
+\]
+Since $q$ is the only singular point of $X$, the local-to-global spectral sequence gives an exact sequence
+\[
+0
+\longrightarrow
+H^1(X,\Theta_X)
+\longrightarrow
+\mathbb T_X^1
+\xrightarrow{\operatorname{loc}}
+T_q^1
+\xrightarrow{\delta}
+H^2(X,\Theta_X).
+\]
+By the preceding proposition,
+\[
+h^2(X,\Theta_X)=e-1.
+\]
+
+The germ $(X,q)$ is the cone over an elliptic normal curve of degree $2e$. By \cite[Example~6.10]{Pinkham},
+\[
+T_q^1
+=
+T_q^1(0)\oplus T_q^1(-1),
+\qquad
+\dim T_q^1(0)=1,
+\qquad
+\dim T_q^1(-1)=2e.
+\]
+Consequently,
+\[
+\dim
+\ker\!\left(
+\delta|_{T_q^1(-1)}
+\right)
+\geq
+2e-(e-1)
+=
+e+1.
+\]
+By exactness, every element of this kernel is the localization of a first-order deformation of $X$.
+
+Since $2e\geq10$, Pinkham proves that every nonzero deformation belonging to $T_q^1(-1)$ is obstructed \cite[(9.2)(a)]{Pinkham}. Hence any global first-order deformation whose localization is a nonzero element of the above kernel is obstructed: otherwise, compatible liftings of the global deformation to all orders would restrict to compatible liftings of its localization at $q$, contradicting Pinkham's result. Choosing a vector-space lifting of the kernel to $\mathbb T_X^1$ gives the asserted subspace of dimension at least $e+1$.
+\end{proof}
+
 
 \bibliographystyle{plain}
 \begin{thebibliography}{KMM92}
