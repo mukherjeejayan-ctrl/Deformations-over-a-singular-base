@@ -244,21 +244,10 @@ Let \(k\) be a field of characteristic \(0\). Let \(A\) be a reduced noetherian
 \[
     0\longrightarrow M\longrightarrow B\xrightarrow{q} A\longrightarrow 0
 \]
-be a square-zero extension of \(k\)-algebras; that is,
-\[
-    M=\ker(q)
-    \qquad\text{and}\qquad
-    M^2=0.
-\]
+be a square-zero extension of \(k\)-algebras; that is, \(M=\ker(q)\) and \(M^2=0\).
 Assume that \(M\) is torsion-free as an \(A\)-module, where torsion-free means that
 multiplication by every nonzerodivisor of \(A\) is injective on \(M\). Then the natural
-conormal map
-\[
-    M=M/M^2
-    \longrightarrow
-    \Omega_{B/k}\otimes_B A
-\]
-is injective.
+conormal map \(M=M/M^2\to \Omega_{B/k}\otimes_B A\) is injective.
 
 Equivalently, we have an exact sequence the conormal sequence
 \[
@@ -273,58 +262,28 @@ is left-exact.
 \end{proposition}
 
 \begin{proof}
-Let
-\[
-    \delta:M\longrightarrow \Omega_{B/k}\otimes_B A
-\]
-be the conormal map. Explicitly, it is given by
-\[
-    m\longmapsto dm\otimes 1.
-\]
-Let
-\[
-    N:=\ker(\delta).
-\]
-We want to prove that \(N=0\).
+Let \(\delta:M\to \Omega_{B/k}\otimes_B A\) be the conormal map. Explicitly, it is given by
+\(m\mapsto dm\otimes 1\). Let \(N:=\ker(\delta)\). We want to prove that \(N=0\).
 
 We first reduce to the generic points of \(\operatorname{Spec}A\). Since \(A\) is noetherian,
 it has only finitely many minimal primes; see \cite[Algebra, Lemma 10.31.6]{stacks-project}.
 Let \(\mathfrak p\subset A\) be a minimal prime. Since \(A\) is reduced, the localization
-\[
-    A_{\mathfrak p}
-\]
-is a field; see \cite[Algebra, Lemma 10.25.1]{stacks-project}. We denote this field by
-\[
-    K:=A_{\mathfrak p}.
-\]
+\(A_{\mathfrak p}\) is a field; see \cite[Algebra, Lemma 10.25.1]{stacks-project}. We denote
+this field by \(K:=A_{\mathfrak p}\).
 
 Localizing the given square-zero extension at \(\mathfrak p\), we obtain an exact sequence
-\[
-    0\longrightarrow M_{\mathfrak p}
-    \longrightarrow B_{\mathfrak p}
-    \longrightarrow K
-    \longrightarrow 0.
-\]
+\(0\to M_{\mathfrak p}\to B_{\mathfrak p}\to K\to 0\).
 The ideal \(M_{\mathfrak p}\) is still square-zero.
 
 Because \(\operatorname{char}k=0\), every field extension of \(k\) is formally smooth over
 \(k\); see \cite[Algebra, Lemma 10.158.8]{stacks-project}. Hence \(K/k\) is formally
 smooth. Applying the infinitesimal lifting property for formal smoothness to the square-zero
-surjection
-\[
-    B_{\mathfrak p}\twoheadrightarrow K
-\]
-and to the identity map \(K\to K\), we obtain a \(k\)-algebra section
-\[
-    K\longrightarrow B_{\mathfrak p}.
-\]
+surjection \(B_{\mathfrak p}\twoheadrightarrow K\) and to the identity map \(K\to K\), we
+obtain a \(k\)-algebra section \(K\to B_{\mathfrak p}\).
 
 Now apply the split conormal exact sequence for Kähler differentials to the surjection
-\[
-    B_{\mathfrak p}\twoheadrightarrow K
-\]
-with kernel \(M_{\mathfrak p}\). The split conormal sequence says that, since this surjection
-has a \(k\)-algebra section, the sequence
+\(B_{\mathfrak p}\twoheadrightarrow K\) with kernel \(M_{\mathfrak p}\). The split conormal
+sequence says that, since this surjection has a \(k\)-algebra section, the sequence
 \[
     0
     \longrightarrow
@@ -335,99 +294,40 @@ has a \(k\)-algebra section, the sequence
     \Omega_{K/k}
     \longrightarrow 0
 \]
-is exact; see \cite[Algebra, Lemma 10.131.10]{stacks-project}. Since
-\[
-    M_{\mathfrak p}^{2}=0,
-\]
-we have
-\[
-    M_{\mathfrak p}/M_{\mathfrak p}^{2}=M_{\mathfrak p}.
-\]
-Therefore the localized conormal map
-\[
-    M_{\mathfrak p}
-    \longrightarrow
-    \Omega_{B_{\mathfrak p}/k}\otimes_{B_{\mathfrak p}} K
-\]
+is exact; see \cite[Algebra, Lemma 10.131.10]{stacks-project}. Since \(M_{\mathfrak p}^{2}=0\),
+we have \(M_{\mathfrak p}/M_{\mathfrak p}^{2}=M_{\mathfrak p}\). Therefore the localized
+conormal map \(M_{\mathfrak p}\to \Omega_{B_{\mathfrak p}/k}\otimes_{B_{\mathfrak p}} K\)
 is injective.
 
 Formation of Kähler differentials commutes with localization; see
 \cite[Algebra, Lemma 10.131.8]{stacks-project}. Hence
-\[
-    \Omega_{B_{\mathfrak p}/k}
-    \simeq
-    \Omega_{B/k}\otimes_B B_{\mathfrak p}.
-\]
+\(\Omega_{B_{\mathfrak p}/k}\simeq\Omega_{B/k}\otimes_B B_{\mathfrak p}\).
 After tensoring with \(K=A_{\mathfrak p}\), this identifies
-\[
-    \Omega_{B_{\mathfrak p}/k}\otimes_{B_{\mathfrak p}} K
-\]
-with
-\[
-    \left(\Omega_{B/k}\otimes_B A\right)_{\mathfrak p}.
-\]
-Thus the localized map
-\[
-    \delta_{\mathfrak p}:M_{\mathfrak p}
-    \longrightarrow
-    \left(\Omega_{B/k}\otimes_B A\right)_{\mathfrak p}
-\]
-is injective. Equivalently,
-\[
-    N_{\mathfrak p}=0
-\]
-for every minimal prime \(\mathfrak p\subset A\).
+\(\Omega_{B_{\mathfrak p}/k}\otimes_{B_{\mathfrak p}} K\) with
+\(\left(\Omega_{B/k}\otimes_B A\right)_{\mathfrak p}\). Thus the localized map
+\(\delta_{\mathfrak p}:M_{\mathfrak p}\to\left(\Omega_{B/k}\otimes_B A\right)_{\mathfrak p}\)
+is injective. Equivalently, \(N_{\mathfrak p}=0\) for every minimal prime
+\(\mathfrak p\subset A\).
 
 It remains to pass from generic injectivity to global injectivity. Let \(n\in N\). Since
 \(N_{\mathfrak p}=0\) for every minimal prime \(\mathfrak p\), for each minimal prime
-\(\mathfrak p\) there exists an element
-\[
-    s_{\mathfrak p}\in A\setminus \mathfrak p
-\]
-such that
-\[
-    s_{\mathfrak p}n=0.
-\]
-Equivalently, the annihilator ideal
-\[
-    \operatorname{Ann}_A(n)
-\]
-is not contained in any minimal prime of \(A\).
+\(\mathfrak p\) there exists an element \(s_{\mathfrak p}\in A\setminus \mathfrak p\)
+such that \(s_{\mathfrak p}n=0\). Equivalently, the annihilator ideal
+\(\operatorname{Ann}_A(n)\) is not contained in any minimal prime of \(A\).
 
 Since \(A\) has only finitely many minimal primes, prime avoidance
-\cite[Algebra, Lemma 10.15.2]{stacks-project} implies that
-\[
-    \operatorname{Ann}_A(n)
-\]
+\cite[Algebra, Lemma 10.15.2]{stacks-project} implies that \(\operatorname{Ann}_A(n)\)
 is not contained in the union of the minimal primes. Hence there exists an element
-\[
-    s\in \operatorname{Ann}_A(n)
-\]
-which is contained in no minimal prime of \(A\).
+\(s\in \operatorname{Ann}_A(n)\) which is contained in no minimal prime of \(A\).
 
 Because \(A\) is reduced, the set of zerodivisors of \(A\) is the union of its minimal
 primes; see \cite[Algebra, Lemma 10.25.2]{stacks-project}. Therefore \(s\) is a
 nonzerodivisor of \(A\). Since \(M\) is torsion-free and \(N\subset M\), multiplication by
-\(s\) is injective on \(N\). But
-\[
-    sn=0
-\]
-by construction. Hence
-\[
-    n=0.
-\]
-Therefore every element of \(N\) is zero, so
-\[
-    N=0.
-\]
+\(s\) is injective on \(N\). But \(sn=0\) by construction. Hence \(n=0\). Therefore every
+element of \(N\) is zero, so \(N=0\).
 
-Thus the conormal map
-\[
-    M\longrightarrow \Omega_{B/k}\otimes_B A
-\]
-is injective.
+Thus the conormal map \(M\to \Omega_{B/k}\otimes_B A\) is injective.
 \end{proof}
-
 
 \begin{proposition}[Classification of square-zero thickenings with torsion-free conormal sheaf]
 \label{prop:classification-square-zero-thickenings}
