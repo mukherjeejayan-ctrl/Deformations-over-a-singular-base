@@ -333,127 +333,43 @@ Thus the conormal map \(M\to \Omega_{B/k}\otimes_B A\) is injective.
 \label{prop:classification-square-zero-thickenings}
 Let \(k\) be a field of characteristic \(0\). Let \(Y\) be a reduced connected
 noetherian \(k\)-scheme, and let \(\mathcal E\) be a coherent torsion-free
-\(\mathcal O_Y\)-module. Consider pairs
-\[
-    (j:Y\hookrightarrow \widetilde Y,\alpha),
-\]
-where \(j\) is a closed immersion such that
-\[
-    \widetilde Y_{\mathrm{red}}=Y,
-    \qquad
-    \mathcal I_{Y/\widetilde Y}^{2}=0,
-\]
-and where
-\[
-    \alpha:\mathcal I_{Y/\widetilde Y}\xrightarrow{\sim}\mathcal E
-\]
-is an isomorphism of \(\mathcal O_Y\)-modules. Then the isomorphism classes of such pairs, where isomorphisms are required to be
-over \(Y\) and compatible with the chosen identification with \(\mathcal E\), are
-classified by
-\[
-    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E).
-\]
+\(\mathcal O_Y\)-module. Consider pairs \((j:Y\hookrightarrow \widetilde Y,\alpha)\),
+where \(j\) is a closed immersion such that \(\widetilde Y_{\mathrm{red}}=Y\),
+\(\mathcal I_{Y/\widetilde Y}^{2}=0\), and where
+\(\alpha:\mathcal I_{Y/\widetilde Y}\xrightarrow{\sim}\mathcal E\)
+is an isomorphism of \(\mathcal O_Y\)-modules. Then the isomorphism classes of such pairs,
+where isomorphisms are required to be over \(Y\) and compatible with the chosen
+identification with \(\mathcal E\), are classified by
+\(\operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E)\).
 
-If the identification
-\[
-    \mathcal I_{Y/\widetilde Y}\simeq\mathcal E
-\]
-is not fixed, then the set of isomorphism classes is the quotient of
-\[
-    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E)
-\]
-by the natural action of
-\[
-    \operatorname{Aut}_{\mathcal O_Y}(\mathcal E).
-\]
+If the identification \(\mathcal I_{Y/\widetilde Y}\simeq\mathcal E\) is not fixed, then the
+set of isomorphism classes is the quotient of
+\(\operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E)\) by the natural action of
+\(\operatorname{Aut}_{\mathcal O_Y}(\mathcal E)\).
 \end{proposition}
 
 \begin{proof}
-Let
-\[
-    (j:Y\hookrightarrow \widetilde Y,\alpha)
-\]
-be such a square-zero thickening, and set
-\[
-    \mathcal K:=\mathcal I_{Y/\widetilde Y}.
-\]
-Thus
-\[
-    \mathcal K^{2}=0
-\]
-and
-\[
-    \alpha:\mathcal K\xrightarrow{\sim}\mathcal E.
-\]
-
-The closed immersion
-\[
-    j:Y\hookrightarrow \widetilde Y
-\]
-has the usual conormal sequence
-\[
-    \mathcal K/\mathcal K^{2}
-    \longrightarrow
-    \Omega_{\widetilde Y/k}\otimes_{\mathcal O_{\widetilde Y}}\mathcal O_Y
-    \longrightarrow
-    \Omega_{Y/k}
-    \longrightarrow 0.
-\]
+Let \((j:Y\hookrightarrow \widetilde Y,\alpha)\) be such a square-zero thickening, and set
+\(\mathcal K:=\mathcal I_{Y/\widetilde Y}\). Thus \(\mathcal K^{2}=0\) and
+\(\alpha:\mathcal K\xrightarrow{\sim}\mathcal E\). The closed immersion \(j:Y\hookrightarrow \widetilde Y\) has the usual conormal sequence
+\(\mathcal K/\mathcal K^{2}\to
+\Omega_{\widetilde Y/k}\otimes_{\mathcal O_{\widetilde Y}}\mathcal O_Y\to
+\Omega_{Y/k}\to 0\).
 Since \(\mathcal K^2=0\), this becomes
-\[
-    \mathcal K
-    \longrightarrow
-    \Omega_{\widetilde Y/k}|_Y
-    \longrightarrow
-    \Omega_{Y/k}
-    \longrightarrow 0.
-\]
-
+\(\mathcal K\to\Omega_{\widetilde Y/k}|_Y\to\Omega_{Y/k}\to 0\).
 We claim that the first map is injective. This is local on \(Y\). On an affine open
-subset \(U=\operatorname{Spec}A\subset Y\), write
-\[
-    \widetilde U=\operatorname{Spec}B
-\]
+subset \(U=\operatorname{Spec}A\subset Y\), write \(\widetilde U=\operatorname{Spec}B\)
 for the corresponding affine open subset of \(\widetilde Y\). Then we have a
-square-zero extension
-\[
-    0\longrightarrow M\longrightarrow B\longrightarrow A\longrightarrow 0,
-\]
-where
-\[
-    M=\Gamma(U,\mathcal K).
-\]
+square-zero extension \(0\to M\to B\to A\to 0\), where \(M=\Gamma(U,\mathcal K)\).
 Since \(\mathcal K\simeq\mathcal E\), and since \(\mathcal E\) is torsion-free, the
 \(A\)-module \(M\) is torsion-free. Also \(A\) is reduced because \(Y\) is reduced.
 Therefore, by \Cref{prop:injectivity-conormal-map}, the conormal map
-\[
-    M
-    \longrightarrow
-    \Omega_{B/k}\otimes_B A
-\]
-is injective. Hence the sheaf map
-\[
-    \mathcal K
-    \longrightarrow
-    \Omega_{\widetilde Y/k}|_Y
-\]
-is injective.
+\(M\to\Omega_{B/k}\otimes_B A\) is injective. Hence the sheaf map
+\(\mathcal K\to\Omega_{\widetilde Y/k}|_Y\) is injective.
 
 Thus we obtain a short exact sequence
-\[
-    0
-    \longrightarrow
-    \mathcal K
-    \longrightarrow
-    \Omega_{\widetilde Y/k}|_Y
-    \longrightarrow
-    \Omega_{Y/k}
-    \longrightarrow 0.
-\]
-Using the chosen isomorphism
-\[
-    \alpha:\mathcal K\xrightarrow{\sim}\mathcal E,
-\]
+\(0\to\mathcal K\to\Omega_{\widetilde Y/k}|_Y\to\Omega_{Y/k}\to 0\).
+Using the chosen isomorphism \(\alpha:\mathcal K\xrightarrow{\sim}\mathcal E\),
 this gives a short exact sequence
 \[
     0
@@ -466,13 +382,7 @@ this gives a short exact sequence
     \longrightarrow 0.
 \]
 Therefore the thickening determines an extension class
-\[
-    [e_{\widetilde Y}]
-    \in
-    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E).
-\]
-
-Conversely, let
+\([e_{\widetilde Y}]\in\operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E)\). Conversely, let
 \[
     0
     \longrightarrow
@@ -484,18 +394,8 @@ Conversely, let
     \longrightarrow 0
 \]
 be an extension of \(\Omega_{Y/k}\) by \(\mathcal E\). We construct from this a
-square-zero thickening of \(Y\) with conormal sheaf \(\mathcal E\).
-
-Let
-\[
-    d:\mathcal O_Y\longrightarrow \Omega_{Y/k}
-\]
-be the universal derivation. Define
-\[
-    \mathcal O_{\widetilde Y}
-    :=
-    \mathcal O_Y\times_{\Omega_{Y/k}}\mathcal G.
-\]
+square-zero thickening of \(Y\) with conormal sheaf \(\mathcal E\). Let \(d:\mathcal O_Y\to\Omega_{Y/k}\) be the universal derivation. Define
+\(\mathcal O_{\widetilde Y}:=\mathcal O_Y\times_{\Omega_{Y/k}}\mathcal G\).
 Thus, for an open set \(U\subset Y\),
 \[
     \mathcal O_{\widetilde Y}(U)
@@ -506,20 +406,9 @@ Thus, for an open set \(U\subset Y\),
         df=p(g)
     \right\}.
 \]
-
 We define multiplication on \(\mathcal O_{\widetilde Y}\) by
-\[
-    (f,g)\cdot(f',g')
-    :=
-    (ff',fg'+f'g).
-\]
-This multiplication is well-defined. Indeed, since
-\[
-    p(g)=df
-    \qquad\text{and}\qquad
-    p(g')=df',
-\]
-we have
+\((f,g)\cdot(f',g'):=(ff',fg'+f'g)\).
+This multiplication is well-defined. Indeed, since \(p(g)=df\) and \(p(g')=df'\), we have
 \[
     p(fg'+f'g)
     =
@@ -529,139 +418,42 @@ we have
     =
     d(ff').
 \]
-Thus
-\[
-    (ff',fg'+f'g)
-\]
-again lies in the fiber product
-\[
-    \mathcal O_Y\times_{\Omega_{Y/k}}\mathcal G.
-\]
-With this multiplication, \(\mathcal O_{\widetilde Y}\) is a sheaf of rings whose unit is
-\[
-    (1,0).
-\]
-
+Thus \((ff',fg'+f'g)\) again lies in the fiber product
+\(\mathcal O_Y\times_{\Omega_{Y/k}}\mathcal G\). With this multiplication,
+\(\mathcal O_{\widetilde Y}\) is a sheaf of rings whose unit is \((1,0)\).
 The projection onto the first factor gives a surjection
-\[
-    \mathcal O_{\widetilde Y}
-    \longrightarrow
-    \mathcal O_Y,
-    \qquad
-    (f,g)\longmapsto f.
-\]
-Its kernel consists of pairs
-\[
-    (0,g)
-\]
-with
-\[
-    p(g)=0.
-\]
-Since
-\[
-    \ker(p)=\mathcal E,
-\]
-we get
-\[
-    \ker(\mathcal O_{\widetilde Y}\to\mathcal O_Y)\simeq\mathcal E.
-\]
+\(\mathcal O_{\widetilde Y}\to\mathcal O_Y\), \((f,g)\mapsto f\). Its kernel consists of pairs \((0,g)\) with \(p(g)=0\). Since \(\ker(p)=\mathcal E\), we get
+\(\ker(\mathcal O_{\widetilde Y}\to\mathcal O_Y)\simeq\mathcal E\).
 Moreover, if \(e,e'\) are local sections of \(\mathcal E\), then
-\[
-    (0,e)\cdot(0,e')=(0,0).
-\]
-Hence this kernel is an ideal of square zero.
-
-Therefore the ringed space defined by \(\mathcal O_{\widetilde Y}\) is a square-zero
-thickening
-\[
-    Y\hookrightarrow \widetilde Y
-\]
-whose ideal sheaf is identified with \(\mathcal E\).
-
-These two constructions give the desired classification of marked square-zero thickenings
-by
-\[
-    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E).
-\]
-
-Finally, suppose the identification of the square-zero ideal with \(\mathcal E\) is not fixed.
-Changing an identification
-\[
-    \mathcal I_{Y/\widetilde Y}\xrightarrow{\sim}\mathcal E
-\]
-by an automorphism
-\[
-    \sigma\in \operatorname{Aut}_{\mathcal O_Y}(\mathcal E)
-\]
-pushes out the corresponding extension class by \(\sigma\). Thus
-\[
-    \operatorname{Aut}_{\mathcal O_Y}(\mathcal E)
-\]
-acts naturally on
-\[
-    \operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E),
-\]
-and the unmarked isomorphism classes are obtained by taking the quotient by this action.
+\((0,e)\cdot(0,e')=(0,0)\). Hence this kernel is an ideal of square zero. Therefore the ringed space defined by \(\mathcal O_{\widetilde Y}\) is a square-zero
+thickening \(Y\hookrightarrow \widetilde Y\) whose ideal sheaf is identified with
+\(\mathcal E\). These two constructions give the desired classification of marked square-zero thickenings by \(\operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E)\). Finally, suppose the identification of the square-zero ideal with \(\mathcal E\) is not fixed.
+Changing an identification \(\mathcal I_{Y/\widetilde Y}\xrightarrow{\sim}\mathcal E\) by an automorphism \(\sigma\in \operatorname{Aut}_{\mathcal O_Y}(\mathcal E)\) pushes out the corresponding extension class by \(\sigma\). Thus
+\(\operatorname{Aut}_{\mathcal O_Y}(\mathcal E)\) acts naturally on
+\(\operatorname{Ext}^{1}_{Y}(\Omega_{Y/k},\mathcal E)\), and the unmarked isomorphism classes are obtained by taking the quotient by this action.
 \end{proof}
-
 
 
 \begin{proposition}[Morphisms from square-zero thickenings to an ambient scheme]
 \label{prop:square-zero-thickenings-and-morphisms}
-Let
-\[
-    i:Y\hookrightarrow Z
-\]
-be a closed immersion of schemes, and let
-\[
-    I=I_{Y/Z}\subset \mathcal O_Z
-\]
-be its ideal sheaf. Let \(\mathcal E\) be an \(\mathcal O_Y\)-module. Consider triples
-\[
-    (\widetilde Y,j,\alpha),
-\]
-where
-\[
-    j:Y\hookrightarrow \widetilde Y
-\]
-is a closed immersion defined by a square-zero ideal
-\[
-    \mathcal K:=\mathcal I_{Y/\widetilde Y},
-    \qquad
-    \mathcal K^2=0,
-\]
-and
-\[
-    \alpha:\mathcal K\xrightarrow{\sim}\mathcal E
-\]
-is an isomorphism of \(\mathcal O_Y\)-modules.
+Let \(i:Y\hookrightarrow Z\) be a closed immersion of schemes, and let
+\(I=I_{Y/Z}\subset \mathcal O_Z\) be its ideal sheaf. Let \(\mathcal E\) be an
+\(\mathcal O_Y\)-module. Consider triples \((\widetilde Y,j,\alpha)\), where
+\(j:Y\hookrightarrow \widetilde Y\) is a closed immersion defined by a square-zero ideal
+\(\mathcal K:=\mathcal I_{Y/\widetilde Y}\), \(\mathcal K^2=0\), and
+\(\alpha:\mathcal K\xrightarrow{\sim}\mathcal E\) is an isomorphism of
+\(\mathcal O_Y\)-modules.
 
 Then the following hold.
 
 \begin{enumerate}
-    \item Isomorphism classes of pairs
-    \[
-        \left((\widetilde Y,j,\alpha),\widetilde i\right),
-    \]
-    where
-    \[
-        \widetilde i:\widetilde Y\to Z
-    \]
-    is a morphism satisfying
-    \[
-        \widetilde i\circ j=i,
-    \]
-    are naturally in bijection with homomorphisms
-    \[
-        \tau:I/I^2\longrightarrow \mathcal E.
-    \]
+    \item Isomorphism classes of pairs \(\left((\widetilde Y,j,\alpha),\widetilde i\right)\),
+    where \(\widetilde i:\widetilde Y\to Z\) is a morphism satisfying
+    \(\widetilde i\circ j=i\), are naturally in bijection with homomorphisms
+    \(\tau:I/I^2\to \mathcal E\).
 
     \item Under this correspondence, the scheme-theoretic image
-    \[
-        W:=\operatorname{Im}(\widetilde i)\subset Z
-    \]
-    has ideal sheaf
+    \(W:=\operatorname{Im}(\widetilde i)\subset Z\) has ideal sheaf
     \[
         I_{W/Z}
         =
@@ -673,157 +465,43 @@ Then the following hold.
             \mathcal E
         \right).
     \]
-    Consequently,
-    \[
-        I^2\subset I_{W/Z}\subset I,
-    \]
-    and the ideal of \(Y\) inside \(W\) is
-    \[
-        \mathcal I_{Y/W}
-        \simeq
-        \operatorname{im}(\tau).
-    \]
+    Consequently, \(I^2\subset I_{W/Z}\subset I\), and the ideal of \(Y\) inside \(W\) is
+    \(\mathcal I_{Y/W}\simeq\operatorname{im}(\tau)\).
 
-    \item The morphism
-    \[
-        \widetilde i:\widetilde Y\to Z
-    \]
-    is a closed immersion if and only if
-    \[
-        \tau:I/I^2\to \mathcal E
-    \]
-    is surjective.
+    \item The morphism \(\widetilde i:\widetilde Y\to Z\) is a closed immersion if and only
+    if \(\tau:I/I^2\to \mathcal E\) is surjective.
 
-    In particular, embedded square-zero thickenings
-    \[
-        \widetilde Y\subset Z
-    \]
-    with
-    \[
-        \mathcal I_{Y/\widetilde Y}\simeq\mathcal E
-    \]
-    correspond precisely to surjections
-    \[
-        I/I^2\twoheadrightarrow \mathcal E.
-    \]
+    In particular, embedded square-zero thickenings \(\widetilde Y\subset Z\) with
+    \(\mathcal I_{Y/\widetilde Y}\simeq\mathcal E\) correspond precisely to surjections
+    \(I/I^2\twoheadrightarrow \mathcal E\).
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
-We first explain how a morphism
-\[
-    \widetilde i:\widetilde Y\to Z
-\]
-extending \(i:Y\hookrightarrow Z\) produces a homomorphism
-\[
-    \tau:I/I^2\to \mathcal E.
-\]
-
-Let
-\[
-    \mathcal K=\mathcal I_{Y/\widetilde Y}.
-\]
-Since \(\widetilde i\circ j=i\), the morphism on structure sheaves
-\[
-    \widetilde i^\#:\mathcal O_Z\longrightarrow \widetilde i_*\mathcal O_{\widetilde Y}
-\]
-reduces modulo \(\mathcal K\) to the map
-\[
-    i^\#:\mathcal O_Z\longrightarrow i_*\mathcal O_Y.
-\]
-Therefore, if \(a\) is a local section of \(I\), then \(i^\#(a)=0\), and hence
-\[
-    \widetilde i^\#(a)\in \mathcal K.
-\]
-Using the fixed isomorphism
-\[
-    \alpha:\mathcal K\xrightarrow{\sim}\mathcal E,
-\]
-we define
-\[
-    \lambda_{\widetilde i}(a)
-    :=
-    \alpha\bigl(\widetilde i^\#(a)\bigr)
-    \in \mathcal E.
-\]
-
+We first explain how a morphism \(\widetilde i:\widetilde Y\to Z\) extending
+\(i:Y\hookrightarrow Z\) produces a homomorphism \(\tau:I/I^2\to \mathcal E\).
+Let \(\mathcal K=\mathcal I_{Y/\widetilde Y}\). Since \(\widetilde i\circ j=i\), the
+morphism on structure sheaves \(\widetilde i^\#:\mathcal O_Z\to \widetilde i_*\mathcal O_{\widetilde Y}\) reduces modulo \(\mathcal K\) to the map \(i^\#:\mathcal O_Z\to i_*\mathcal O_Y\). Therefore, if \(a\) is a local section of \(I\), then \(i^\#(a)=0\), and hence \(\widetilde i^\#(a)\in \mathcal K\). Using the fixed isomorphism \(\alpha:\mathcal K\xrightarrow{\sim}\mathcal E\), we define
+\(\lambda_{\widetilde i}(a):=\alpha\bigl(\widetilde i^\#(a)\bigr)\in \mathcal E\).
 We claim that \(\lambda_{\widetilde i}\) kills \(I^2\). Indeed, if \(a,b\) are local
-sections of \(I\), then
-\[
-    \widetilde i^\#(a),\widetilde i^\#(b)\in \mathcal K.
-\]
-Since \(\mathcal K^2=0\), it follows that
-\[
-    \widetilde i^\#(ab)
-    =
-    \widetilde i^\#(a)\widetilde i^\#(b)
-    =
-    0.
-\]
-Thus
-\[
-    \lambda_{\widetilde i}(ab)=0.
-\]
-Therefore \(\lambda_{\widetilde i}\) descends to a homomorphism
-\[
-    \tau_{\widetilde i}:I/I^2\longrightarrow \mathcal E.
-\]
-
-This homomorphism is \(\mathcal O_Y\)-linear. To see this, let \(f\) be a local section
-of \(\mathcal O_Z\), and let \(a\) be a local section of \(I\). Then
-\[
-    \widetilde i^\#(fa)
-    =
-    \widetilde i^\#(f)\widetilde i^\#(a).
-\]
-The section \(\widetilde i^\#(a)\) lies in \(\mathcal K\). Since \(\mathcal K^2=0\), the
+sections of \(I\), then \(\widetilde i^\#(a),\widetilde i^\#(b)\in \mathcal K\).
+Since \(\mathcal K^2=0\), it follows that \(\widetilde i^\#(ab)=\widetilde i^\#(a)\widetilde i^\#(b)=0\). Thus \(\lambda_{\widetilde i}(ab)=0\). Therefore \(\lambda_{\widetilde i}\) descends to ahomomorphism \(\tau_{\widetilde i}:I/I^2\to \mathcal E\). This homomorphism is \(\mathcal O_Y\)-linear. To see this, let \(f\) be a local section of \(\mathcal O_Z\), and let \(a\) be a local section of \(I\). Then \(\widetilde i^\#(fa)=\widetilde i^\#(f)\widetilde i^\#(a)\). The section \(\widetilde i^\#(a)\) lies in \(\mathcal K\). Since \(\mathcal K^2=0\), the
 \(\mathcal O_{\widetilde Y}\)-module structure on \(\mathcal K\) factors through
-\[
-    \mathcal O_{\widetilde Y}/\mathcal K\simeq\mathcal O_Y.
-\]
-Thus
-\[
-    \widetilde i^\#(f)\widetilde i^\#(a)
-    =
-    \overline f\cdot \widetilde i^\#(a),
-\]
-where \(\overline f\) is the image of \(f\) in \(\mathcal O_Y\). Applying \(\alpha\), we get
-\[
-    \tau_{\widetilde i}(\overline{fa})
-    =
-    \overline f\cdot \tau_{\widetilde i}(\overline a).
-\]
-Hence
-\[
-    \tau_{\widetilde i}:I/I^2\to\mathcal E
-\]
-is \(\mathcal O_Y\)-linear.
+\(\mathcal O_{\widetilde Y}/\mathcal K\simeq\mathcal O_Y\). Thus
+\(\widetilde i^\#(f)\widetilde i^\#(a)=\overline f\cdot \widetilde i^\#(a)\),
+where \(\overline f\) is the image of \(f\) in \(\mathcal O_Y\). Applying \(\alpha\), we get \(\tau_{\widetilde i}(\overline{fa})=\overline f\cdot \tau_{\widetilde i}(\overline a)\). Hence \(\tau_{\widetilde i}:I/I^2\to\mathcal E\) is \(\mathcal O_Y\)-linear. 
 
 We now construct the inverse correspondence.
 
-Let
-\[
-    \tau:I/I^2\to\mathcal E
-\]
-be an \(\mathcal O_Y\)-module homomorphism. Let
-\[
-    Y^{(1)}_Z:=V(I^2)\subset Z
-\]
-be the first infinitesimal neighborhood of \(Y\) in \(Z\). Its structure sheaf fits into
-the square-zero extension
+Let \(\tau:I/I^2\to\mathcal E\) be an \(\mathcal O_Y\)-module homomorphism. Let
+\(Y^{(1)}_Z:=V(I^2)\subset Z\) be the first infinitesimal neighborhood of \(Y\) in \(Z\). Its structure sheaf fits into the square-zero extension
 \[
     0\longrightarrow I/I^2
     \longrightarrow \mathcal O_{Y^{(1)}_Z}
     \longrightarrow \mathcal O_Y
     \longrightarrow 0.
 \]
-We push out this square-zero extension along
-\[
-    \tau:I/I^2\to\mathcal E.
-\]
-
-Concretely, define a sheaf of rings \(\mathcal O_{\widetilde Y_\tau}\) on the underlying
-topological space of \(Y\) by
+We push out this square-zero extension along \(\tau:I/I^2\to\mathcal E\). Concretely, define a sheaf of rings \(\mathcal O_{\widetilde Y_\tau}\) on the underlying topological space of \(Y\) by
 \[
     \mathcal O_{\widetilde Y_\tau}
     :=
@@ -836,83 +514,16 @@ topological space of \(Y\) by
     \right\rangle.
 \]
 Here \(I/I^2\) is viewed as a square-zero ideal in \(\mathcal O_{Y^{(1)}_Z}\), and
-\(\mathcal E\) is placed as a square-zero ideal. The multiplication is the one induced
-from the standard square-zero multiplication:
-\[
-    (a,e)(a',e')
-    =
-    \bigl(
-        aa',
-        \overline a\, e'
-        +
-        \overline{a'}\, e
-    \bigr),
-\]
-where \(\overline a,\overline{a'}\) denote the images in \(\mathcal O_Y\).
-
-By construction, there is an exact sequence of sheaves of rings and modules
-\[
-    0\longrightarrow \mathcal E
-    \longrightarrow \mathcal O_{\widetilde Y_\tau}
-    \longrightarrow \mathcal O_Y
-    \longrightarrow 0,
-\]
+\(\mathcal E\) is placed as a square-zero ideal. The multiplication is the one induced from the standard square-zero multiplication:
+\((a,e)(a',e')=\bigl(aa',\overline a\, e'+\overline{a'}\, e\bigr)\),
+where \(\overline a,\overline{a'}\) denote the images in \(\mathcal O_Y\). By construction, there is an exact sequence of sheaves of rings and modules
+\(0\to \mathcal E\to \mathcal O_{\widetilde Y_\tau}\to \mathcal O_Y\to 0\),
 and \(\mathcal E\) is an ideal of square zero. Therefore
-\[
-    j_\tau:Y\hookrightarrow \widetilde Y_\tau
-\]
-is a square-zero thickening with conormal sheaf \(\mathcal E\).
-
-The natural quotient map
-\[
-    \mathcal O_Z
-    \longrightarrow
-    \mathcal O_Z/I^2
-    =
-    \mathcal O_{Y^{(1)}_Z}
-\]
-followed by
-\[
-    \mathcal O_{Y^{(1)}_Z}\to \mathcal O_{\widetilde Y_\tau}
-\]
-defines a morphism
-\[
-    \widetilde i_\tau:\widetilde Y_\tau\to Z.
-\]
-Modulo the square-zero ideal \(\mathcal E\), this morphism restricts to the original
-closed immersion
-\[
-    i:Y\hookrightarrow Z.
-\]
-Hence
-\[
-    \widetilde i_\tau\circ j_\tau=i.
-\]
-
-We now check that the two constructions are inverse to each other.
-
-Starting from a homomorphism \(\tau:I/I^2\to\mathcal E\), the construction above gives
-\[
-    \widetilde i_\tau:\widetilde Y_\tau\to Z.
-\]
-If \(a\) is a local section of \(I\), then its image in
-\(\mathcal O_{Y^{(1)}_Z}\) is the class \(\overline a\in I/I^2\). In the pushout
-\(\mathcal O_{\widetilde Y_\tau}\), this class becomes \(\tau(\overline a)\in\mathcal E\).
-Therefore the homomorphism associated to \(\widetilde i_\tau\) is exactly \(\tau\).
-
-Conversely, suppose we start with a pair
-\[
-    \left((\widetilde Y,j,\alpha),\widetilde i\right).
-\]
-The morphism
-\[
-    \widetilde i^\#:\mathcal O_Z\to\widetilde i_*\mathcal O_{\widetilde Y}
-\]
-kills \(I^2\). Hence it
-factors through
-\[
-    \mathcal O_{Y^{(1)}_Z}=\mathcal O_Z/I^2.
-\]
+\(j_\tau:Y\hookrightarrow \widetilde Y_\tau\) is a square-zero thickening with conormal sheaf \(\mathcal E\). The natural quotient map \(\mathcal O_Z\to \mathcal O_Z/I^2=\mathcal O_{Y^{(1)}_Z}\) followed by \(\mathcal O_{Y^{(1)}_Z}\to \mathcal O_{\widetilde Y_\tau}\) defines a morphism \(\widetilde i_\tau:\widetilde Y_\tau\to Z\). Modulo the square-zero ideal \(\mathcal E\), this morphism restricts to the original closed immersion \(i:Y\hookrightarrow Z\). Hence \(\widetilde i_\tau\circ j_\tau=i\). We now check that the two constructions are inverse to each other.
+Starting from a homomorphism \(\tau:I/I^2\to\mathcal E\), the construction above gives \(\widetilde i_\tau:\widetilde Y_\tau\to Z\). If \(a\) is a local section of \(I\), then its image in \(\mathcal O_{Y^{(1)}_Z}\) is the class \(\overline a\in I/I^2\). In the pushout \(\mathcal O_{\widetilde Y_\tau}\), this class becomes \(\tau(\overline a)\in\mathcal E\). Therefore the homomorphism associated to \(\widetilde i_\tau\) is exactly \(\tau\). Conversely, suppose we start with a pair
+\(\left((\widetilde Y,j,\alpha),\widetilde i\right)\). The morphism
+\(\widetilde i^\#:\mathcal O_Z\to\widetilde i_*\mathcal O_{\widetilde Y}\)
+kills \(I^2\). Hence it factors through \(\mathcal O_{Y^{(1)}_Z}=\mathcal O_Z/I^2\).
 We obtain a morphism of square-zero extensions
 \[
 \begin{tikzcd}
@@ -930,41 +541,12 @@ We obtain a morphism of square-zero extensions
 \end{tikzcd}
 \]
 By the universal property of the pushout, this induces a morphism
-\[
-    \mathcal O_{\widetilde Y_{\tau_{\widetilde i}}}
-    \longrightarrow
-    \mathcal O_{\widetilde Y}.
-\]
-This morphism is the identity on the quotient \(\mathcal O_Y\) and the identity on the
-square-zero ideal \(\mathcal E\). Hence it is an isomorphism of sheaves of rings. Therefore
-the original pair is recovered from \(\tau_{\widetilde i}\). This proves the bijection in
-part \((1)\).
-
-Next we compute the ideal of the scheme-theoretic image. Let
-\[
-    W=\operatorname{Im}(\widetilde i_\tau)\subset Z.
-\]
-By definition,
-\[
-    I_{W/Z}
-    =
-    \ker\left(
-        \mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}
-    \right).
-\]
-If a local section \(f\in\mathcal O_Z\) maps to zero in \(\mathcal O_{\widetilde Y_\tau}\),
-then its image in \(\mathcal O_Y\) is zero, so \(f\in I\). For \(a\in I\), its image in
-\(\mathcal O_{\widetilde Y_\tau}\) is precisely
-\[
-    \tau(\overline a)\in\mathcal E,
-\]
-where \(\overline a\) denotes the class of \(a\) in \(I/I^2\). Therefore
-\[
-    a\in I_{W/Z}
-    \quad\Longleftrightarrow\quad
-    \tau(\overline a)=0.
-\]
-Thus
+\(\mathcal O_{\widetilde Y_{\tau_{\widetilde i}}}\to\mathcal O_{\widetilde Y}\).
+This morphism is the identity on the quotient \(\mathcal O_Y\) and the identity on the square-zero ideal \(\mathcal E\). Hence it is an isomorphism of sheaves of rings. Therefore the original pair is recovered from \(\tau_{\widetilde i}\). This proves the bijection in
+part \((1)\). Next we compute the ideal of the scheme-theoretic image. Let
+\(W=\operatorname{Im}(\widetilde i_\tau)\subset Z\). By definition,
+\(I_{W/Z}=\ker\left(\mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}\right)\).
+If a local section \(f\in\mathcal O_Z\) maps to zero in \(\mathcal O_{\widetilde Y_\tau}\), then its image in \(\mathcal O_Y\) is zero, so \(f\in I\). For \(a\in I\), its image in \(\mathcal O_{\widetilde Y_\tau}\) is precisely \(\tau(\overline a)\in\mathcal E\), where \(\overline a\) denotes the class of \(a\) in \(I/I^2\). Therefore \(a\in I_{W/Z}\) if and only if \(\tau(\overline a)=0\). Thus
 \[
     I_{W/Z}
     =
@@ -976,60 +558,15 @@ Thus
         \mathcal E
     \right).
 \]
-
 Since this ideal contains \(I^2\) and is contained in \(I\), we have
-\[
-    I^2\subset I_{W/Z}\subset I.
-\]
-Moreover, the ideal of \(Y\) in \(W\) is
-\[
-    \mathcal I_{Y/W}=I/I_{W/Z}.
-\]
-By the first isomorphism theorem,
-\[
-    I/I_{W/Z}\simeq\operatorname{im}(\tau).
-\]
-Hence
-\[
-    \mathcal I_{Y/W}\simeq \operatorname{im}(\tau).
-\]
-
-Finally, we prove the closed immersion criterion. The morphism
-\[
-    \widetilde i_\tau:\widetilde Y_\tau\to Z
-\]
-is a closed immersion if and only if the corresponding morphism of sheaves of rings
-\[
-    \mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}
-\]
-is surjective. Since
-\[
-    \mathcal O_Z\to\mathcal O_Y
-\]
-is already surjective, the only possible failure of surjectivity lies in the square-zero
-ideal \(\mathcal E\subset\mathcal O_{\widetilde Y_\tau}\). The image of \(I\) inside
-\(\mathcal E\) is exactly
-\[
-    \operatorname{im}(\tau).
-\]
-Therefore
-\[
-    \mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}
-\]
-is surjective if and only if
-\[
-    \operatorname{im}(\tau)=\mathcal E,
-\]
-i.e. if and only if
-\[
-    \tau:I/I^2\to\mathcal E
-\]
-is surjective.
-
-Thus \(\widetilde i_\tau\) is a closed immersion if and only if \(\tau\) is surjective.
-This proves the proposition.
+\(I^2\subset I_{W/Z}\subset I\). Moreover, the ideal of \(Y\) in \(W\) is
+\(\mathcal I_{Y/W}=I/I_{W/Z}\). By the first isomorphism theorem,
+\(I/I_{W/Z}\simeq\operatorname{im}(\tau)\). Hence
+\(\mathcal I_{Y/W}\simeq \operatorname{im}(\tau)\). Finally, we prove the closed immersion criterion. The morphism \(\widetilde i_\tau:\widetilde Y_\tau\to Z\) is a closed immersion if and only if the corresponding morphism of sheaves of rings
+\(\mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}\) is surjective. Since
+\(\mathcal O_Z\to\mathcal O_Y\) is already surjective, the only possible failure of
+surjectivity lies in the square-zero ideal \(\mathcal E\subset\mathcal O_{\widetilde Y_\tau}\). The image of \(I\) inside \(\mathcal E\) is exactly \(\operatorname{im}(\tau)\). Therefore \(\mathcal O_Z\to \mathcal O_{\widetilde Y_\tau}\) is surjective if and only if \(\operatorname{im}(\tau)=\mathcal E\), i.e. if and only if \(\tau:I/I^2\to\mathcal E\) is surjective. Thus \(\widetilde i_\tau\) is a closed immersion if and only if \(\tau\) is surjective. This proves the proposition.
 \end{proof}
-
 
 \section{The map connecting deformations and reflexive ribbons}
 
@@ -1312,68 +849,21 @@ is formally smooth, and the proposition itself gives surjectivity on deformation
 \end{proof}
 
 
+
 \begin{theorem}[Central fiber of the image of a first-order deformation]
 \label{thm:central-fiber-image-singular-source}
 Let \(k\) be an algebraically closed field and let
-\[
-    X \xrightarrow{\pi} Y \xrightarrow{i} Z
-\]
-be morphisms of \(k\)-schemes, where \(\pi\) is finite and \(i\) is a closed immersion.
-Let
-\[
-    \varphi=i\circ \pi:X\to Z,
-\]
-and let \(I=I_{Y/Z}\subset \mathcal O_Z\) be the ideal sheaf of \(Y\) in \(Z\).
-Assume that
-\[
-    \pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E
-\]
-as an \(\mathcal O_Y\)-module.
-
-Let
-\[
-    \Delta=\operatorname{Spec} k[\epsilon]/(\epsilon^2),
-\]
-and let
-\[
-    \widetilde\varphi:\widetilde X\longrightarrow Z\times \Delta
-\]
-be a first-order deformation of \(\varphi\) over the fixed target \(Z\), i.e. assume that
-\(\widetilde X\) is flat over \(\Delta\), its central fiber is \(X\), and the restriction of
-\(\widetilde\varphi\) to the central fiber is \(\varphi\).
-
-Let
-\[
-    \widetilde Y:=\operatorname{Im}(\widetilde\varphi)\subset Z\times\Delta
-\]
+\(X \xrightarrow{\pi} Y \xrightarrow{i} Z\)
+be morphisms of \(k\)-schemes, where \(\pi\) is finite and \(i\) is a closed immersion. Let \(\varphi=i\circ \pi:X\to Z\), and let \(I=I_{Y/Z}\subset \mathcal O_Z\) be the ideal sheaf of \(Y\) in \(Z\). Assume that
+\(\pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E\) as an \(\mathcal O_Y\)-module. Let \(\Delta=\operatorname{Spec} k[\epsilon]/(\epsilon^2)\), and let
+\(\widetilde\varphi:\widetilde X\to Z\times \Delta\)
+be a first-order deformation of \(\varphi\) over the fixed target \(Z\), i.e. assume that \(\widetilde X\) is flat over \(\Delta\), its central fiber is \(X\), and the restriction of \(\widetilde\varphi\) to the central fiber is \(\varphi\).
+Let \(\widetilde Y:=\operatorname{Im}(\widetilde\varphi)\subset Z\times\Delta\)
 be the scheme-theoretic image of \(\widetilde\varphi\), and let
-\[
-    \widetilde Y_0:=\widetilde Y\times_{\Delta}\operatorname{Spec}k
-    \subset Z
-\]
-be its central fiber.
-
-Associated to \(\widetilde\varphi\) there is a natural homomorphism
-\[
-    \nu_{\widetilde\varphi}: I/I^2\longrightarrow \pi_*\mathcal O_X.
-\]
-Using the splitting
-\[
-    \pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E,
-\]
-write
-\[
-    \nu_{\widetilde\varphi}
-    =
-    \nu_1\oplus \nu_2,
-\]
-where
-\[
-    \nu_1:I/I^2\to \mathcal O_Y,
-    \qquad
-    \nu_2:I/I^2\to \mathcal E.
-\]
-Then the ideal sheaf of \(\widetilde Y_0\) in \(Z\) is
+\(\widetilde Y_0:=\widetilde Y\times_{\Delta}\operatorname{Spec}k\subset Z\)
+be its central fiber. Associated to \(\widetilde\varphi\) there is a natural homomorphism \(\nu_{\widetilde\varphi}: I/I^2\to \pi_*\mathcal O_X\).
+Using the splitting \(\pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E\), write
+\(\nu_{\widetilde\varphi}=\nu_1\oplus \nu_2\), where \(\nu_1:I/I^2\to \mathcal O_Y\), \(\nu_2:I/I^2\to \mathcal E\). Then the ideal sheaf of \(\widetilde Y_0\) in \(Z\) is
 \[
     I_{\widetilde Y_0/Z}
     =
@@ -1385,59 +875,21 @@ Then the ideal sheaf of \(\widetilde Y_0\) in \(Z\) is
         \mathcal E
     \right).
 \]
-In particular,
-\[
-    I^2\subset I_{\widetilde Y_0/Z}\subset I,
-\]
-and hence
-\[
-    Y\subset \widetilde Y_0\subset Y^{(1)}_Z,
-\]
-where \(Y^{(1)}_Z\) denotes the first infinitesimal neighborhood of \(Y\) in \(Z\).
+In particular, \(I^2\subset I_{\widetilde Y_0/Z}\subset I\), and hence
+\(Y\subset \widetilde Y_0\subset Y^{(1)}_Z\), where \(Y^{(1)}_Z\) denotes the first
+infinitesimal neighborhood of \(Y\) in \(Z\).
 \end{theorem}
 
 \begin{proof}
-The proof is local on \(Z\), so let
-\[
-    W=\operatorname{Spec}A\subset Z
-\]
-be an affine open subset and set
-\[
-    U=W\cap Y=\operatorname{Spec}(A/I),
-\]
-where, by abuse of notation, \(I\subset A\) denotes the ideal defining \(U\subset W\).
-Let
-\[
-    V=\pi^{-1}(U)=\operatorname{Spec}B.
-\]
-Since \(\pi\) is finite, we have
-\[
-    B=\Gamma(U,\pi_*\mathcal O_X).
-\]
-Using the splitting \(\pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E\), after restricting to
-\(U\) we may write
-\[
-    B\simeq A/I\oplus M,
-    \qquad
-    M=\Gamma(U,\mathcal E).
-\]
-
-Let
-\[
-    R=k[\epsilon]/(\epsilon^2).
-\]
-Then
-\[
-    W\times\Delta=\operatorname{Spec}(A\otimes_k R)
-    =
-    \operatorname{Spec}(A\oplus A\epsilon).
-\]
-The restriction of \(\widetilde X\) over \(V\) is affine, say
-\[
-    \widetilde V=\operatorname{Spec}\widetilde B.
-\]
-Since \(\widetilde X\) is flat over \(\Delta\) and has central fiber \(X\), the \(R\)-algebra
-\(\widetilde B\) fits into a square-zero extension
+The proof is local on \(Z\), so let \(W=\operatorname{Spec}A\subset Z\) be an affine open subset and set \(U=W\cap Y=\operatorname{Spec}(A/I)\), where, by abuse of notation,
+\(I\subset A\) denotes the ideal defining \(U\subset W\). Let
+\(V=\pi^{-1}(U)=\operatorname{Spec}B\). Since \(\pi\) is finite, we have
+\(B=\Gamma(U,\pi_*\mathcal O_X)\). Using the splitting
+\(\pi_*\mathcal O_X\simeq \mathcal O_Y\oplus \mathcal E\), after restricting to
+\(U\) we may write \(B\simeq A/I\oplus M\), \(M=\Gamma(U,\mathcal E)\). Let \(R=k[\epsilon]/(\epsilon^2)\). Then
+\(W\times\Delta=\operatorname{Spec}(A\otimes_k R)=\operatorname{Spec}(A\oplus A\epsilon)\). The restriction of \(\widetilde X\) over \(V\) is affine, say
+\(\widetilde V=\operatorname{Spec}\widetilde B\).
+Since \(\widetilde X\) is flat over \(\Delta\) and has central fiber \(X\), the \(R\)-algebra \(\widetilde B\) fits into a square-zero extension
 \[
     0\longrightarrow B
     \xrightarrow{\iota}
@@ -1448,135 +900,26 @@ Since \(\widetilde X\) is flat over \(\Delta\) and has central fiber \(X\), the 
 \]
 Here \(q\) is reduction modulo \(\epsilon\), and \(\iota\) identifies \(B\) with
 \(\epsilon\widetilde B\). Explicitly, if \(b\in B\) and \(\widetilde b\in \widetilde B\) is any lift of \(b\),
-then
-\[
-    \iota(b)=\epsilon\widetilde b.
-\]
+then \(\iota(b)=\epsilon\widetilde b\).
 This is independent of the chosen lift because \(\epsilon^2=0\). Thus
-\[
-    \ker(q)=\epsilon\widetilde B\simeq B,
-    \qquad
-    (\epsilon\widetilde B)^2=0.
-\]
-
+\(\ker(q)=\epsilon\widetilde B\simeq B\), \((\epsilon\widetilde B)^2=0\).
 The morphism \(\widetilde\varphi\) gives a ring homomorphism
-\[
-    \widetilde\varphi^\#:
-    A\oplus A\epsilon
-    \longrightarrow
-    \widetilde B.
-\]
-Modulo \(\epsilon\), this recovers the original morphism
-\[
-    \varphi^\#:A\to B.
-\]
+\(\widetilde\varphi^\#:A\oplus A\epsilon\to\widetilde B\).
+Modulo \(\epsilon\), this recovers the original morphism \(\varphi^\#:A\to B\).
 Since \(\varphi\) factors through \(Y\), the kernel of \(\varphi^\#:A\to B\) is \(I\), and the image
 of \(\varphi^\#\) is the summand \(A/I\subset B=A/I\oplus M\).
-
-We first construct the map
-\[
-    \nu_{\widetilde\varphi}: I/I^2\to B.
-\]
-If \(a\in I\), then
-\[
-    q\bigl(\widetilde\varphi^\#(a)\bigr)
-    =
-    \varphi^\#(a)
-    =
-    0.
-\]
-Therefore
-\[
-    \widetilde\varphi^\#(a)\in \ker(q)=\epsilon\widetilde B\simeq B.
-\]
-Define \(\lambda(a)\in B\) by the condition
-\[
-    \iota(\lambda(a))=\widetilde\varphi^\#(a).
-\]
-If \(a,b\in I\), then
-\[
-    \widetilde\varphi^\#(a),\widetilde\varphi^\#(b)\in \epsilon\widetilde B.
-\]
-Hence
-\[
-    \widetilde\varphi^\#(ab)
-    =
-    \widetilde\varphi^\#(a)\widetilde\varphi^\#(b)
-    \in
-    (\epsilon\widetilde B)^2
-    =
-    0.
-\]
+We first construct the map \(\nu_{\widetilde\varphi}: I/I^2\to B\).
+If \(a\in I\), then \(q\bigl(\widetilde\varphi^\#(a)\bigr)=\varphi^\#(a)=0\).
+Therefore \(\widetilde\varphi^\#(a)\in \ker(q)=\epsilon\widetilde B\simeq B\).
+Define \(\lambda(a)\in B\) by the condition \(\iota(\lambda(a))=\widetilde\varphi^\#(a)\). If \(a,b\in I\), then \(\widetilde\varphi^\#(a),\widetilde\varphi^\#(b)\in \epsilon\widetilde B\). Hence \(\widetilde\varphi^\#(ab)=\widetilde\varphi^\#(a)\widetilde\varphi^\#(b)\in(\epsilon\widetilde B)^2=0\).
 Thus \(\lambda(ab)=0\), so \(\lambda\) kills \(I^2\). Therefore \(\lambda\) descends to a homomorphism
-\[
-    \overline{\lambda}: I/I^2\to B.
-\]
-This is the local form of \(\nu_{\widetilde\varphi}\).
-
-Now decompose
-\[
-    B=A/I\oplus M.
-\]
-Write
-\[
-    \overline{\lambda}=\nu_1\oplus \nu_2,
-\]
-where
-\[
-    \nu_1:I/I^2\to A/I,
-    \qquad
-    \nu_2:I/I^2\to M.
-\]
-
-Let \(\widetilde J\subset A\oplus A\epsilon\) be the ideal of the scheme-theoretic image
-\(\widetilde Y\subset W\times\Delta\). Thus
-\[
-    \widetilde J=\ker(\widetilde\varphi^\#).
-\]
-We now compute \(\widetilde J\). Let \(a+a'\epsilon\in A\oplus A\epsilon\). If
-\(a+a'\epsilon\in\widetilde J\), then reducing modulo \(\epsilon\) gives
-\[
-    \varphi^\#(a)=0,
-\]
-so \(a\in I\).
-
-Assume now that \(a\in I\). Then
-\[
-    \widetilde\varphi^\#(a)=\iota(\lambda(a)).
-\]
-Also,
-\[
-    \widetilde\varphi^\#(a'\epsilon)
-    =
-    \epsilon\widetilde\varphi^\#(a')
-    =
-    \iota(\varphi^\#(a')).
-\]
-Therefore
-\[
-    \widetilde\varphi^\#(a+a'\epsilon)
-    =
-    \iota\bigl(\lambda(a)+\varphi^\#(a')\bigr).
-\]
-Since \(\iota\) is injective, this vanishes if and only if
-\[
-    \lambda(a)+\varphi^\#(a')=0
-    \quad\text{in }B.
-\]
+\(\overline{\lambda}: I/I^2\to B\). This is the local form of \(\nu_{\widetilde\varphi}\).
+Now decompose \(B=A/I\oplus M\). Write \(\overline{\lambda}=\nu_1\oplus \nu_2\), where \(\nu_1:I/I^2\to A/I\), \(\nu_2:I/I^2\to M\). Let \(\widetilde J\subset A\oplus A\epsilon\) be the ideal of the scheme-theoretic image
+\(\widetilde Y\subset W\times\Delta\). Thus \(\widetilde J=\ker(\widetilde\varphi^\#)\). We now compute \(\widetilde J\). Let \(a+a'\epsilon\in A\oplus A\epsilon\). If \(a+a'\epsilon\in\widetilde J\), then reducing modulo \(\epsilon\) gives \(\varphi^\#(a)=0\), so \(a\in I\). Assume now that \(a\in I\). Then \(\widetilde\varphi^\#(a)=\iota(\lambda(a))\). Also,
+\(\widetilde\varphi^\#(a'\epsilon)=\epsilon\widetilde\varphi^\#(a')=\iota(\varphi^\#(a'))\). Therefore \(\widetilde\varphi^\#(a+a'\epsilon)=\iota\bigl(\lambda(a)+\varphi^\#(a')\bigr)\). Since \(\iota\) is injective, this vanishes if and only if \(\lambda(a)+\varphi^\#(a')=0\) in \(B\).
 Equivalently, writing \(B=A/I\oplus M\), this condition becomes
-\[
-    \nu_1(\overline a)+\overline{a'}=0
-    \quad\text{in }A/I,
-\]
-and
-\[
-    \nu_2(\overline a)=0
-    \quad\text{in }M,
-\]
-where \(\overline a\) denotes the class of \(a\) in \(I/I^2\), and
-\(\overline{a'}\) denotes the class of \(a'\) in \(A/I\).
-
-Thus
+\(\nu_1(\overline a)+\overline{a'}=0\) in \(A/I\), and \(\nu_2(\overline a)=0\) in \(M\), where \(\overline a\) denotes the class of \(a\) in \(I/I^2\), and
+\(\overline{a'}\) denotes the class of \(a'\) in \(A/I\). Thus
 \[
     \widetilde J
     =
@@ -1588,40 +931,11 @@ Thus
         \nu_2(\overline a)=0
     \right\}.
 \]
-
 The ideal \(J\subset A\) of the central fiber \(\widetilde Y_0\subset W\) is
-\[
-    J=
-    \frac{\widetilde J+(\epsilon)}{(\epsilon)}
-    \subset A.
-\]
+\(J=(\widetilde J+(\epsilon))/(\epsilon)\subset A\).
 Equivalently, \(a\in J\) if and only if there exists \(a'\in A\) such that
-\[
-    a+a'\epsilon\in \widetilde J.
-\]
-By the formula for \(\widetilde J\), this is equivalent to
-\[
-    a\in I,\qquad \nu_2(\overline a)=0,
-\]
-together with the existence of \(a'\in A\) satisfying
-\[
-    \overline{a'}=-\nu_1(\overline a).
-\]
-The last condition is automatic, because every element of \(A/I\) has a lift to \(A\).
-Therefore
-\[
-    J
-    =
-    \{a\in I\mid \nu_2(\overline a)=0\}.
-\]
-Equivalently,
-\[
-    J=
-    \ker\left(
-        I\to I/I^2\xrightarrow{\nu_2}M
-    \right).
-\]
-Sheafifying this local computation gives
+\(a+a'\epsilon\in \widetilde J\). By the formula for \(\widetilde J\), this is equivalent to \(a\in I\), \(\nu_2(\overline a)=0\),
+together with the existence of \(a'\in A\) satisfying \(\overline{a'}=-\nu_1(\overline a)\). The last condition is automatic, because every element of \(A/I\) has a lift to \(A\). Therefore \(J=\{a\in I\mid \nu_2(\overline a)=0\}\). Equivalently, \(J=\ker\left(I\to I/I^2\xrightarrow{\nu_2}M\right)\). Sheafifying this local computation gives
 \[
     I_{\widetilde Y_0/Z}
     =
@@ -1633,17 +947,7 @@ Sheafifying this local computation gives
         \mathcal E
     \right).
 \]
-
-Since the map factors through \(I/I^2\), we have \(I^2\subset I_{\widetilde Y_0/Z}\).
-Also \(I_{\widetilde Y_0/Z}\subset I\). Hence
-\[
-    I^2\subset I_{\widetilde Y_0/Z}\subset I,
-\]
-which is equivalent to
-\[
-    Y\subset \widetilde Y_0\subset Y^{(1)}_Z.
-\]
-This proves the theorem.
+Since the map factors through \(I/I^2\), we have \(I^2\subset I_{\widetilde Y_0/Z}\). Also \(I_{\widetilde Y_0/Z}\subset I\). Hence \(I^2\subset I_{\widetilde Y_0/Z}\subset I\), which is equivalent to \(Y\subset \widetilde Y_0\subset Y^{(1)}_Z\). This proves the theorem.
 \end{proof}
 
 \section{Deformations of double covers of cones over a rational normal curve}
@@ -2920,7 +2224,7 @@ Set
 \]
 
 Pardini's eigensheaf decomposition for differentials
-\cite[Proposition~4.1(b)]{Pardini}, together with the logarithmic residue sequence
+\cite[Proposition~4.1(b)]{Par91}, together with the logarithmic residue sequence
 \cite[(2.3)]{EV}, gives
 \[
 \widehat\pi_*\Omega_{\widehat X}^1(\log E)
@@ -3299,6 +2603,11 @@ arXiv:2412.05500
 %Universitext Springer--Verlag, New York, 2001.
 %\color{black}
 
+\bibitem{EV}
+H.~Esnault and E.~Viehweg,
+\emph{Lectures on Vanishing Theorems},
+DMV Seminar, vol.~20, Birkh\"auser Verlag, Basel, 1992.
+
 \bibitem{DP12}
 Duflot, Jeanne; Peters, Pamela L.
 \emph{Gaussian maps for double covers of toric surfaces.}
@@ -3520,10 +2829,11 @@ Algebraic Geometry and Commutative Algebra, Academic Press,
 
 
   \color{black}
-%\bibitem[Par91]{Par91}
-%Pardini, Rita
-%\emph{Abelian covers of algebraic varieties.}
-%J. Reine Angew. Math.417(1991), 191–213.
+
+\bibitem{Par91}
+Pardini, Rita
+\emph{Abelian covers of algebraic varieties.}
+J. Reine Angew. Math.417(1991), 191–213.
 
 
 
