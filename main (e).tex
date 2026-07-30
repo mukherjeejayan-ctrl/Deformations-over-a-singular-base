@@ -950,6 +950,100 @@ together with the existence of \(a'\in A\) satisfying \(\overline{a'}=-\nu_1(\ov
 Since the map factors through \(I/I^2\), we have \(I^2\subset I_{\widetilde Y_0/Z}\). Also \(I_{\widetilde Y_0/Z}\subset I\). Hence \(I^2\subset I_{\widetilde Y_0/Z}\subset I\), which is equivalent to \(Y\subset \widetilde Y_0\subset Y^{(1)}_Z\). This proves the theorem.
 \end{proof}
 
+\begin{theorem}[Deformation to a degree-one morphism]
+\label{thm:deformation-degree-one}
+Let $k$ be an algebraically closed field, let $Z$ be a projective $k$-scheme endowed with a very ample line bundle $H$, and let
+$
+X\xrightarrow{\pi}Y\xrightarrow{i}Z
+$
+be morphisms of projective integral $k$-varieties. Assume that $X$ and $Y$ are normal, $\pi$ is finite of degree $n\geq 2$, $i$ is a closed immersion, and
+$
+\pi_*\mathcal O_X\simeq\mathcal O_Y\oplus\mathcal E,
+$
+where $\mathcal E$ is reflexive of rank $n-1$. Set $\varphi=i\circ\pi$ and $I=I_{Y/Z}$.
+
+Let $(T,0)$ be a smooth irreducible pointed curve, and let
+$
+\Phi:\mathscr X\to Z\times T
+$
+be a $T$-morphism such that $\mathscr X$ is integral, $\mathscr X\to T$ is proper, flat, and surjective, every fiber $X_t$ is integral and projective, and $X_0=X$ and $\Phi_0=\varphi$.
+
+Let $\Delta\subset T$ be the first infinitesimal neighborhood of $0$, and let
+$
+\widetilde\Phi:\widetilde X\to Z\times\Delta
+$
+be the restriction of $\Phi$. Write
+$
+\nu_{\widetilde\Phi}=\nu_1\oplus\nu_2
+$
+for the homomorphism associated with $\widetilde\Phi$ in \Cref{thm:central-fiber-image-singular-source}, where
+$
+\nu_2:I/I^2\to\mathcal E.
+$
+Suppose that $\nu_2$ has generic rank $r$ and that
+$
+r>\frac{n}{2}-1.
+$
+Then, after shrinking $T$ around $0$, the morphism $\Phi_t$ is finite and birational onto its scheme-theoretic image for every $t\neq 0$.
+
+If, moreover, the scheme-theoretic image of $\Phi_t$ is normal, then $\Phi_t$ is a closed immersion.
+\end{theorem}
+
+\begin{proof}
+Let $\mathscr Y:=\operatorname{Im}(\Phi)\subset Z\times T$ be the scheme-theoretic image and factor $\Phi$ as
+$
+\mathscr X\xrightarrow{\Pi}\mathscr Y\hookrightarrow Z\times T.
+$
+Since $\mathscr X$ is integral, $\mathscr Y$ is integral. Moreover, $\mathscr Y\to T$ is dominant. As $T$ is a smooth curve, $\mathcal O_{\mathscr Y}$ is torsion-free, hence flat, over $\mathcal O_T$.
+
+The morphism $\Pi_0$ factors as
+$
+X\xrightarrow{\pi}Y\hookrightarrow\mathscr Y_0
+$
+and is therefore finite. Since $\Pi$ is proper, its quasi-finite locus contains $X_0$. Properness of $\mathscr X\to T$ then shows that, after shrinking $T$ around $0$, $\Pi$ is quasi-finite and hence finite. By generic flatness applied to the cokernel of
+$
+\mathcal O_{\mathscr Y}\to\Pi_*\mathcal O_{\mathscr X},
+$
+we may shrink $T$ further, without removing $0$, so that $\mathscr Y_t$ is the scheme-theoretic image of $\Phi_t$ for every $t\neq0$. In particular, each $\mathscr Y_t$ is integral.
+
+Let
+$
+W:=\operatorname{Im}(\widetilde\Phi)_0\subset Z.
+$
+By \Cref{thm:central-fiber-image-singular-source}, its ideal is
+$
+J=\ker(I\to I/I^2\xrightarrow{\nu_2}\mathcal E).
+$
+If $\mathcal F:=\operatorname{Im}(\nu_2)$, then $I/J\simeq\mathcal F$, and hence
+$$
+0\longrightarrow\mathcal F
+\longrightarrow\mathcal O_W
+\longrightarrow\mathcal O_Y
+\longrightarrow0.
+$$
+Since $\mathcal E$ is torsion-free, $\mathcal F$ is torsion-free of rank $r$. It follows from the Hilbert polynomials that
+$
+\deg_H W=(r+1)\deg_HY.
+$
+Moreover, $\widetilde\Phi$ factors through $\mathscr Y\times_T\Delta$, so $W\subset\mathscr Y_0$. Consequently,
+$
+\deg_H\mathscr Y_0\geq(r+1)\deg_HY.
+$
+
+Set $m=\dim Y$ and $\mathscr L:=\Phi^*H$. Flatness of $\mathscr X\to T$ implies that $(\mathscr L_t^m)$ is independent of $t$. Since $\pi$ has degree $n$, one has $(\mathscr L_0^m)=n\deg_HY$. For $t\neq0$, let $d_t$ be the degree of the finite morphism $\Pi_t:X_t\to\mathscr Y_t$. Flatness of $\mathscr Y\to T$ and the projection formula give
+$$
+n\deg_HY
+=(\mathscr L_0^m)
+=(\mathscr L_t^m)
+=d_t\deg_H\mathscr Y_t
+=d_t\deg_H\mathscr Y_0
+\geq d_t(r+1)\deg_HY.
+$$
+Thus $n\geq d_t(r+1)$. Since $r+1>n/2$, this implies $d_t<2$. Therefore $d_t=1$, and $\Phi_t$ is finite and birational onto its scheme-theoretic image.
+
+If $\mathscr Y_t$ is normal, the finite birational morphism $\Pi_t$ is an isomorphism. Hence $\Phi_t$ is a closed immersion.
+\end{proof}
+
 \section{Deformations of double covers of cones over a rational normal curve}
 
 \subsection{Canonical double covers of rational normal cones}
