@@ -960,14 +960,16 @@ be morphisms of projective integral $k$-varieties. Assume that $X$ and $Y$ are n
 $
 \pi_*\mathcal O_X\simeq\mathcal O_Y\oplus\mathcal E,
 $
-where $\mathcal E$ is reflexive of rank $n-1$. Set $\varphi=i\circ\pi$ and $I=I_{Y/Z}$.
-
-Let $(T,0)$ be a smooth irreducible pointed curve, and let
+where $\mathcal E$ is reflexive of rank $n-1$. Set $\varphi=i\circ\pi$ and $I=I_{Y/Z}$. Let $(T,0)$ be a smooth irreducible pointed curve, and let
 $
 \Phi:\mathscr X\to Z\times T
 $
-be a $T$-morphism such that $\mathscr X$ is integral, $\mathscr X\to T$ is proper, flat, and surjective, every fiber $X_t$ is integral and projective, and $X_0=X$ and $\Phi_0=\varphi$.
-
+be a $T$-morphism such that
+\begin{enumerate}
+    \item $\mathscr X$ is integral, $\mathscr X\to T$ is proper, flat, and surjective, 
+    \item every fiber $X_t$ is integral and projective,
+    \item $X_0=X$ and $\Phi_0=\varphi$.
+\end{enumerate}
 Let $\Delta\subset T$ be the first infinitesimal neighborhood of $0$, and let
 $
 \widetilde\Phi:\widetilde X\to Z\times\Delta
@@ -984,9 +986,7 @@ Suppose that $\nu_2$ has generic rank $r$ and that
 $
 r>\frac{n}{2}-1.
 $
-Then, after shrinking $T$ around $0$, the morphism $\Phi_t$ is finite and birational onto its scheme-theoretic image for every $t\neq 0$.
-
-If, moreover, the scheme-theoretic image of $\Phi_t$ is normal, then $\Phi_t$ is a closed immersion.
+Then, after shrinking $T$ around $0$, the morphism $\Phi_t$ is finite and birational onto its scheme-theoretic image for every $t\neq 0$. If, moreover, the scheme-theoretic image of $\Phi_t$ is normal, then $\Phi_t$ is a closed immersion.
 \end{theorem}
 
 \begin{proof}
@@ -1043,6 +1043,511 @@ Thus $n\geq d_t(r+1)$. Since $r+1>n/2$, this implies $d_t<2$. Therefore $d_t=1$,
 
 If $\mathscr Y_t$ is normal, the finite birational morphism $\Pi_t$ is an isomorphism. Hence $\Phi_t$ is a closed immersion.
 \end{proof}
+
+\section{The groups and sheaves related to deformations}
+
+\begin{lemma}\label{lem:T1-relative-differentials}
+Let $\pi:X\to Y$ be a morphism locally of finite type between noetherian schemes. Assume that $X$ is $S_1$ and $\pi$ is generically smooth at every generic point of $X$.  
+Then the natural map
+$
+\mathcal E xt_X^1(\Omega_{X/Y},\mathcal O_X)
+\longrightarrow
+\mathcal T^1(X/Y)
+$
+is an isomorphism, where
+$
+\mathcal T^1(X/Y):=\mathcal E xt_X^1(\mathbb L_{X/Y},\mathcal O_X).
+$
+In particular, the conclusion holds if $\pi$ is finite and generically étale.
+\end{lemma}
+
+\begin{proof}
+The question is local on $X$. Choose a local factorization
+$
+X\hookrightarrow P\to Y
+$
+with $P\to Y$ smooth, and let $I\subset \mathcal O_P$ be the ideal sheaf of $X$ in $P$. The cotangent complex $\mathbb L_{X/Y}$ is represented by the two-term complex
+$
+\left[
+I/I^2
+\xrightarrow{d}
+\Omega_{P/Y}\otimes_{\mathcal O_P}\mathcal O_X
+\right],
+$
+where $I/I^2$ is placed in degree $-1$ and $\Omega_{P/Y}\otimes_{\mathcal O_P}\mathcal O_X$ is placed in degree $0$.
+
+Set $F:=I/I^2,$ $G:=\Omega_{P/Y}\otimes_{\mathcal O_P}\mathcal O_X,$ $
+N:=\operatorname{Im}(F\to G),$ and $K:=\ker(F\to G).$
+Then there is an exact sequence
+$$
+0\to N\to G\to \Omega_{X/Y}\to0.
+$$
+Since $G$ is locally free, applying $\mathcal H om_X(-,\mathcal O_X)$ gives
+$$
+\mathcal E xt_X^1(\Omega_{X/Y},\mathcal O_X) =
+\operatorname{coker}
+\left(
+\mathcal H om_X(G,\mathcal O_X)
+\to
+\mathcal H om_X(N,\mathcal O_X)
+\right).
+$$
+
+On the other hand, by the above two-term presentation of $\mathbb L_{X/Y}$, we have
+$$
+\mathcal T^1(X/Y) =
+\operatorname{coker}
+\left(
+\mathcal H om_X(G,\mathcal O_X)
+\to
+\mathcal H om_X(F,\mathcal O_X)
+\right).
+$$
+
+
+Moreover, from the exact sequence
+$
+0\to K\to F\to N\to0
+$
+we get
+$$
+0\to
+\mathcal H om_X(N,\mathcal O_X)
+\to
+\mathcal H om_X(F,\mathcal O_X)
+\to
+\mathcal H om_X(K,\mathcal O_X).
+$$
+Suppose $X$ is $S_1$ and $\pi$ is generically smooth at every generic point of $X$. Then the conormal map
+$
+I/I^2\to \Omega_{P/Y}\otimes_{\mathcal O_P}\mathcal O_X
+$
+is injective at every generic point of $X$. Hence $K$ is supported away from the generic points of $X$. Since $X$ is $S_1$, the sheaf $\mathcal O_X$ has no nonzero subsheaves supported away from the generic points. Therefore
+$
+\mathcal H om_X(K,\mathcal O_X)=0.
+$
+Therefore
+$
+\mathcal H om_X(N,\mathcal O_X)
+\simeq
+\mathcal H om_X(F,\mathcal O_X).
+$
+Substituting this into the two cokernel descriptions above gives
+$
+\mathcal E xt_X^1(\Omega_{X/Y},\mathcal O_X)
+\simeq
+\mathcal T^1(X/Y).
+$
+
+In particular, if $\pi$ is finite and generically étale, then $f$ is generically smooth, so the same argument applies.
+\end{proof}
+
+\begin{lemma}\label{lem:omega-double-cover-trace-zero}
+Let $k$ be a field with $\operatorname{char}k\neq 2$, and let $\pi:X\to Y$ be a finite morphism of noetherian $k$-schemes. Assume that, as an $\mathcal{O}_Y$-algebra, one has a decomposition
+$$
+\pi_{*}\mathcal{O}_X=\mathcal{O}_Y\oplus\mathcal{E},
+$$
+where the product of two local sections of $\mathcal{E}$ lands in $\mathcal{O}_Y$. Equivalently, the multiplication on the trace-zero summand is given by an $\mathcal{O}_Y$-bilinear map
+$$
+\mu:\mathcal{E}\otimes_{\mathcal{O}_Y}\mathcal{E}\longrightarrow\mathcal{O}_Y.
+$$
+Let $J\subset\mathcal{O}_X$ be the ideal generated by the image of the natural map
+$$
+\pi^*\mathcal{E}\longrightarrow\mathcal{O}_X,
+$$
+and set $R:=V(J)$.
+
+Then there is a natural exact sequence
+$$
+0\longrightarrow\mathcal{K}\longrightarrow\Omega_{X/Y}
+\longrightarrow
+\mathcal{O}_R\otimes_{\mathcal{O}_X}\pi^*\mathcal{E}
+\longrightarrow 0.
+$$
+Moreover, over the open subset of $Y$ where $\mathcal{E}$ is locally free of rank $1$, the map
+$$
+\Omega_{X/Y}
+\longrightarrow
+\mathcal{O}_R\otimes_{\mathcal{O}_X}\pi^*\mathcal{E}
+$$
+is an isomorphism. Consequently,
+$$
+\operatorname{Supp}\mathcal{K}
+\subset
+\pi^{-1}\bigl(\operatorname{NLF}(\mathcal{E})\bigr),
+$$
+where $\operatorname{NLF}(\mathcal{E})$ denotes the non-locally-free locus of $\mathcal{E}$.
+
+Assume further that $\mathcal{K}$ has finite length and that
+$$
+\operatorname{depth}\mathcal{O}_{X,x}\geq 2
+$$
+for every $x\in\operatorname{Supp}\mathcal{K}$. Then the natural map induced by the above exact sequence gives an isomorphism
+$$
+\mathcal{E}xt_X^1
+\left(
+\mathcal{O}_R\otimes_{\mathcal{O}_X}\pi^*\mathcal{E},
+\mathcal{O}_X
+\right)
+\simeq
+\mathcal{E}xt_X^1(\Omega_{X/Y},\mathcal{O}_X).
+$$
+In particular, this conclusion holds if $\mathcal{K}$ has finite length and $X$ is $S_2$ along $\operatorname{Supp}\mathcal{K}$, with all points of $\operatorname{Supp}\mathcal{K}$ having codimension at least $2$ in $X$.
+\end{lemma}
+
+\begin{proof}
+The construction is local on $Y$. Let $U=\operatorname{Spec}A\subset Y$ be an affine open subset, and write $\pi^{-1}(U)=\operatorname{Spec}C$. Put
+$$
+M:=\mathcal{E}(U).
+$$
+Then the algebra $\pi_*\mathcal{O}_X$ over $U$ is
+$$
+C=A\oplus M
+$$
+as an $A$-module. The multiplication on $C$ is determined by the $A$-bilinear map
+$$
+\mu:M\otimes_A M\longrightarrow A.
+$$
+Thus, for $m,n\in M$, the product of $m$ and $n$ inside $C$ is
+$$
+m\cdot n=\mu(m,n)\in A.
+$$
+
+Let
+$$
+B:=\operatorname{Sym}*A(M).
+$$
+The inclusion $M\hookrightarrow C$ induces an $A$-algebra homomorphism
+$$
+\varphi:B\longrightarrow C.
+$$
+This map is surjective, because $C=A\oplus M$ is generated as an $A$-algebra by $M$. Let
+$$
+I:=\ker(\varphi).
+$$
+The conormal sequence for the closed embedding $\operatorname{Spec}C\hookrightarrow\operatorname{Spec}B$ over $\operatorname{Spec}A$ gives
+$$
+I/I^2
+\longrightarrow
+\Omega_{B/A}\otimes_B C
+\longrightarrow
+\Omega_{C/A}
+\longrightarrow 0.
+$$
+Since $B=\operatorname{Sym}_A(M)$, one has the standard identification
+$$
+\Omega*{B/A}\simeq B\otimes_A M.
+$$
+After tensoring with $C$, this becomes
+$$
+\Omega_{B/A}\otimes_B C\simeq C\otimes_A M.
+$$
+Thus the conormal map may be viewed as a map
+$$
+\delta:I/I^2\longrightarrow C\otimes_A M.
+$$
+
+We first describe the ideal $I$. For every $m,n\in M$, the element
+$$
+mn-\mu(m,n)\in B
+$$
+maps to zero in $C$, because the product of $m$ and $n$ in $C$ is $\mu(m,n)$. Hence $mn-\mu(m,n)\in I$. Let $I_2\subset B$ be the ideal generated by all such elements:
+$$
+I_2:=\bigl(mn-\mu(m,n)\mid m,n\in M\bigr).
+$$
+We claim that $I=I_2$.
+
+Set
+$$
+Q:=B/I_2.
+$$
+The map $\varphi:B\to C$ factors through $Q$, giving an $A$-algebra map
+$$
+Q\longrightarrow C.
+$$
+Conversely, define an $A$-linear map
+$$
+\psi:C=A\oplus M\longrightarrow Q
+$$
+by
+$$
+\psi(a+m)=\overline{a}+\overline{m}.
+$$
+This is well-defined because $C=A\oplus M$ is a direct sum as an $A$-module. We check that $\psi$ is multiplicative. Let $a,b\in A$ and $m,n\in M$. Then
+$$
+\psi(a+m)\psi(b+n)
+(\overline{a}+\overline{m})(\overline{b}+\overline{n}).
+$$
+Expanding in $Q$, we obtain
+$$
+\psi(a+m)\psi(b+n)
+\overline{ab}+\overline{an}+\overline{bm}+\overline{mn}.
+$$
+By the defining relation in $Q$, one has
+$$
+\overline{mn}=\overline{\mu(m,n)}.
+$$
+Therefore
+$$
+\psi(a+m)\psi(b+n)
+\overline{ab}+\overline{an}+\overline{bm}+\overline{\mu(m,n)}.
+$$
+On the other hand, in $C$ one has
+$$
+(a+m)(b+n)=ab+an+bm+\mu(m,n).
+$$
+Applying $\psi$ gives
+$$
+\psi\bigl((a+m)(b+n)\bigr)
+\overline{ab}+\overline{an}+\overline{bm}+\overline{\mu(m,n)}.
+$$
+Hence
+$$
+\psi(a+m)\psi(b+n)=\psi\bigl((a+m)(b+n)\bigr).
+$$
+Thus $\psi$ is an $A$-algebra homomorphism. The maps $Q\to C$ and $C\to Q$ are inverse to each other, because both compositions are the identity on $A$ and on $M$, and $Q$ is generated as an $A$-algebra by the image of $M$. Therefore $Q\simeq C$, and hence $I=I_2$.
+
+Now compute the conormal map on the generators of $I$. Since $\mu(m,n)\in A$, its relative differential over $A$ is zero. Hence
+$$
+d\bigl(mn-\mu(m,n)\bigr)=m,dn+n,dm.
+$$
+Under the identification
+$$
+\Omega_{B/A}\otimes_B C\simeq C\otimes_A M,
+$$
+this corresponds to
+$$
+m\otimes n+n\otimes m.
+$$
+Let $J_C\subset C$ be the ideal generated by the image of $M\subset C$. Since $m,n\in M\subset J_C$, we have
+$$
+m,dn+n,dm\in J_C\cdot(C\otimes_A M).
+$$
+Since the elements $mn-\mu(m,n)$ generate $I$, it follows that
+$$
+\operatorname{Im}(\delta)\subset J_C\cdot(C\otimes_A M).
+$$
+Therefore the quotient map
+$$
+C\otimes_A M\longrightarrow (C/J_C)\otimes_A M
+$$
+kills the image of $\delta$. Hence it descends to a natural surjection
+$$
+\Omega_{C/A}\twoheadrightarrow (C/J_C)\otimes_A M.
+$$
+
+Now $(C/J_C)\otimes_A M$ is naturally identified with the restriction of $\mathcal{O}_R\otimes_{\mathcal{O}_X}\pi^*\mathcal{E}$ to $\pi^{-1}(U)$. Indeed,
+$$
+(C/J_C)\otimes_C(C\otimes_A M)\simeq (C/J_C)\otimes_A M.
+$$
+Thus the local maps glue and give a natural surjection
+$$
+\Omega_{X/Y}
+\twoheadrightarrow
+\mathcal{O}_R\otimes_{\mathcal{O}_X}\pi^*\mathcal{E}.
+$$
+Let $\mathcal{K}$ be its kernel. This gives the exact sequence
+$$
+0\longrightarrow\mathcal{K}\longrightarrow\Omega_{X/Y}
+\longrightarrow
+\mathcal{O}_R\otimes_{\mathcal{O}_X}\pi^*\mathcal{E}
+\longrightarrow 0.
+$$
+
+It remains to check the assertion on the locus where $\mathcal{E}$ is locally free of rank $1$. On this locus, after shrinking $U$ if necessary, we may write $M=Az$ for a generator $z$. Then
+$$
+B=\operatorname{Sym}_A(M)\simeq A[T],
+$$
+where $T$ corresponds to $z$. If $f:=\mu(z,z)\in A$, then
+$$
+C\simeq A[T]/(T^2-f).
+$$
+Identifying the image of $T$ in $C$ with $z$, the ideal $J_C$ is $(z)$. The conormal map is given by
+$$
+T^2-f\longmapsto d(T^2-f)=2z,dz.
+$$
+Since $\operatorname{char}k\neq 2$, the image of the conormal map is exactly $(z)\cdot C,dz$. Therefore
+$$
+\Omega_{C/A}\simeq C,dz/(z\cdot C,dz)\simeq (C/(z))\otimes_A Az.
+$$
+This is precisely $(C/J_C)\otimes_A M$. Hence the surjection
+$$
+\Omega_{C/A}\twoheadrightarrow (C/J_C)\otimes_A M
+$$
+is an isomorphism wherever $\mathcal{E}$ is locally free of rank $1$. Therefore
+$$
+\operatorname{Supp}\mathcal{K}
+\subset
+\pi^{-1}\bigl(\operatorname{NLF}(\mathcal{E})\bigr).
+$$
+
+Now assume that $\mathcal{K}$ has finite length and that $\operatorname{depth}\mathcal{O}_{X,x}\geq 2$ for every $x\in\operatorname{Supp}\mathcal{K}$. Then
+$$
+\mathcal{H}om_X(\mathcal{K},\mathcal{O}_X)=0
+$$
+and
+$$
+\mathcal{E}xt_X^1(\mathcal{K},\mathcal{O}_X)=0.
+$$
+Indeed, locally this follows from the standard depth vanishing statement: if $A'$ is a noetherian local ring, $N$ is a finite-length $A'$-module, and $\operatorname{depth}A'\geq 2$, then
+$$
+\operatorname{Ext}_{A'}^i(N,A')=0
+$$
+for $i=0,1$.
+
+Applying $\mathcal{H}om_X(-,\mathcal{O}-X)$ to
+$$
+0\longrightarrow\mathcal{K}\longrightarrow\Omega_{X/Y}
+\longrightarrow
+\mathcal{O}_R\otimes_{\mathcal{O}_X}\pi^*\mathcal{E}
+\longrightarrow 0
+$$
+and using the two vanishings above, the long exact sequence of sheaf Exts gives
+$$
+\mathcal{E}xt_X^1
+\left(
+\mathcal{O}_R\otimes_{\mathcal{O}_X}\pi^*\mathcal{E},
+\mathcal{O}_X
+\right)
+\simeq
+\mathcal{E}xt_X^1(\Omega_{X/Y},\mathcal{O}_X).
+$$
+Finally, if $\mathcal{K}$ has finite length and $X$ is $S_2$ along $\operatorname{Supp}\mathcal{K}$, with all points of $\operatorname{Supp}\mathcal{K}$ having codimension at least $2$ in $X$, then $\operatorname{depth}\mathcal{O}_{X,x}\geq 2$ for every $x\in\operatorname{Supp}\mathcal{K}$, so the preceding argument applies.
+\end{proof}
+
+\begin{lemma}\label{lem:differentials-symmetric-algebra}(\textcolor{blue}{Explanatory})
+Let $A$ be a ring, let $M$ be an $A$-module, and set
+$$
+B:=\operatorname{Sym}_A(M).
+$$
+Then there is a natural isomorphism of $B$-modules
+$$
+\Omega_{B/A}\simeq B\otimes_A M.
+$$
+Under this isomorphism, the universal derivation
+$$
+d:B\longrightarrow \Omega_{B/A}
+$$
+sends an element $m\in M\subset B$ to
+$$
+dm=1\otimes m.
+$$
+
+\end{lemma}
+
+\begin{proof}
+Choose a presentation of $M$ by a free $A$-module:
+$$
+N\xrightarrow{\alpha} F\longrightarrow M\longrightarrow 0,
+$$
+where $F$ is free. Let
+$$
+P:=\operatorname{Sym}_A(F).
+$$
+Since $F$ is free, $P$ is a polynomial algebra over $A$, possibly in infinitely many variables. Therefore
+$$
+\Omega_{P/A}\simeq P\otimes_A F.
+$$
+The surjection $F\to M$ induces a surjection of $A$-algebras
+$$
+P=\operatorname{Sym}_A(F)\longrightarrow \operatorname{Sym}_A(M)=B.
+$$
+Let $J$ be its kernel. Then $J$ is the ideal of $P$ generated by the image of $N$ in $F\subset P$. Equivalently,
+$$
+J=(\alpha(n)\mid n\in N).
+$$
+Thus
+$$
+B=P/J.
+$$
+
+Apply the conormal sequence to the quotient $P\to B$ over $A$. We get an exact sequence
+$$
+J/J^2
+\longrightarrow
+\Omega_{P/A}\otimes_P B
+\longrightarrow
+\Omega_{B/A}
+\longrightarrow 0.
+$$
+Using $\Omega_{P/A}\simeq P\otimes_A F$, this becomes
+$$
+J/J^2
+\longrightarrow
+B\otimes_A F
+\longrightarrow
+\Omega_{B/A}
+\longrightarrow 0.
+$$
+
+We now identify the image of the first map. For $n\in N$, the element $\alpha(n)\in F\subset P$ lies in $J$. Its differential is
+$$
+d(\alpha(n))=1\otimes \alpha(n)\in P\otimes_A F.
+$$
+After tensoring with $B$, this becomes
+$$
+1\otimes \alpha(n)\in B\otimes_A F.
+$$
+More generally, every element of $J$ is a finite sum of terms $p_i\alpha(n_i)$, with $p_i\in P$ and $n_i\in N$. Its differential is a sum of terms
+$$
+d\bigl(p_i\alpha(n_i)\bigr) =
+p_id(\alpha(n_i))+\alpha(n_i)dp_i.
+$$
+After tensoring with $B=P/J$, the second term vanishes because $\alpha(n_i)\in J$. Therefore the image of $d\bigl(p_i\alpha(n_i)\bigr)$ in $B\otimes_A F$ is
+$$
+\overline{p_i}\otimes \alpha(n_i).
+$$
+It follows that the image of
+$$
+J/J^2\longrightarrow B\otimes_A F
+$$
+is exactly the image of the natural map
+$$
+B\otimes_A N\longrightarrow B\otimes_A F.
+$$
+
+Therefore the conormal sequence gives
+$$
+\Omega_{B/A}
+\simeq
+\operatorname{coker}\left(B\otimes_A N\longrightarrow B\otimes_A F\right).
+$$
+On the other hand, tensoring the right-exact sequence
+$$
+N\longrightarrow F\longrightarrow M\longrightarrow 0
+$$
+with $B$ over $A$ gives a right-exact sequence
+$$
+B\otimes_A N
+\longrightarrow
+B\otimes_A F
+\longrightarrow
+B\otimes_A M
+\longrightarrow 0.
+$$
+Hence
+$$
+\operatorname{coker}\left(B\otimes_A N\longrightarrow B\otimes_A F\right)
+\simeq
+B\otimes_A M.
+$$
+Combining the preceding identifications, we obtain
+$$
+\Omega_{B/A}\simeq B\otimes_A M.
+$$
+
+Finally, under this isomorphism, if $m\in M\subset B$, choose a lift $f\in F$ of $m$. In $P$, one has
+$$
+df=1\otimes f.
+$$
+Passing to $B$ gives
+$$
+dm=1\otimes m.
+$$
+This proves the claim.
+\end{proof}
+
+
 
 \section{Deformations of double covers of cones over a rational normal curve}
 
