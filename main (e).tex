@@ -3367,73 +3367,180 @@ $$
 $$
 Thus $\widetilde Y$ is an embedded reflexive ribbon. Since every nonzero element of the one-dimensional space $k\theta$ has the same kernel, this ribbon is unique.
 
-It remains to determine the origin of its abstract extension class. Set
+It remains to determine the origin of the abstract extension class
+$$
+e(\widetilde Y)=\delta(\theta)
+\in \operatorname{Ext}^1_Y(\Omega_Y,\mathcal E).
+$$
+Set
 $$
 \mathcal D=\mathcal H om_Y(\Omega_Y,\mathcal E).
 $$
-For this calculation, return temporarily to the original grading and write $\mathcal L_m=\mathcal O_{\mathbb P(1,2,3)}(m)$, so that $\mathcal E=\mathcal L_{-9}$. Since $\mathcal E$ is maximal Cohen--Macaulay at the two quotient singularities, the natural map from $\Omega_Y$ to its reflexive hull gives
+For the following cohomological calculation, we use the original weighted grading on $Y=\mathbb P(1,2,3)$; in this grading, $\mathcal E=\mathcal O_Y(-9)$. Since $\mathcal E$ is maximal Cohen--Macaulay at the quotient singularities, replacing $\Omega_Y$ by its reflexive hull does not change $\mathcal D$. Applying $\mathcal{H}om(-, \mathcal E$) to the  weighted Euler sequence we get
 $$
-\mathcal D\simeq
-\mathcal H om_Y(\widehat\Omega_Y^1,\mathcal E).
-$$
-Dualizing the weighted Euler sequence and tensoring by $\mathcal E$ gives
-$$
-0\longrightarrow\mathcal L_{-9}
+0\longrightarrow\mathcal O_Y(-9)
 \longrightarrow
-\mathcal L_{-8}\oplus\mathcal L_{-7}\oplus\mathcal L_{-6}
+\mathcal O_Y(-8)\oplus\mathcal O_Y(-7)\oplus\mathcal O_Y(-6)
 \longrightarrow\mathcal D
 \longrightarrow0.
 $$
-All the first cohomology groups of the line bundles in this sequence vanish. By Serre duality, the map on second cohomology is dual to
+The first cohomology of every reflexive twist $\mathcal O_Y(m)$ vanishes. By Serre duality, the map on second cohomology in this sequence is dual to
 $$
-H^0(\mathcal L_2)\oplus H^0(\mathcal L_1)
-   \oplus H^0(\mathcal O_Y)
-\longrightarrow H^0(\mathcal L_3),
+H^0(\mathcal O_Y(2))\oplus H^0(\mathcal O_Y(1))
+\oplus H^0(\mathcal O_Y)
+\longrightarrow H^0(\mathcal O_Y(3)),
 \qquad
 (s_1,s_2,s_3)\longmapsto xs_1+ys_2+zs_3.
 $$
-This map is surjective because $H^0(\mathcal L_3)=\langle x^3,xy,z\rangle$. Therefore
+This map is surjective, since
+$$
+H^0(\mathcal O_Y(3))=\langle x^3,xy,z\rangle.
+$$
+Consequently,
 $$
 H^1(Y,\mathcal D)=0.
 $$
-Consequently, the local-to-global sequence gives an injection
+The local-to-global sequence therefore gives an injection
 $$
 \operatorname{Ext}^1_Y(\Omega_Y,\mathcal E)
 \hookrightarrow
 H^0\bigl(Y,\mathcal E xt^1_Y(\Omega_Y,\mathcal E)\bigr).
 $$
+Thus the abstract extension class is determined by its localizations at $p_2$ and $p_3$.
 
-At $p_2$, write
+By functoriality of the conormal connecting homomorphisms for the factorization
 $$
-R_2=k[[A,B,C]]/(AC-B^2)
-=k[[u,v]]^{\mu_2},
+Y\subset Q\subset\mathbb P^6
+$$
+and the equality $\theta=\beta\circ q$, the localization of $e(\widetilde Y)$ at either singular point is the image of the corresponding localization of $\beta$ under the conormal connecting homomorphism for $Y\subset Q$.
+
+We first consider $p_2$. After completion, write
+$$
+B_2=k[[\tau,u,v]]^{\mu_2},
 \qquad
-\mathcal E_{p_2}=M=R_2u+R_2v.
+R_2=k[[u,v]]^{\mu_2},
+\qquad
+M_2=\mathcal E_{p_2}=k[[u,v]]^{-},
 $$
-The hypersurface presentation of $\Omega_{R_2}$ gives
+where $\mu_2$ changes the signs of $\tau,u,v$. The homomorphism $B_2\to R_2$ is obtained by setting $\tau=0$, and its kernel is
 $$
-\operatorname{Ext}^1_{R_2}(\Omega_{R_2},M)
-\simeq M/(A,B,C)M\simeq k^2.
+J_2=(\tau^2,\tau u,\tau v).
 $$
-The local ribbon determined by $\beta$ is split as an abstract ribbon. Indeed, the inclusion of the invariant power series independent of $\tau$ gives a section of its quotient map to $R_2$. Hence the localization of $e(\widetilde Y)$ at $p_2$ is zero.
+The localization of $\beta$ is
+$$
+\beta_{p_2}:J_2/J_2^2\longrightarrow M_2,
+\qquad
+[\tau^2]\longmapsto0,\quad
+[\tau u]\longmapsto u,\quad
+[\tau v]\longmapsto v.
+$$
+The relevant part of the local conormal sequence is
+$$
+\operatorname{Hom}_{R_2}
+   (\Omega_{B_2}\otimes_{B_2}R_2,M_2)
+\longrightarrow
+\operatorname{Hom}_{R_2}(J_2/J_2^2,M_2)
+\xrightarrow{\ \partial_{p_2}\ }
+\operatorname{Ext}^1_{R_2}(\Omega_{R_2},M_2).
+$$
+Define
+$$
+D:B_2\longrightarrow M_2,
+\qquad
+D(F)=
+\left.\frac{\partial F}{\partial\tau}\right|_{\tau=0}.
+$$
+If $F$ is $\mu_2$-invariant, then $D(F)$ is anti-invariant in $u,v$, so $D(F)\in M_2$. Moreover, $D$ is a derivation with respect to the quotient map $B_2\to R_2$, and hence induces an $R_2$-linear homomorphism
+$$
+\Omega_{B_2}\otimes_{B_2}R_2\longrightarrow M_2.
+$$
+Its restriction to $J_2/J_2^2$ satisfies
+$$
+D(\tau^2)=0,\qquad
+D(\tau u)=u,\qquad
+D(\tau v)=v,
+$$
+and is therefore precisely $\beta_{p_2}$. Thus $\beta_{p_2}$ lifts to the term preceding $\operatorname{Hom}_{R_2}(J_2/J_2^2,M_2)$, and exactness gives
+$$
+\partial_{p_2}(\beta_{p_2})=0.
+$$
+Hence the localization of $e(\widetilde Y)$ at $p_2$ is zero.
 
-At $p_3$, the point lies in the smooth locus of $Q$, and, after setting $c=1$, the local ring of $Y$ is
+We next consider $p_3$. Localizing the exact sequence
 $$
-R_3=k[[a,b,d]]/(b^3-ad).
+0\longrightarrow k(p_2)
+\longrightarrow\mathcal J/\mathcal J^2
+\xrightarrow{\ \beta\ }\mathcal E
+\longrightarrow0
 $$
-Here $\mathcal E_{p_3}\simeq R_3$, and the hypersurface calculation gives
+at $p_3$ gives
 $$
-\operatorname{Ext}^1_{R_3}(\Omega_{R_3},R_3)
-\simeq
-R_3/(a,d,b^2)
-\simeq k[b]/(b^2).
+0\longrightarrow
+(\mathcal J/\mathcal J^2)_{p_3}
+\xrightarrow{\ \beta_{p_3}\ }
+\mathcal E_{p_3}
+\longrightarrow0.
 $$
-The homomorphism $\beta$ sends the local conormal generator $b^3-ad$ to $1$. Therefore its image under the local conormal connecting homomorphism is $\overline{1}\in k[b]/(b^2)$. Thus
+Thus $\beta_{p_3}$ is an isomorphism. On the chart $c=1$, set
+$$
+B_3=k[[a,b,d]],
+\qquad
+f=b^3-ad,
+\qquad
+R_3=B_3/(f).
+$$
+Then
+$$
+(\mathcal J/\mathcal J^2)_{p_3}=R_3[f],
+\qquad
+\mathcal E_{p_3}\simeq R_3.
+$$
+With the trivializations used in the construction of $\beta$, one has
+$$
+\beta_{p_3}([f])=1.
+$$
+Equivalently, after identifying both modules with $R_3$, the homomorphism $\beta_{p_3}$ is the identity.
+
+The local conormal sequence is
+$$
+0\longrightarrow R_3[f]
+\xrightarrow{\ df\ }
+\Omega_{B_3}\otimes_{B_3}R_3
+\longrightarrow\Omega_{R_3}
+\longrightarrow0.
+$$
+Since $p_3$ lies on the smooth locus of $Q$, we have $\operatorname{Ext}^1(\Omega_{R_3}, R_3) = \frac{R_3}
+{\left(
+\frac{\partial f}{\partial a},
+\frac{\partial f}{\partial b},
+\frac{\partial f}{\partial d}
+\right)}$. Applying $\operatorname{Hom}_{R_3}(-,R_3)$ identifies the local connecting homomorphism with the quotient map
+$$
+R_3=\operatorname{Hom}_{R_3}(R_3[f],R_3)
+\longrightarrow
+\frac{R_3}
+{\left(
+\frac{\partial f}{\partial a},
+\frac{\partial f}{\partial b},
+\frac{\partial f}{\partial d}
+\right)}
+=
+\frac{R_3}{(a,d,b^2)}
+\simeq \frac{k[b]}{(b^2)}.
+$$
+Since $\beta_{p_3}$ corresponds to $1\in R_3$, its image is
+$$
+\partial_{p_3}(\beta_{p_3})
+=\overline{1}
+\in k[b]/(b^2).
+$$
+Therefore the localization of the abstract ribbon class is
 $$
 e(\widetilde Y)\longmapsto(0,\overline{1}).
 $$
-Since the localization map is injective, this proves that the ribbon is non-split and that its abstract extension class comes entirely from the $A_2$-singularity $p_3$.
+Since the localization map is injective, the class has no locally trivial contribution. It is zero at $p_2$ and is precisely the constant local deformation direction at the $A_2$-singularity $p_3$.
 \end{proof}
+
 
 \bibliographystyle{plain}
 \begin{thebibliography}{KMM92}
