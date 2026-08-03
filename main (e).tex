@@ -3376,7 +3376,48 @@ Set
 $$
 \mathcal D=\mathcal H om_Y(\Omega_Y,\mathcal E).
 $$
-For the following cohomological calculation, we use the original weighted grading on $Y=\mathbb P(1,2,3)$; in this grading, $\mathcal E=\mathcal O_Y(-9)$. Since $\mathcal E$ is maximal Cohen--Macaulay at the quotient singularities, replacing $\Omega_Y$ by its reflexive hull does not change $\mathcal D$. Applying $\mathcal{H}om(-, \mathcal E$) to the  weighted Euler sequence we get
+For the following cohomological calculation, we use the original weighted grading on $Y=\mathbb P(1,2,3)$; in this grading, $\mathcal E=\mathcal O_Y(-9)$. Let $\widehat\Omega_Y^1:=\Omega_Y^{**}$, and write
+$$
+T=\ker(\Omega_Y\longrightarrow\widehat\Omega_Y^1),
+\qquad
+C=\operatorname{coker}(\Omega_Y\longrightarrow\widehat\Omega_Y^1).
+$$
+Here $T$ is torsion, while $C$ has finite length and is supported at $p_2$ and $p_3$. Since $\mathcal E$ is torsion-free, $\mathcal H om_Y(T,\mathcal E)=0$. Moreover, $\mathcal E$ is reflexive on the normal surface $Y$, and hence has depth $2$ at each singular point. Indeed, for $R=\mathcal O_{Y,p}$ and $M=\mathcal E_p$, the characterization
+$$
+\operatorname{depth}_R M
+=
+\inf\bigl\{i\geq 0\mid
+\operatorname{Ext}^i_R(k(p),M)\neq0\bigr\}
+$$
+shows that
+$$
+\operatorname{Hom}_R(k(p),M)
+=
+\operatorname{Ext}^1_R(k(p),M)=0.
+$$
+Using a composition series of the finite-length module $C_p$, one obtains
+$$
+\operatorname{Hom}_R(C_p,M)
+=
+\operatorname{Ext}^1_R(C_p,M)=0.
+$$
+Applying $\mathcal H om_Y(-,\mathcal E)$ first to
+$$
+0\longrightarrow T\longrightarrow\Omega_Y
+\longrightarrow\Omega_Y/T\longrightarrow0
+$$
+and then to
+$$
+0\longrightarrow\Omega_Y/T
+\longrightarrow\widehat\Omega_Y^1
+\longrightarrow C\longrightarrow0
+$$
+therefore gives
+$$
+\mathcal D=\mathcal H om_Y(\Omega_Y,\mathcal E)
+\simeq
+\mathcal H om_Y(\widehat\Omega_Y^1,\mathcal E).
+$$ Applying $\mathcal{H}om(-, \mathcal E$) to the  weighted Euler sequence we get
 $$
 0\longrightarrow\mathcal O_Y(-9)
 \longrightarrow
