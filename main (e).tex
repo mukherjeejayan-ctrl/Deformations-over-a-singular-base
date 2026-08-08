@@ -3582,6 +3582,486 @@ $$
 Since the localization map is injective, the class has no locally trivial contribution. It is zero at $p_2$ and is precisely the constant local deformation direction at the $A_2$-singularity $p_3$.
 \end{proof}
 
+\begin{lemma}[The relevant cotangent-cohomology groups]
+\label{lem:cotangent-groups-bicanonical-cover}
+Retain the notation of Proposition~\ref{prop:reflexive-ribbon}, and let
+$\iota$ denote the covering involution of $\pi:X\to Y$. For an
+$\mathcal O_Y$-module $\mathcal F$, write
+$$
+T^i(Y,\mathcal F)
+:=\Ext^i_Y(\mathbb L_{Y/k},\mathcal F).
+$$
+For the relative groups and sheaves, write
+$$
+\begin{aligned}
+T^i(X/Y)&:=\Ext^i_X(\mathbb L_{X/Y},\mathcal O_X),\\
+\mathcal T^i(X/Y)&:=
+\mathcal E xt^i_X(\mathbb L_{X/Y},\mathcal O_X).
+\end{aligned}
+$$
+Then the following hold.
+
+\begin{enumerate}
+\item The decomposition
+$\pi_*\mathcal O_X=\mathcal O_Y\oplus\mathcal E$ induces
+$$
+T^1(Y,\pi_*\mathcal O_X)
+=T^1(Y,\mathcal O_Y)\oplus T^1(Y,\mathcal E)
+\simeq (k^3)^+\oplus (k^3)^-,
+$$
+where the superscripts denote the eigenspaces of $\iota$. More precisely,
+localization at the two singular points gives an isomorphism
+$$
+T^1(Y,\mathcal O_Y)
+\xrightarrow{\ \sim\ }
+k\oplus k[b]/(b^2),
+$$
+where the two summands are the local contributions at $p_2$ and $p_3$,
+respectively. On the anti-invariant side, localization gives a short exact
+sequence
+$$
+0\longrightarrow k\,e(\widetilde Y)
+\longrightarrow T^1(Y,\mathcal E)
+\xrightarrow{\ \operatorname{loc}_{p_2}\ }
+\mathcal E_{p_2}/\mathfrak m_{p_2}\mathcal E_{p_2}
+\longrightarrow0.
+$$
+Here $\mathcal E_{p_2}/\mathfrak m_{p_2}\mathcal E_{p_2}\simeq k^2$, and,
+under the local identifications in Proposition~\ref{prop:reflexive-ribbon},
+$e(\widetilde Y)$ localizes to $(0,\overline 1)$ at $(p_2,p_3)$.
+
+\item There is an $\iota$-equivariant isomorphism
+$$
+T^2(X/Y)\simeq k^+\oplus (k^2)^-.
+$$
+More precisely, if $q_2$ is the unique point of $X$ over $p_2$, then
+$\mathcal T^2(X/Y)$ is supported at $q_2$ and
+$$
+T^2(X/Y)
+\simeq
+\widehat{\mathcal T^2(X/Y)_{q_2}}
+\simeq
+\frac{k[[u,v]]}{(u,v)^2}
+=k\cdot1\oplus k\cdot u\oplus k\cdot v,
+$$
+where $\iota(u,v)=(-u,-v)$.
+
+\item One has
+$$
+T^2(Y,\pi_*\mathcal O_X)
+=T^2(Y,\mathcal O_Y)\oplus T^2(Y,\mathcal E)=0.
+$$
+Moreover, the same calculation gives $T^3(X/Y)=0$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+We use the original grading on $Y=\mathbb P(1,2,3)$ throughout the
+cohomological calculations. Thus
+$$
+\mathcal E=\mathcal O_Y(-9),
+\qquad
+\omega_Y=\mathcal O_Y(-6),
+\qquad
+B\in|\mathcal O_Y(18)|.
+$$
+We shall repeatedly use
+$$
+H^1(Y,\mathcal O_Y(m))=0
+\quad\text{for every }m\in\mathbb Z,
+\qquad
+H^2(Y,\mathcal O_Y(m))^\vee
+\simeq H^0(Y,\mathcal O_Y(-m-6)).
+$$
+
+The surface $Y$ is smooth away from $p_2$ and $p_3$, and its completed
+local rings at these points are hypersurfaces. Since the conormal maps in
+the two local hypersurface presentations are injective, $\mathbb L_{Y/k}$
+is quasi-isomorphic to $\Omega_Y$. In particular,
+$$
+T^i(Y,\mathcal F)=\Ext^i_Y(\Omega_Y,\mathcal F)
+$$
+for every coherent $\mathcal F$. Set
+$$
+\mathcal D_{\mathcal F}:=\mathcal H om_Y(\Omega_Y,\mathcal F).
+$$
+Since the local projective dimension of $\Omega_Y$ is at most one and
+$\mathcal E xt^1_Y(\Omega_Y,\mathcal F)$ is supported at $p_2$ and $p_3$,
+the local-to-global Ext spectral sequence gives
+$$
+\begin{aligned}
+0&\longrightarrow H^1(\mathcal D_{\mathcal F})
+\longrightarrow T^1(Y,\mathcal F)
+\longrightarrow
+H^0\!\left(\mathcal E xt^1_Y(\Omega_Y,\mathcal F)\right)\\
+&\xrightarrow{d_{\mathcal F}}
+H^2(\mathcal D_{\mathcal F})
+\longrightarrow T^2(Y,\mathcal F)
+\longrightarrow0.
+\end{aligned}
+$$
+
+We first calculate the local terms in this five-term sequence. At $p_2$,
+put
+$$
+R_2=k[[r,s,t]]/(rt-s^2)
+=k[[u,v]]^{\mu_2},
+\qquad
+r=u^2,\quad s=uv,\quad t=v^2,
+$$
+and let
+$$
+M_2:=\widehat{\mathcal E}_{p_2}
+=k[[u,v]]^-=R_2u+R_2v.
+$$
+The hypersurface presentation
+$$
+0\longrightarrow R_2
+\xrightarrow{(t,-2s,r)}
+R_2^{\oplus3}
+\longrightarrow\Omega_{R_2}
+\longrightarrow0
+$$
+gives
+$$
+\Ext^1_{R_2}(\Omega_{R_2},R_2)\simeq k,
+\qquad
+\Ext^1_{R_2}(\Omega_{R_2},M_2)
+\simeq\frac{M_2}{(r,s,t)M_2}
+\simeq k^2.
+$$
+We shall also use the periodic presentation
+$$
+R_2^{\oplus2}
+\xrightarrow{
+\left(\begin{smallmatrix}s&t\\-r&-s\end{smallmatrix}\right)}
+R_2^{\oplus2}
+\longrightarrow M_2
+\longrightarrow0,
+$$
+which gives $\Ext^1_{R_2}(M_2,M_2)\simeq k$. Moreover,
+$\Ext^1_{R_2}(k,M_2)=0$ because $M_2$ has depth two.
+
+At $p_3$, put
+$$
+R_3=k[[a,b,d]]/(b^3-ad).
+$$
+The sheaf $\mathcal E$ is locally free at $p_3$. The corresponding
+hypersurface presentation gives
+$$
+\Ext^1_{R_3}(\Omega_{R_3},R_3)
+\simeq\frac{R_3}{(a,d,b^2)}
+\simeq\frac{k[b]}{(b^2)}.
+$$
+Consequently,
+$$
+H^0\!\left(
+\mathcal E xt^1_Y(\Omega_Y,\mathcal O_Y)
+\right)
+\simeq k\oplus k[b]/(b^2),
+$$
+whereas
+$$
+H^0\!\left(
+\mathcal E xt^1_Y(\Omega_Y,\mathcal E)
+\right)
+\simeq k^2\oplus k[b]/(b^2).
+$$
+
+As in the proof of Proposition~\ref{prop:reflexive-ribbon}, the
+finite-length discrepancy between $\Omega_Y$ and its reflexive hull does
+not change $\mathcal H om_Y(\Omega_Y,\mathcal F)$ for
+$\mathcal F=\mathcal O_Y$ or $\mathcal E$. For
+$\mathcal F=\mathcal O_Y$, the dual weighted Euler sequence is therefore
+$$
+0\longrightarrow\mathcal O_Y
+\longrightarrow
+\mathcal O_Y(1)\oplus\mathcal O_Y(2)\oplus\mathcal O_Y(3)
+\longrightarrow\mathcal D_{\mathcal O_Y}
+\longrightarrow0.
+$$
+The weighted cohomology vanishings above give
+$$
+H^1(\mathcal D_{\mathcal O_Y})
+=H^2(\mathcal D_{\mathcal O_Y})=0.
+$$
+The five-term sequence and the preceding local calculations therefore
+yield
+$$
+T^1(Y,\mathcal O_Y)
+\simeq k\oplus k[b]/(b^2)
+\simeq k^3,
+\qquad
+T^2(Y,\mathcal O_Y)=0.
+$$
+
+We next take $\mathcal F=\mathcal E$. As in the proof of
+Proposition~\ref{prop:reflexive-ribbon}, the dual weighted Euler sequence
+is
+$$
+0\longrightarrow\mathcal O_Y(-9)
+\longrightarrow
+\mathcal O_Y(-8)\oplus
+\mathcal O_Y(-7)\oplus
+\mathcal O_Y(-6)
+\longrightarrow\mathcal D_{\mathcal E}
+\longrightarrow0.
+$$
+The dual of the map on second cohomology in this sequence is
+$$
+H^0(\mathcal O_Y(2))\oplus
+H^0(\mathcal O_Y(1))\oplus
+H^0(\mathcal O_Y)
+\longrightarrow
+H^0(\mathcal O_Y(3)),
+$$
+$$
+(A,B,C)\longmapsto xA+2yB+3zC.
+$$
+This map is surjective and its kernel is generated by $(2y,-x,0)$.
+It follows that
+$$
+H^1(\mathcal D_{\mathcal E})=0,
+\qquad
+H^2(\mathcal D_{\mathcal E})\simeq k.
+$$
+
+It remains to determine the rank of $d_{\mathcal E}$. We do this by the
+conormal-sequence method for
+$Y\subset Q=\mathbb P(1,1,1,2)$. Let $\mathcal J$ be the ideal of $Y$ in
+$Q$. The conormal sequence is left exact in this example:
+$$
+0\longrightarrow\mathcal J/\mathcal J^2
+\longrightarrow\Omega_Q|_Y
+\longrightarrow\Omega_Y
+\longrightarrow0.
+$$
+Indeed, this is clear away from $p_2$. At $p_2$, use the index cover
+$k[[\tau,u,v]]$ and put
+$$
+s_0=\tau^2,\qquad p=\tau u,\qquad q=\tau v.
+$$
+After completion, one has
+$$
+(\mathcal J/\mathcal J^2)_{p_2}^{\wedge}
+\simeq k\,ds_0\oplus M_2,
+\qquad
+(\Omega_Q|_Y)_{p_2}^{\wedge}
+\simeq k\,ds_0\oplus M_2\oplus\Omega_{R_2},
+$$
+and the conormal map is the inclusion of the first two summands.
+
+We record the groups in the long exact sequence obtained from this
+conormal sequence. First,
+Proposition~\ref{prop:reflexive-ribbon} gives
+$$
+\Hom_Y(\mathcal J/\mathcal J^2,\mathcal E)=k.
+$$
+The exact sequence
+$$
+0\longrightarrow k(p_2)
+\longrightarrow\mathcal J/\mathcal J^2
+\longrightarrow\mathcal E
+\longrightarrow0
+$$
+and the depth-two equalities
+$$
+\Hom_Y(k(p_2),\mathcal E)
+=\Ext^1_Y(k(p_2),\mathcal E)=0
+$$
+give
+$$
+\Ext^1_Y(\mathcal J/\mathcal J^2,\mathcal E)
+\simeq\Ext^1_Y(\mathcal E,\mathcal E).
+$$
+Now $\mathcal H om_Y(\mathcal E,\mathcal E)=\mathcal O_Y$, and the only
+nonzero local $\mathcal E xt^1$ is at $p_2$, where
+$$
+\Ext^1_{R_2}(M_2,M_2)\simeq k.
+$$
+Since $H^1(\mathcal O_Y)=H^2(\mathcal O_Y)=0$, the local-to-global
+sequence gives
+$$
+\Ext^1_Y(\mathcal J/\mathcal J^2,\mathcal E)\simeq k.
+$$
+
+Next set
+$$
+\mathcal D_Q:=
+\mathcal H om_Y(\Omega_Q|_Y,\mathcal E).
+$$
+The same depth argument allows us to use the reflexive weighted Euler
+sequence of $Q$. After restriction to $Y$ and dualization, it gives
+$$
+0\longrightarrow\mathcal O_Y(-9)
+\longrightarrow
+\mathcal O_Y(-6)^{\oplus3}\oplus\mathcal O_Y(-3)
+\longrightarrow\mathcal D_Q
+\longrightarrow0.
+$$
+The dual of the map on second cohomology in this sequence is
+$$
+k^{\oplus3}
+\longrightarrow H^0(\mathcal O_Y(3)),
+\qquad
+(\lambda,\mu,\nu)\longmapsto
+\lambda x^3+\mu xy+\nu z,
+$$
+and hence is an isomorphism. Thus
+$$
+H^0(\mathcal D_Q)
+=H^1(\mathcal D_Q)
+=H^2(\mathcal D_Q)
+=0.
+$$
+The only local contribution to
+$\mathcal E xt^1_Y(\Omega_Q|_Y,\mathcal E)$ occurs at $p_2$. By the
+local decomposition above,
+$$
+\Ext^1_{R_2}
+\bigl(k\oplus M_2\oplus\Omega_{R_2},M_2\bigr)
+\simeq
+0\oplus k\oplus k^2
+\simeq k^3,
+$$
+because $\Ext^1_{R_2}(k,M_2)=0$,
+$\Ext^1_{R_2}(M_2,M_2)=k$, and the local hypersurface calculation gives
+the last summand. The vanishing of the cohomology of $\mathcal D_Q$ and
+the local-to-global sequence now give
+$$
+\Ext^1_Y(\Omega_Q|_Y,\mathcal E)\simeq k^3.
+$$
+
+Under the local decompositions above, the homomorphism
+$$
+\Ext^1_Y(\Omega_Q|_Y,\mathcal E)
+\longrightarrow
+\Ext^1_Y(\mathcal J/\mathcal J^2,\mathcal E)
+$$
+induced by the conormal inclusion is, at $p_2$, the projection
+$$
+k\oplus k^2\longrightarrow k
+$$
+onto the normal $M_2$-summand. It is therefore surjective. Applying
+$\Hom_Y(-,\mathcal E)$ to the conormal sequence, and using the groups
+just calculated, now gives a short exact sequence
+$$
+0\longrightarrow k
+\longrightarrow
+\Ext^1_Y(\Omega_Y,\mathcal E)
+\longrightarrow k^2
+\longrightarrow0.
+$$
+The first map in this short exact sequence is the conormal connecting
+homomorphism. Its image is generated by $e(\widetilde Y)$, by
+Proposition~\ref{prop:reflexive-ribbon}. The local splitting at $p_2$
+identifies the last map with localization at $p_2$. Hence
+$$
+T^1(Y,\mathcal E)
+=\Ext^1_Y(\Omega_Y,\mathcal E)
+\simeq k^3,
+$$
+with the more precise short exact sequence asserted in part~\textup{(1)}.
+
+Finally, return to the five-term sequence for $\mathcal E$. The map
+$$
+T^1(Y,\mathcal E)
+\longrightarrow
+H^0\!\left(
+\mathcal E xt^1_Y(\Omega_Y,\mathcal E)
+\right)
+$$
+is injective, with three-dimensional image in a four-dimensional vector
+space. Therefore $d_{\mathcal E}$ has one-dimensional image. Its target
+is one-dimensional, so $d_{\mathcal E}$ is surjective and
+$$
+T^2(Y,\mathcal E)=0.
+$$
+These calculations, together with
+$\pi_*\mathcal O_X=\mathcal O_Y\oplus\mathcal E$, prove
+parts~\textup{(1)} and~\textup{(3)}.
+
+It remains to compute $T^2(X/Y)$. Let $q_2$ be the point of $X$ over
+$p_2$. Since the branch divisor avoids $p_2$, after completion and a
+change of the trace-zero generator the local cover is
+$$
+R_2=k[[u,v]]^{\mu_2}
+\longrightarrow
+S_2=k[[u,v]].
+$$
+The transitivity triangle for $k\to R_2\to S_2$, together with the
+smoothness of $S_2$, gives
+$$
+T^2(S_2/R_2,S_2)
+\simeq
+\Ext^1_{S_2}
+\left(
+\mathbb L_{R_2/k}\otimes_{R_2}^{\mathbf L}S_2,
+S_2
+\right).
+$$
+Tensoring the hypersurface presentation of $\mathbb L_{R_2/k}$ with
+$S_2$ gives
+$$
+\Ext^1_{S_2}
+\left(
+\mathbb L_{R_2/k}\otimes_{R_2}^{\mathbf L}S_2,
+S_2
+\right)
+\simeq
+\frac{S_2}{(v^2,-2uv,u^2)}
+=
+\frac{S_2}{(u,v)^2}.
+$$
+Thus the completed stalk of $\mathcal T^2(X/Y)$ at $q_2$ is
+$S_2/(u,v)^2$. At every other point it vanishes: over $p_3$ the cover is
+\'{e}tale, and along the ramification divisor the flat double cover is a
+relative hypersurface, whose cotangent complex has projective amplitude
+$[-1,0]$.
+
+We now pass from the local calculation to the global group. Since $\pi$
+is finite and generically \'{e}tale and $X$ is normal,
+$$
+\mathcal T^0(X/Y)
+=
+\mathcal H om_X(\Omega_{X/Y},\mathcal O_X)
+=0.
+$$
+On the flat locus, the standard double-cover calculation identifies the
+part of $\mathcal T^1(X/Y)$ supported on the ramification curve with
+$\mathcal O_B(B)$; its remaining part is supported at $q_2$ and has
+finite length. Consequently,
+$$
+H^1\bigl(X,\mathcal T^1(X/Y)\bigr)
+\simeq
+H^1(B,\mathcal O_B(B))
+=0.
+$$
+Indeed, the last vanishing follows from
+$$
+0\longrightarrow\mathcal O_Y
+\longrightarrow\mathcal O_Y(18)
+\longrightarrow\mathcal O_B(18)
+\longrightarrow0
+$$
+and the weighted cohomology vanishings above. Since
+$\mathcal T^2(X/Y)$ is the skyscraper sheaf calculated above, the
+local-to-global spectral sequence gives
+$$
+T^2(X/Y)
+\simeq
+\frac{S_2}{(u,v)^2}.
+$$
+The involution acts on $S_2$ by $(u,v)\mapsto(-u,-v)$. Hence $1$ is
+invariant and $u,v$ are anti-invariant, proving part~\textup{(2)}.
+
+Finally, the same local transitivity sequence gives
+$$
+T^3(S_2/R_2,S_2)=T^2(R_2,S_2)=0.
+$$
+Together with the support calculations above, the local-to-global
+spectral sequence yields $T^3(X/Y)=0$.
+\end{proof}
 
 \bibliographystyle{plain}
 \begin{thebibliography}{KMM92}
